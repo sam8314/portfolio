@@ -24,7 +24,7 @@ const About = () => {
     <div className='about__intro'>
       {name && (
         <h1>
-          Hi, I am <span className='about__name'>{name}.</span>
+          hi, I'm <span className='about__name'>{name}</span>
         </h1>
       )}
 
@@ -35,7 +35,7 @@ const About = () => {
 
       <div className='about__contact center'>
         {resume && (
-          <a href={resume}>
+          <a href={resume} target='_blank' rel='noopener noreferrer'>
             <span type='button' className='btn btn--outline'>
               Resume
             </span>
