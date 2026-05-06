@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Brightness2Icon from '@material-ui/icons/Brightness2'
 import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
 import MenuIcon from '@material-ui/icons/Menu'
@@ -21,37 +22,37 @@ const Navbar = () => {
       >
         {projects.length ? (
           <li className='nav__list-item'>
-            <a
-              href='#projects'
+            <Link
+              to={{ pathname: '/', hash: '#projects' }}
               onClick={toggleNavList}
               className='link link--nav'
             >
               Projects
-            </a>
+            </Link>
           </li>
         ) : null}
 
         {skills.length ? (
           <li className='nav__list-item'>
-            <a
-              href='#skills'
+            <Link
+              to={{ pathname: '/', hash: '#skills' }}
               onClick={toggleNavList}
               className='link link--nav'
             >
               Skills
-            </a>
+            </Link>
           </li>
         ) : null}
 
         {contact.email ? (
           <li className='nav__list-item'>
-            <a
-              href='#contact'
+            <Link
+              to={{ pathname: '/', hash: '#contact' }}
               onClick={toggleNavList}
               className='link link--nav'
             >
               Contact
-            </a>
+            </Link>
           </li>
         ) : null}
       </ul>

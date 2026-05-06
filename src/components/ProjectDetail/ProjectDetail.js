@@ -3,12 +3,55 @@ import { projects } from '../../portfolio'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LaunchIcon from '@material-ui/icons/Launch'
+import CloseIcon from '@material-ui/icons/Close'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import CheckCircleIcon from '@material-ui/icons/CheckCircle'
+import { useState, useRef } from 'react'
 import './ProjectDetail.css'
 
 const ProjectDetail = () => {
   const { projectId } = useParams()
   const history = useHistory()
   const project = projects.find((p) => p.id === projectId)
+  const [zoomedImage, setZoomedImage] = useState(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const slideshowRef = useRef(null)
+
+  const handleImageClick = (index) => {
+    setZoomedImage(index)
+  }
+
+  const closeZoom = () => {
+    setZoomedImage(null)
+  }
+
+  const getImageCaption = (projectId, imageIndex) => {
+    // Hardcode custom captions for each project and image index
+    const captions = {
+      // Example: replace with your project IDs and custom text
+      'housebite': {
+        0: 'Main dashboard showing project overview',
+        1: 'User authentication flow',
+        2: 'Database schema diagram'
+      },
+      'university-app': {
+        0: 'Custom caption for first image',
+        1: 'Custom caption for second image'
+      }
+      // Add more projects as needed
+    };
+
+    return captions[projectId]?.[imageIndex] || `${project.name} screenshot ${imageIndex + 1}`;
+  }
+
+  const nextZoomedImage = () => {
+    setZoomedImage((prev) => (prev + 1) % project.images.length)
+  }
+
+  const prevZoomedImage = () => {
+    setZoomedImage((prev) => (prev - 1 + project.images.length) % project.images.length)
+  }
 
   if (!project) {
     return (
@@ -48,19 +91,75 @@ const ProjectDetail = () => {
 
         {project.images && project.images.length > 0 && (
           <div className='project-detail__slideshow'>
-            <div className='slideshow-container'>
-              {project.images.map((img, index) => (
-                <div key={index} className='slide'>
+            <div className='slideshow-main'>
+              {project.images.length > 1 && (
+                <button className='slide-arrow left' onClick={() => setCurrentSlide((s) => (s - 1 + project.images.length) % project.images.length)}>
+                  <ChevronLeftIcon />
+                </button>
+              )}
+
+              <div className='main-image-wrap'>
+                <img
+                  src={
+                    project.images[currentSlide].startsWith('http')
+                      ? project.images[currentSlide]
+                      : `${process.env.PUBLIC_URL}/images/${project.images[currentSlide]}`
+                  }
+                  alt={`${project.name} screenshot ${currentSlide + 1}`}
+                  onClick={() => handleImageClick(currentSlide)}
+                  className='main-slide-image'
+                />
+              </div>
+
+              {project.images.length > 1 && (
+                <button className='slide-arrow right' onClick={() => setCurrentSlide((s) => (s + 1) % project.images.length)}>
+                  <ChevronRightIcon />
+                </button>
+              )}
+            </div>
+
+            {project.images.length > 1 && (
+              <div className='slideshow-thumbs'>
+                {project.images.map((img, index) => (
                   <img
-                    src={
-                      img.startsWith('http')
-                        ? img
-                        : `${process.env.PUBLIC_URL}/images/${img}`
-                    }
-                    alt={`${project.name} screenshot ${index + 1}`}
+                    key={index}
+                    src={img.startsWith('http') ? img : `${process.env.PUBLIC_URL}/images/${img}`}
+                    alt={`thumb-${index}`}
+                    className={`thumb ${index === currentSlide ? 'active' : ''}`}
+                    onClick={() => setCurrentSlide(index)}
                   />
-                </div>
-              ))}
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {zoomedImage !== null && (
+          <div className='image-zoom-modal' onClick={closeZoom}>
+            <div className='zoom-content' onClick={(e) => e.stopPropagation()}>
+              <button className='close-zoom' onClick={closeZoom}>
+                <CloseIcon />
+              </button>
+              {project.images.length > 1 && (
+                <>
+                  <button className='zoom-arrow left' onClick={prevZoomedImage}>
+                    <ChevronLeftIcon />
+                  </button>
+                  <button className='zoom-arrow right' onClick={nextZoomedImage}>
+                    <ChevronRightIcon />
+                  </button>
+                </>
+              )}
+              <img
+                src={
+                  project.images[zoomedImage].startsWith('http')
+                    ? project.images[zoomedImage]
+                    : `${process.env.PUBLIC_URL}/images/${project.images[zoomedImage]}`
+                }
+                alt={`${project.name} screenshot ${zoomedImage + 1}`}
+                className='zoomed-image'
+              />
+              <p className='zoom-caption'>{getImageCaption(project.id, zoomedImage)}</p>
             </div>
           </div>
         )}
@@ -76,7 +175,10 @@ const ProjectDetail = () => {
               <h2>Key Features</h2>
               <ul className='feature-list'>
                 {project.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
+                  <li key={index}>
+                    <CheckCircleIcon className='list-icon' />
+                    {feature}
+                  </li>
                 ))}
               </ul>
             </section>
@@ -112,6 +214,43 @@ const ProjectDetail = () => {
             </section>
           )}
 
+          {project.reportPDFs && project.reportPDFs.length > 0 && (
+            <section className='detail-section'>
+              <h2>Sprint Report PDFs</h2>
+              <div className='pdf-report-grid'>
+                {project.reportPDFs.map((report, index) => (
+                  <div key={index} className='pdf-report-card'>
+                    <div className='pdf-report-preview'>
+                      <object
+                        data={report.src}
+                        type='application/pdf'
+                        width='100%'
+                        height='240'
+                      >
+                        <p>
+                          <strong>{report.title}</strong> is available as a PDF. 
+                          <a href={report.src} target='_blank' rel='noopener noreferrer'>Open in a new tab</a>.
+                        </p>
+                      </object>
+                    </div>
+                    <div className='pdf-report-info'>
+                      <h3>{report.title}</h3>
+                      <p>{report.description}</p>
+                      <a
+                        href={report.src}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='btn btn--outline pdf-open-btn'
+                      >
+                        Open Report
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
           <section className='detail-section project-links'>
             {project.sourceCode && (
               <a
@@ -128,9 +267,19 @@ const ProjectDetail = () => {
                 href={project.livePreview}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='btn btn--primary'
+                className='btn btn--live-demo'
               >
-                <LaunchIcon /> Live Demo
+                Live Demo
+              </a>
+            )}
+            {project.id === 'housebite' && (
+              <a
+                href='https://arpega75.github.io/houseBite/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='btn btn--live-demo'
+              >
+                More about the project
               </a>
             )}
           </section>

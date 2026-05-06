@@ -82,6 +82,12 @@
   white-space: nowrap;
 }
 
+.metadata-icon {
+  margin-right: 0.35em;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
 .wip-badge {
   background: #ff9800;
   color: white;
@@ -158,25 +164,44 @@
 }
 
 .btn--live-demo {
-  padding: 0.6em 1.2em;
-  background: var(--clr-primary);
-  color: white;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 0.85rem;
+  color: var(--clr-primary);
+  border: 2px solid var(--clr-primary);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: 0.8em 1.4em;
+  font-weight: 500;
+  font-size: 0.9rem;
   text-decoration: none;
-  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
-.btn--live-demo:hover {
-  background: var(--clr-primary);
+.btn--live-demo:hover,
+.btn--live-demo:focus {
+  color: var(--clr-bg);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  filter: brightness(1.1);
+}
+
+.btn--live-demo::before {
+  content: '';
+  position: absolute;
+  background-color: var(--clr-primary);
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: right 0.2s ease-in-out;
+}
+
+.btn--live-demo:hover::before,
+.btn--live-demo:focus::before {
+  right: 0;
 }
 
 @media (max-width: 768px) {

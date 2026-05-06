@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import uniqid from 'uniqid'
 import GitHubIcon from '@material-ui/icons/GitHub'
+import GroupIcon from '@material-ui/icons/Group'
+import DateRangeIcon from '@material-ui/icons/DateRange'
 import './ProjectContainer.css'
 
 const ProjectContainer = ({ project, allProjects }) => {
@@ -52,13 +54,13 @@ const ProjectContainer = ({ project, allProjects }) => {
 
         <div className='project__metadata'>
           <span className='metadata-badge' title='Team Size'>
-            👥 {project.teamSize}
+            <GroupIcon className='metadata-icon' /> {project.teamSize}
           </span>
           <span className='metadata-badge' title='Role'>
             {project.role}
           </span>
           <span className='metadata-badge' title='Year'>
-            📅 {project.year}
+            <DateRangeIcon className='metadata-icon' /> {project.year}
           </span>
           {project.wip && (
             <span className='metadata-badge wip-badge' title='Work in Progress'>

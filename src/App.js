@@ -1,5 +1,10 @@
-import { useContext } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { useContext, useEffect } from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useLocation,
+} from 'react-router-dom'
 import { ThemeContext } from './contexts/theme'
 import Header from './components/Header/Header'
 import About from './components/About/About'
@@ -20,6 +25,21 @@ const HomePage = () => (
   </>
 )
 
+const ScrollToHash = () => {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (!location.hash) return
+    const id = location.hash.replace('#', '')
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [location.hash, location.pathname])
+
+  return null
+}
+
 const App = () => {
   const [{ themeName }] = useContext(ThemeContext)
 
@@ -27,6 +47,7 @@ const App = () => {
     <Router>
       <div id='top' className={`${themeName} app`}>
         <Header />
+        <ScrollToHash />
 
         <main>
           <Switch>
