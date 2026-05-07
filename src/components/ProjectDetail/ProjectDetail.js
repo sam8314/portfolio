@@ -31,9 +31,13 @@ const ProjectDetail = () => {
     const captions = {
       // Example: replace with your project IDs and custom text
       'housebite': {
-        0: 'Main dashboard showing project overview',
-        1: 'User authentication flow',
-        2: 'Database schema diagram'
+        0: 'Users can join several households and see at a quick glance which products should be consumed first.',
+        1: 'Users can customize their accounts and set their personal diets that apply across all of their households.',
+        2: 'Users can track the overall budget of each household',
+        3: 'Users can see all the products in a specific household delete them in bulk or search for recipes using selected products.',
+        4: 'An OpenAI scanner can parse any receipt and suggest expiration dates (which the user can edit) and then adds them to a households pantry.',
+        5: 'Users can search and save their favourite recipes but also add the missing ingredients to the shopping list of a household.',
+        6: 'A shared shopping list allows for live edits for efficient shopping.'
       },
       'university-app': {
         0: 'Custom caption for first image',

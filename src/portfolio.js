@@ -42,7 +42,14 @@ const projects = [
       'Comprehensive account management with Google login or email confirmation'
     ],
     challenges: [],
-    images: ['housebite/members.png', 'housebite/account.png', 'housebite/budget.png', 'housebite/pantry.png', 'housebite/scan.png', 'housebite/receipts.png', 'housebite/recipe.png', 'housebite/shopping list.png'],
+    images: ['housebite/members.png', 
+             'housebite/account.png', 
+             'housebite/budget.png', 
+             'housebite/pantry.png', 
+             'housebite/scan.png', 
+             'housebite/receipts.png', 
+             'housebite/recipe.png', 
+             'housebite/shopping list.png'],
     sprints: [
       { title: 'Sprint 1: Project Foundation', description: 'Core project setup. Core frontend and backend implementation. Share household model that the rest of the app builds on. Households: create, join via invite code, member allocations' },
       { title: 'Sprint 2: Core Product Experience', description: 'Focused on delivering the core user-facing features that define the everyday HouseBite experience. Household dashboard with a filterable “expiring soon” view. Recipe suggestions, with support for diets and intolerances. Receipt scanning. Account page with dietary restriction profiles for each member' },
