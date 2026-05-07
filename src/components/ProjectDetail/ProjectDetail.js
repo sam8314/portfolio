@@ -40,10 +40,19 @@ const ProjectDetail = () => {
         6: 'A shared shopping list allows for live edits for efficient shopping.'
       },
       'university-app': {
-        0: 'Custom caption for first image',
-        1: 'Custom caption for second image'
+        0: 'The complete logical-physical database schema on Astah Professional',
+        1: 'The schema for courses',
+        2: 'The schema for a university employee',
+        3: 'The schema for a person',
+        4: 'The user can compute the cost for a course based on hourly pay',
+        5: 'The user can allocate a teacher to a course',
+        6: 'After allocation',
+        7: 'The user can deallocate a teacher to a course',
+        8: 'The user can create new types of activities for a course'
+      },
+      'slso-energy':{
+
       }
-      // Add more projects as needed
     };
 
     return captions[projectId]?.[imageIndex] || `${project.name} screenshot ${imageIndex + 1}`;

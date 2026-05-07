@@ -65,7 +65,13 @@ const projects = [
     sourceCode: 'https://github.com/daDevBoat/SLSOProject',
     livePreview: '',
     image: '',
-    images: [
+    images: [ 'slso/0_action_plan.png',
+              'slso/1_distribution_analysis.png',
+              'slso/2_energy_types.png',
+              'slso/3_spikes_zscore.png',
+              'slso/4_seasonal_patterns.png',
+              'slso/5_spikes_energy_class.png',
+              'slso/6_consumption_trends.png'
     ],
     teamSize: 5,
     role: 'Dev',
