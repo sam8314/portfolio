@@ -1,16 +1,16 @@
 const header = {
-  homepage: 'https://sam8314.github.io', // Update this to your GitHub Pages URL
-  title: 'Sam Serbouti',
+  homepage: 'https://sam8314.github.io/portfolio', // Update this to your GitHub Pages URL
+  title: 'Samia Serbouti',
 }
 
 const about = {
   name: 'Samia Serbouti',
-  role: 'Software Engineering Student @ KTH with Backend Focus',
+  role: 'Software Engineering from KTH with Backend Focus',
   picture: 'https://media.licdn.com/dms/image/v2/D4E03AQH0_5sOvg1wxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694356364808?e=1779321600&v=beta&t=ajJD6Te-rVFMz80bAzEzg_1eVphh77PXT6bdvmwfDcA',
   
   description: `Engineering student at KTH with hands-on experience in PostgreSQL, Python, and full-stack development. Strong foundation in database systems, algorithms, and software engineering. Passionate about sustainable digitalization and data-driven solutions for real-world problems. My coursework includes Databases, Software Engineering, Data Structures, Algorithms, and Computer Networks. I'm actively improving skills in DevOps practices, data analysis, and security fundamentals, with a goal of contributing across the data-infrastructure-security stack.`,
   
-  resume: '/Resume_Serbouti.pdf', // Local PDF file in public folder
+  resume: '/portfolio/Resume_Serbouti.pdf', // Local PDF file in public folder
   social: {
     linkedin: 'https://www.linkedin.com/in/samia-serbouti-0595b1229',
     github: 'https://github.com/sam8314',
@@ -35,16 +35,13 @@ const projects = [
     features: [
       'Smart pantry inventory with expiry date tracking',
       'Recipe suggestions based on available ingredients',
-      'OCR receipt scanning for automatic item entry',
+      'AI receipt scanning for automatic item entry with OpenAi',
       'Shared household budgets and expense tracking',
       'Progressive Web App for mobile and desktop',
       'Real-time synchronization with Supabase',
+      'Comprehensive account management with Google login or email confirmation'
     ],
-    challenges: [
-      'Implementing efficient OCR for receipt scanning',
-      'Designing a scalable database schema for multi-household support',
-      'Optimizing real-time synchronization performance',
-    ],
+    challenges: [],
     images: ['housebite/members.png', 'housebite/account.png', 'housebite/budget.png', 'housebite/pantry.png', 'housebite/scan.png', 'housebite/receipts.png', 'housebite/recipe.png', 'housebite/shopping list.png'],
     sprints: [
       { title: 'Sprint 1: Project Foundation', description: 'Core project setup. Core frontend and backend implementation. Share household model that the rest of the app builds on. Households: create, join via invite code, member allocations' },
@@ -57,13 +54,13 @@ const projects = [
     id: 'slso-energy',
     name: 'SLSO Healthcare Energy Analysis',
     description: 'Data analysis project for Stockholm County healthcare provider (SLSO) to identify energy inefficiencies across 185+ facilities. Applied z-score anomaly detection, weather correlation analysis (Pearson correlation), and temporal pattern identification to flag clinics with unreasonable energy consumption.',
-    stack: ['Python', 'Pandas', 'Matplotlib', 'Statistical Analysis', 'Weather Data', 'Data Analytics', 'Sustainability'],
+    stack: ['Python', 'Pandas', 'Matplotlib', 'Statistical Analysis', 'Weather Data', 'Sustainability'],
     sourceCode: 'https://github.com/daDevBoat/SLSOProject',
     livePreview: '',
     image: '',
     images: [
     ],
-    teamSize: 4,
+    teamSize: 5,
     role: 'Dev',
     year: 2025,
     wip: false,
@@ -74,11 +71,7 @@ const projects = [
       'Temporal pattern identification across seasons',
       'Building classification system (D-class, E-class)',
     ],
-    challenges: [
-      'Handling missing and inconsistent data from multiple sources',
-      'Correlating weather data with energy consumption patterns',
-      'Developing actionable recommendations for diverse building types',
-    ],
+    challenges: [],
     images: ['slso-energy.png', 'slso-energy.png'],
     sprints: [
       { title: 'Sprint 1: Data Collection', description: 'Gathered energy consumption data from 185+ facilities, integrated SMHI weather data' },
@@ -87,6 +80,24 @@ const projects = [
       { title: 'Sprint 4: Pattern Identification', description: 'Identified temporal patterns, classified buildings by energy efficiency' },
       { title: 'Sprint 5: Reporting', description: 'Created visualizations, generated actionable recommendations, prepared final report' },
     ],
+  },
+  {
+    id: 'socket-programming',
+    name: 'TCP Networking suite',
+    description: 'A comprehensive networking toolkit demonstrating TCP socket programming, HTTP proxy servers, and concurrent client handling in Java.',
+    stack: ['Networking', 'Java', 'Concurrent Programming', 'HTTP'],
+    teamSize: 1,
+    role: 'Dev',
+    year: 2026,
+    wip: false,
+    detailedDescription: '',
+    sourceCode: 'https://github.com/sam8314/socket-programming',
+    sprints:[
+      {title: 'TCP Client', description:'Reusable TCP client library with advanced features'},
+      {title: 'TCP Ask', description:'Command-line TCP client. Manual testing and debugging of TCP servers'},
+      {title: 'HTTP Ask', description:'Single-threaded HTTP-to-TCP proxy. Simple HTTP gateway to TCP services'},
+      {title: 'ConcHTTPAsk', description:'Multi-threaded HTTP proxy. Production-ready concurrent request handling'}
+    ]
   },
   {
     id: 'university-staff',
@@ -124,32 +135,49 @@ The database is designed around the project task requirements: flexible course l
       'Teacher allocation limits and period constraints',
       'Flexible activity types with preparation factor rules',
     ],
-    challenges: [
-      'Designing efficient database queries for complex relationships',
-      'Implementing transaction management for data consistency',
-      'Creating an intuitive UI for complex scheduling operations',
-    ],
     reportPDFs: [
       {
         title: 'Sprint 1 Report',
-        description: 'Project setup, conceptual model, and database schema design.',
+        description: 'Project setup, conceptual model, and database schema design and implementation in PostgreSQL via pgAdmin4',
         src: '/reports/university-staff/sprint-1-report.pdf',
       },
       {
         title: 'Sprint 2 Report',
-        description: 'CRUD implementation, allocation logic, and teaching load calculation.',
+        description: 'Implementation of an OLAP (Online Analytical Processing) queries and views as well as an efficiency analysis of the efficiency of one of the queries with EXPLAIN ANALYZE',
         src: '/reports/university-staff/sprint-2-report.pdf',
       },
       {
         title: 'Sprint 3 Report',
-        description: 'Final validation, reporting queries, and application polish.',
+        description: 'Implementation of a layered Java application with focus on correct ACID transaction handling and a clean separation of concerns between view, controller, service, and integration (DAO) layers',
         src: '/reports/university-staff/sprint-3-report.pdf',
       },
     ],
     sprints: [
-      { title: 'Sprint 1: Database Design', description: 'Designed PostgreSQL schema, implemented JDBC connection layer' },
-      { title: 'Sprint 2: Core CRUD', description: 'Built basic CRUD operations for courses, instructors, and activities' },
-      { title: 'Sprint 3: Allocation Logic', description: 'Implemented teaching load calculation and allocation algorithms' },
+      { title: 'Sprint 1: Database Design', description: 'Design of the logical/physical model on Astah and wrote build and populate scripts in PostgreSQL' },
+      { title: 'Sprint 2: Core CRUD', description: 'Wrote OLAP queries and views with thorough efficiency analysis' },
+      { title: 'Sprint 3: Allocation Logic', description: 'Built layered JDBC app using Maven and Flatlaf UI' },
+    ],
+  },
+  {
+    id: 'fast-typer',
+    name: 'FastTyper',
+    description: 'A JS webapp that helps users grow their typing speed',
+    stack: ['JavaScript', 'HTML', 'CSS'],
+    sourceCode: 'https://github.com/sam8314/fast-typer',
+    livePreview: '',
+    teamSize: '1',
+    role: 'Dev',
+    year: '2026',
+    wip: true,
+    detailedDescription: '',
+    features: [],
+    challenges: [],
+    images: [],
+    sprints: [
+      {title: 'Sprint 1: ', description: ''},
+      {title: 'Sprint 1: ', description: ''},
+      {title: 'Sprint 1: ', description: ''},
+      
     ],
   },
   {
@@ -166,7 +194,7 @@ The database is designed around the project task requirements: flexible course l
     wip: false,
     detailedDescription: ``,
     features: [
-      'Progress tracking',
+      'GUI',
     ],
     challenges: [],
     images: [],
@@ -175,6 +203,16 @@ The database is designed around the project task requirements: flexible course l
       { title: 'Sprint 2: Implementation', description: 'Implemented core simulation logic and resource management' },
       { title: 'Sprint 3: Testing', description: 'Testing, debugging, and performance optimization' },
     ],
+  },
+  {
+    id: 'baxandall',
+    name: 'Baxandall Filter',
+    description: 'A bass and treble filter built with no potentiometer',
+    stack: 'Embedded electronics',
+    year: 2024,
+    wip: false,
+    teamSize: 1,
+    images: ['baxandall/baxandall.png']
   },
 
 ]

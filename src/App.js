@@ -52,7 +52,7 @@ const App = () => {
         <main>
           <Switch>
             <Route exact path='/' component={HomePage} />
-            <Route path='/project/:projectId' component={ProjectDetail} />
+            <Route path='/portfolio/project/:projectId' component={ProjectDetail} />
           </Switch>
         </main>
 
