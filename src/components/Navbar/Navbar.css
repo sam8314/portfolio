@@ -1,5 +1,11 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
 .nav__list {
-  margin-right: 1.5em;
+  margin-right: 0;
   display: flex;
 }
 .nav__list-item {

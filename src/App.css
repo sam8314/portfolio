@@ -2,7 +2,8 @@
   font-family: 'Nunito', sans-serif;
   line-height: 1.5;
   color: var(--clr-fg);
-  background-color: var(--clr-bg);
+  background: linear-gradient(135deg, var(--clr-bg) 0%, var(--clr-bg-alt) 100%);
+  min-height: 100vh;
 }
 
 .light {
@@ -10,7 +11,7 @@
   --clr-bg-alt: #fff;
   --clr-fg: #555;
   --clr-fg-alt: #444;
-  --clr-primary: #7c3aed;
+  --clr-primary: #652aca;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -89,6 +90,7 @@ university-app.png
   font-size: 0.9rem;
   text-transform: lowercase;
   transition: transform 0.2s ease-in-out;
+  border-radius: 12px;
 }
 
 .btn--outline {

@@ -84,15 +84,26 @@ const projects = [
       'Temporal pattern identification across seasons',
       'Building classification system (D-class, E-class)',
     ],
-    challenges: [],
-    images: ['slso-energy.png', 'slso-energy.png'],
-    sprints: [
-      { title: 'Sprint 1: Data Collection', description: 'Gathered energy consumption data from 185+ facilities, integrated SMHI weather data' },
-      { title: 'Sprint 2: Data Cleaning', description: 'Cleaned and normalized data, handled missing values, established data quality metrics' },
-      { title: 'Sprint 3: Statistical Analysis', description: 'Implemented z-score anomaly detection, Pearson correlation analysis with weather data' },
-      { title: 'Sprint 4: Pattern Identification', description: 'Identified temporal patterns, classified buildings by energy efficiency' },
-      { title: 'Sprint 5: Reporting', description: 'Created visualizations, generated actionable recommendations, prepared final report' },
+    challenges: [
+      "Mapping SLSO clinic addresses to energy usage data",
+      "Integrating web-scraped location data with visit counts and square meter datasets",
+      "Cleaning and pruning the merged dataset for analysis",
+      "Establishing clear connections between energy use and sustainability goals",
+      "Developing analysis tools that are actionable for SLSO"
     ],
+    sprints: [
+      { title: "Sprint 1: Project Scoping & Data Identification", description: "Selected project mission, held initial group and supervision meetings, clarified available datasets with supervisors." },
+      { title: "Sprint 2: Data Integration & Initial Research", description: "Explored web scraping for SLSO addresses, mapped clinic names to energy data, researched sustainable building energy management, merged initial datasets, started pruning." },
+      { title: "Sprint 3: Visualization & Statistical Analysis", description: "Created visualizations, wrote report draft, performed correlation analysis (energy vs visitor count, season), and started energy intensity mapping." },
+      { title: "Sprint 4: Sustainability Deep Dive & Tool Development", description: "Conducted further sustainability research, developed or refined analysis tools, and aligned findings with SLSO sustainability goals." },
+      { title: "Sprint 5: Final Reporting & Presentations", description: "Completed report draft, incorporated peer and supervisor feedback, prepared and delivered final seminar presentation." }
+    ],
+    reportPDFs: [
+      {
+        title: 'An Analysis of Energy Consumption Patterns in SLSO Healthcare Facilities',
+        description: '',
+        src: `${process.env.PUBLIC_URL}/reports/slso/slso_report.pdf`,
+      }],
   },
   {
     id: 'socket-programming',
@@ -197,7 +208,7 @@ The database is designed around the project task requirements: flexible course l
     id: 'alter-flughafen',
     name: 'Alter Flughafen',
     description: 'A 2D educational game in Python to teach about wildlife conservation. Created during volunteer work in Karlsruhe, Germany. Designed to engage diverse age groups in environmental awareness.',
-    stack: ['Python', 'Game dev'],
+    stack: ['Python', 'Game dev', 'sustainability'],
     sourceCode: 'https://github.com/sam8314/alter-flughafen-V1',
     livePreview: '',
     image: '',
@@ -222,6 +233,7 @@ The database is designed around the project task requirements: flexible course l
     name: 'Baxandall Filter',
     description: 'A bass and treble filter built with no potentiometer',
     stack: ['Embedded electronics'],
+    role: 'Dev',
     year: 2024,
     wip: false,
     teamSize: 1,

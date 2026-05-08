@@ -51,7 +51,13 @@ const ProjectDetail = () => {
         8: 'The user can create new types of activities for a course'
       },
       'slso-energy':{
-
+        0: 'Spotting faulty buildings to immediate action: our strategy alignes with Höjer et al.’s path of intensifying',
+        1: 'Distribution analysis of outside temperature to electricity consumption correlation',
+        2: 'Distribution of correlation coefficients and standard deviation broken down by building energy types',
+        3: 'Z-score distribution confirms that the consumptions follow an approximately normal distribution',
+        4: 'The monthly spike results show that a strong seasonal pattern in consumption anomalie',
+        5: 'Energy class analysis suggests that buildings with low energy class are most likely to consume more energy and implies higher chance for spikes',
+        6: 'Monthly distribution of peak energy consumption flags across the buildings'
       }
     };
 
@@ -229,7 +235,7 @@ const ProjectDetail = () => {
 
           {project.reportPDFs && project.reportPDFs.length > 0 && (
             <section className='detail-section'>
-              <h2>Sprint Report PDFs</h2>
+              <h2>Documents</h2>
               <div className='pdf-report-grid'>
                 {project.reportPDFs.map((report, index) => (
                   <div key={index} className='pdf-report-card'>
