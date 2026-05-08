@@ -44,7 +44,7 @@ const App = () => {
   const [{ themeName }] = useContext(ThemeContext)
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div id='top' className={`${themeName} app`}>
         <Header />
         <ScrollToHash />
@@ -52,7 +52,7 @@ const App = () => {
         <main>
           <Switch>
             <Route exact path='/' component={HomePage} />
-            <Route path='/portfolio/project/:projectId' component={ProjectDetail} />
+            <Route path='/project/:projectId' component={ProjectDetail} />
           </Switch>
         </main>
 

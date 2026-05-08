@@ -39,7 +39,7 @@ const ProjectDetail = () => {
         5: 'Users can search and save their favourite recipes but also add the missing ingredients to the shopping list of a household.',
         6: 'A shared shopping list allows for live edits for efficient shopping.'
       },
-      'university-app': {
+      'university-staff': {
         0: 'The complete logical-physical database schema on Astah Professional',
         1: 'The schema for courses',
         2: 'The schema for a university employee',

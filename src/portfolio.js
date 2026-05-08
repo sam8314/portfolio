@@ -10,7 +10,7 @@ const about = {
   
   description: `Engineering student at KTH with hands-on experience in PostgreSQL, Python, and full-stack development. Strong foundation in database systems, algorithms, and software engineering. Passionate about sustainable digitalization and data-driven solutions for real-world problems. My coursework includes Databases, Software Engineering, Data Structures, Algorithms, and Computer Networks. I'm actively improving skills in DevOps practices, data analysis, and security fundamentals, with a goal of contributing across the data-infrastructure-security stack.`,
   
-  resume: '/portfolio/Resume_Serbouti.pdf', // Local PDF file in public folder
+  resume: `${process.env.PUBLIC_URL}/Resume_Serbouti.pdf`, // Local PDF file in public folder
   social: {
     linkedin: 'https://www.linkedin.com/in/samia-serbouti-0595b1229',
     github: 'https://github.com/sam8314',
@@ -116,7 +116,7 @@ const projects = [
     id: 'university-staff',
     name: 'University Staff Management App',
     description: 'Database application for university course layout planning, teaching load allocation, and staff scheduling. Supports course instances, teaching activities, department and teacher management, and full load reporting.',
-    stack: ['Java', 'JDBC', 'PostgreSQL', 'Maven', 'Java Swing', 'FlatLaf'],
+    stack: ['Java', 'JDBC', 'PostgreSQL', 'Maven', 'Java Swing', 'FlatLaf', 'Astah Professional'],
     sourceCode: 'https://github.com/sam8314/university-staff-app',
     livePreview: '',
     image: '',
@@ -152,17 +152,17 @@ The database is designed around the project task requirements: flexible course l
       {
         title: 'Sprint 1 Report',
         description: 'Project setup, conceptual model, and database schema design and implementation in PostgreSQL via pgAdmin4',
-        src: '/reports/university-staff/sprint-1-report.pdf',
+        src: `${process.env.PUBLIC_URL}/reports/university-staff/sprint-1-report.pdf`,
       },
       {
         title: 'Sprint 2 Report',
         description: 'Implementation of an OLAP (Online Analytical Processing) queries and views as well as an efficiency analysis of the efficiency of one of the queries with EXPLAIN ANALYZE',
-        src: '/reports/university-staff/sprint-2-report.pdf',
+        src: `${process.env.PUBLIC_URL}/reports/university-staff/sprint-2-report.pdf`,
       },
       {
         title: 'Sprint 3 Report',
         description: 'Implementation of a layered Java application with focus on correct ACID transaction handling and a clean separation of concerns between view, controller, service, and integration (DAO) layers',
-        src: '/reports/university-staff/sprint-3-report.pdf',
+        src: `${process.env.PUBLIC_URL}/reports/university-staff/sprint-3-report.pdf`,
       },
     ],
     sprints: [
@@ -221,7 +221,7 @@ The database is designed around the project task requirements: flexible course l
     id: 'baxandall',
     name: 'Baxandall Filter',
     description: 'A bass and treble filter built with no potentiometer',
-    stack: 'Embedded electronics',
+    stack: ['Embedded electronics'],
     year: 2024,
     wip: false,
     teamSize: 1,
