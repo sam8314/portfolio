@@ -8,11 +8,14 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 import { useState, useRef } from 'react'
+import { useLanguage } from '../../contexts/language'
+import { getLocalizedValue } from '../../utils/i18n'
 import './ProjectDetail.css'
 
 const ProjectDetail = () => {
   const { projectId } = useParams()
   const history = useHistory()
+  const { language, strings } = useLanguage()
   const project = projects.find((p) => p.id === projectId)
   const [zoomedImage, setZoomedImage] = useState(null)
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -27,41 +30,108 @@ const ProjectDetail = () => {
   }
 
   const getImageCaption = (projectId, imageIndex) => {
-    // Hardcode custom captions for each project and image index
     const captions = {
-      // Example: replace with your project IDs and custom text
       'housebite': {
-        0: 'Users can join several households and see at a quick glance which products should be consumed first.',
-        1: 'Users can customize their accounts and set their personal diets that apply across all of their households.',
-        2: 'Users can track the overall budget of each household',
-        3: 'Users can see all the products in a specific household delete them in bulk or search for recipes using selected products.',
-        4: 'An OpenAI scanner can parse any receipt and suggest expiration dates (which the user can edit) and then adds them to a households pantry.',
-        5: 'Users can search and save their favourite recipes but also add the missing ingredients to the shopping list of a household.',
-        6: 'A shared shopping list allows for live edits for efficient shopping.'
+        0: {
+          en: 'Users can join several households and see at a quick glance which products should be consumed first.',
+          fr: 'Les utilisateurs peuvent rejoindre plusieurs foyers et voir en un coup d’œil quels produits doivent être consommés en premier.',
+        },
+        1: {
+          en: 'Users can customize their accounts and set their personal diets that apply across all of their households.',
+          fr: 'Les utilisateurs peuvent personnaliser leur compte et définir des régimes personnels valables pour tous leurs foyers.',
+        },
+        2: {
+          en: 'Users can track the overall budget of each household',
+          fr: 'Les utilisateurs peuvent suivre le budget global de chaque foyer',
+        },
+        3: {
+          en: 'Users can see all the products in a specific household delete them in bulk or search for recipes using selected products.',
+          fr: 'Les utilisateurs peuvent voir tous les produits d’un foyer spécifique, les supprimer en masse ou chercher des recettes avec les produits sélectionnés.',
+        },
+        4: {
+          en: 'An OpenAI scanner can parse any receipt and suggest expiration dates (which the user can edit) and then adds them to a households pantry.',
+          fr: 'Un scanner OpenAI peut analyser un reçu, suggérer des dates de péremption (modifiables par l’utilisateur) et les ajouter au garde-manger du foyer.',
+        },
+        5: {
+          en: 'Users can search and save their favourite recipes but also add the missing ingredients to the shopping list of a household.',
+          fr: 'Les utilisateurs peuvent rechercher et enregistrer leurs recettes favorites, puis ajouter les ingrédients manquants à la liste de courses du foyer.',
+        },
+        6: {
+          en: 'A shared shopping list allows for live edits for efficient shopping.',
+          fr: 'Une liste de courses partagée permet des modifications en direct pour un shopping efficace.',
+        },
       },
       'university-staff': {
-        0: 'The complete logical-physical database schema on Astah Professional',
-        1: 'The schema for courses',
-        2: 'The schema for a university employee',
-        3: 'The schema for a person',
-        4: 'The user can compute the cost for a course based on hourly pay',
-        5: 'The user can allocate a teacher to a course',
-        6: 'After allocation',
-        7: 'The user can deallocate a teacher to a course',
-        8: 'The user can create new types of activities for a course'
+        0: {
+          en: 'The complete logical-physical database schema on Astah Professional',
+          fr: 'Le schéma logique-physique complet sur Astah Professional',
+        },
+        1: {
+          en: 'The schema for courses',
+          fr: 'Le schéma des cours',
+        },
+        2: {
+          en: 'The schema for a university employee',
+          fr: 'Le schéma d’un employé universitaire',
+        },
+        3: {
+          en: 'The schema for a person',
+          fr: 'Le schéma d’une personne',
+        },
+        4: {
+          en: 'The user can compute the cost for a course based on hourly pay',
+          fr: 'L’utilisateur peut calculer le coût d’un cours en fonction du taux horaire',
+        },
+        5: {
+          en: 'The user can allocate a teacher to a course',
+          fr: 'L’utilisateur peut affecter un enseignant à un cours',
+        },
+        6: {
+          en: 'After allocation',
+          fr: 'Après affectation',
+        },
+        7: {
+          en: 'The user can deallocate a teacher to a course',
+          fr: 'L’utilisateur peut désaffecter un enseignant d’un cours',
+        },
+        8: {
+          en: 'The user can create new types of activities for a course',
+          fr: 'L’utilisateur peut créer de nouveaux types d’activités pour un cours',
+        },
       },
-      'slso-energy':{
-        0: 'Spotting faulty buildings to immediate action: our strategy alignes with Höjer et al.’s path of intensifying',
-        1: 'Distribution analysis of outside temperature to electricity consumption correlation',
-        2: 'Distribution of correlation coefficients and standard deviation broken down by building energy types',
-        3: 'Z-score distribution confirms that the consumptions follow an approximately normal distribution',
-        4: 'The monthly spike results show that a strong seasonal pattern in consumption anomalie',
-        5: 'Energy class analysis suggests that buildings with low energy class are most likely to consume more energy and implies higher chance for spikes',
-        6: 'Monthly distribution of peak energy consumption flags across the buildings'
-      }
-    };
+      'slso-energy': {
+        0: {
+          en: 'Spotting faulty buildings to immediate action: our strategy alignes with Höjer et al.’s path of intensifying',
+          fr: 'Identifier les bâtiments défaillants et passer rapidement à l’action : notre stratégie s’aligne sur la voie d’intensification de Höjer et al.',
+        },
+        1: {
+          en: 'Distribution analysis of outside temperature to electricity consumption correlation',
+          fr: 'Analyse de distribution de la corrélation entre température extérieure et consommation électrique',
+        },
+        2: {
+          en: 'Distribution of correlation coefficients and standard deviation broken down by building energy types',
+          fr: 'Distribution des coefficients de corrélation et de l’écart type par type d’énergie des bâtiments',
+        },
+        3: {
+          en: 'Z-score distribution confirms that the consumptions follow an approximately normal distribution',
+          fr: 'La distribution des scores Z confirme que les consommations suivent une distribution approximativement normale',
+        },
+        4: {
+          en: 'The monthly spike results show that a strong seasonal pattern in consumption anomalie',
+          fr: 'Les résultats des pics mensuels montrent un fort motif saisonnier dans les anomalies de consommation',
+        },
+        5: {
+          en: 'Energy class analysis suggests that buildings with low energy class are most likely to consume more energy and implies higher chance for spikes',
+          fr: 'L’analyse des classes énergétiques suggère que les bâtiments à faible classe énergétique consomment davantage et ont plus de risques de pics',
+        },
+        6: {
+          en: 'Monthly distribution of peak energy consumption flags across the buildings',
+          fr: 'Distribution mensuelle des indicateurs de consommation maximale dans les bâtiments',
+        },
+      },
+    }
 
-    return captions[projectId]?.[imageIndex] || `${project.name} screenshot ${imageIndex + 1}`;
+    return getLocalizedValue(captions[projectId]?.[imageIndex], language) || `${getLocalizedValue(project.name, language)} screenshot ${imageIndex + 1}`
   }
 
   const nextZoomedImage = () => {
@@ -76,9 +146,9 @@ const ProjectDetail = () => {
     return (
       <div className='project-detail'>
         <div className='project-detail__container'>
-          <h2>Project not found</h2>
+          <h2>{strings.projectNotFound}</h2>
           <button onClick={() => history.push('/')} className='btn btn--outline'>
-            <ArrowBackIcon /> Back to Home
+            <ArrowBackIcon /> {strings.backToHome}
           </button>
         </div>
       </div>
@@ -89,20 +159,20 @@ const ProjectDetail = () => {
     <div className='project-detail'>
       <div className='project-detail__container'>
         <button onClick={() => history.push('/')} className='btn btn--outline back-btn'>
-          <ArrowBackIcon /> Back to Homepage
+          <ArrowBackIcon /> {strings.backToHomepage}
         </button>
 
         <div className='project-detail__header'>
-          <h1>{project.name}</h1>
+          <h1>{getLocalizedValue(project.name, language)}</h1>
           <div className='project-detail__meta'>
             <span className='meta-badge'>
-              <strong>Team Size:</strong> {project.teamSize} {project.teamSize === 1 ? 'person' : 'people'}
+              <strong>{strings.teamSizeLabel}</strong> {project.teamSize} {project.teamSize === 1 ? strings.person : strings.people}
             </span>
             <span className='meta-badge'>
-              <strong>Role:</strong> {project.role}
+              <strong>{strings.roleLabel}</strong> {getLocalizedValue(project.role, language)}
             </span>
             <span className='meta-badge'>
-              <strong>Year:</strong> {project.year}
+              <strong>{strings.yearLabel}</strong> {project.year}
             </span>
             {project.wip && <span className='meta-badge wip-badge'>WIP</span>}
           </div>
@@ -124,7 +194,7 @@ const ProjectDetail = () => {
                       ? project.images[currentSlide]
                       : `${process.env.PUBLIC_URL}/images/${project.images[currentSlide]}`
                   }
-                  alt={`${project.name} screenshot ${currentSlide + 1}`}
+                  alt={`${getLocalizedValue(project.name, language)} screenshot ${currentSlide + 1}`}
                   onClick={() => handleImageClick(currentSlide)}
                   className='main-slide-image'
                 />
@@ -175,7 +245,7 @@ const ProjectDetail = () => {
                     ? project.images[zoomedImage]
                     : `${process.env.PUBLIC_URL}/images/${project.images[zoomedImage]}`
                 }
-                alt={`${project.name} screenshot ${zoomedImage + 1}`}
+                alt={`${getLocalizedValue(project.name, language)} screenshot ${zoomedImage + 1}`}
                 className='zoomed-image'
               />
               <p className='zoom-caption'>{getImageCaption(project.id, zoomedImage)}</p>
@@ -185,18 +255,18 @@ const ProjectDetail = () => {
 
         <div className='project-detail__content'>
           <section className='detail-section'>
-            <h2>Overview</h2>
-            <p>{project.detailedDescription}</p>
+            <h2>{strings.overview}</h2>
+            <p>{getLocalizedValue(project.detailedDescription, language)}</p>
           </section>
 
           {project.features && project.features.length > 0 && (
             <section className='detail-section'>
-              <h2>Key Features</h2>
+              <h2>{strings.keyFeatures}</h2>
               <ul className='feature-list'>
                 {project.features.map((feature, index) => (
                   <li key={index}>
                     <CheckCircleIcon className='list-icon' />
-                    {feature}
+                    {getLocalizedValue(feature, language)}
                   </li>
                 ))}
               </ul>
@@ -205,7 +275,7 @@ const ProjectDetail = () => {
 
           {project.stack && project.stack.length > 0 && (
             <section className='detail-section'>
-              <h2>Technologies Used</h2>
+              <h2>{strings.technologiesUsed}</h2>
               <div className='tech-stack'>
                 {project.stack.map((tech, index) => (
                   <span key={index} className='tech-badge'>
@@ -218,14 +288,14 @@ const ProjectDetail = () => {
 
           {project.sprints && project.sprints.length > 0 && (
             <section className='detail-section'>
-              <h2>Development Sprints</h2>
+              <h2>{strings.developmentSprints}</h2>
               <div className='sprints-stepper'>
                 {project.sprints.map((sprint, index) => (
                   <div key={index} className='sprint-step'>
                     <div className='sprint-step__number'>{index + 1}</div>
                     <div className='sprint-step__content'>
-                      <h3>{sprint.title}</h3>
-                      <p>{sprint.description}</p>
+                      <h3>{getLocalizedValue(sprint.title, language)}</h3>
+                      <p>{getLocalizedValue(sprint.description, language)}</p>
                     </div>
                   </div>
                 ))}
@@ -235,7 +305,8 @@ const ProjectDetail = () => {
 
           {project.reportPDFs && project.reportPDFs.length > 0 && (
             <section className='detail-section'>
-              <h2>Documents</h2>
+              <h2>{strings.documents}</h2>
+              <p className='documents-note'>{strings.documentsInEnglishNote}</p>
               <div className='pdf-report-grid'>
                 {project.reportPDFs.map((report, index) => (
                   <div key={index} className='pdf-report-card'>
@@ -247,21 +318,23 @@ const ProjectDetail = () => {
                         height='240'
                       >
                         <p>
-                          <strong>{report.title}</strong> is available as a PDF. 
-                          <a href={report.src} target='_blank' rel='noopener noreferrer'>Open in a new tab</a>.
+                          <strong>{getLocalizedValue(report.title, language)}</strong> {strings.documentAvailable}
+                          <a href={report.src} target='_blank' rel='noopener noreferrer'>
+                            {strings.openInNewTab}
+                          </a>.
                         </p>
                       </object>
                     </div>
                     <div className='pdf-report-info'>
-                      <h3>{report.title}</h3>
-                      <p>{report.description}</p>
+                      <h3>{getLocalizedValue(report.title, language)}</h3>
+                      <p>{getLocalizedValue(report.description, language)}</p>
                       <a
                         href={report.src}
                         target='_blank'
                         rel='noopener noreferrer'
                         className='btn btn--outline pdf-open-btn'
                       >
-                        Open Report
+                        {strings.openReport}
                       </a>
                     </div>
                   </div>
@@ -278,7 +351,7 @@ const ProjectDetail = () => {
                 rel='noopener noreferrer'
                 className='btn btn--outline'
               >
-                <GitHubIcon /> View Source Code
+                <GitHubIcon /> {strings.viewSourceCode}
               </a>
             )}
             {project.livePreview && (
@@ -288,7 +361,7 @@ const ProjectDetail = () => {
                 rel='noopener noreferrer'
                 className='btn btn--live-demo'
               >
-                Live Demo
+                {strings.liveDemo}
               </a>
             )}
             {project.id === 'housebite' && (
@@ -298,7 +371,7 @@ const ProjectDetail = () => {
                 rel='noopener noreferrer'
                 className='btn btn--live-demo'
               >
-                More about the project
+                {strings.moreAboutProject}
               </a>
             )}
           </section>

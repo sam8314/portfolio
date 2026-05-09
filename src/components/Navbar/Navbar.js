@@ -5,11 +5,13 @@ import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import { ThemeContext } from '../../contexts/theme'
+import { useLanguage } from '../../contexts/language'
 import { projects, skills, contact } from '../../portfolio'
 import './Navbar.css'
 
 const Navbar = () => {
   const [{ themeName, toggleTheme }] = useContext(ThemeContext)
+  const { language, toggleLanguage, strings } = useLanguage()
   const [showNavList, setShowNavList] = useState(false)
 
   const toggleNavList = () => setShowNavList(!showNavList)
@@ -27,7 +29,7 @@ const Navbar = () => {
               onClick={toggleNavList}
               className='link link--nav'
             >
-              Projects
+              {strings.navProjects}
             </Link>
           </li>
         ) : null}
@@ -39,7 +41,7 @@ const Navbar = () => {
               onClick={toggleNavList}
               className='link link--nav'
             >
-              Skills
+              {strings.navSkills}
             </Link>
           </li>
         ) : null}
@@ -51,7 +53,7 @@ const Navbar = () => {
               onClick={toggleNavList}
               className='link link--nav'
             >
-              Contact
+              {strings.navContact}
             </Link>
           </li>
         ) : null}
@@ -64,6 +66,15 @@ const Navbar = () => {
         aria-label='toggle theme'
       >
         {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
+      </button>
+
+      <button
+        type='button'
+        onClick={toggleLanguage}
+        className='btn btn--icon nav__lang'
+        aria-label={strings.toggleLanguageLabel}
+      >
+        {strings.languageButton}
       </button>
 
       <button

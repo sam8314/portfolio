@@ -3,9 +3,12 @@ import { useHistory } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
 import CloseIcon from '@material-ui/icons/Close'
 import { projects, skills } from '../../portfolio'
+import { useLanguage } from '../../contexts/language'
+import { getLocalizedValue } from '../../utils/i18n'
 import './SearchBar.css'
 
 const SearchBar = () => {
+  const { language, strings } = useLanguage()
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
   const [showResults, setShowResults] = useState(false)
@@ -24,15 +27,15 @@ const SearchBar = () => {
     const projectResults = projects
       .filter(
         (p) =>
-          p.name.toLowerCase().includes(lowerQuery) ||
-          p.description.toLowerCase().includes(lowerQuery) ||
+          getLocalizedValue(p.name, language).toLowerCase().includes(lowerQuery) ||
+          getLocalizedValue(p.description, language).toLowerCase().includes(lowerQuery) ||
           (p.stack && p.stack.some((s) => s.toLowerCase().includes(lowerQuery)))
       )
       .map((p) => ({
         type: 'project',
         id: p.id,
-        title: p.name,
-        description: p.description,
+        title: getLocalizedValue(p.name, language),
+        description: getLocalizedValue(p.description, language),
       }))
 
     // Search through skills
@@ -74,7 +77,7 @@ const SearchBar = () => {
         <SearchIcon className='search-icon' />
         <input
           type='text'
-          placeholder='Search projects, skills...'
+          placeholder={strings.searchPlaceholder}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => query && setShowResults(true)}
@@ -116,7 +119,7 @@ const SearchBar = () => {
 
       {showResults && query && results.length === 0 && (
         <div className='search-results'>
-          <div className='search-no-results'>No results found</div>
+          <div className='search-no-results'>{strings.noResults}</div>
         </div>
       )}
     </div>

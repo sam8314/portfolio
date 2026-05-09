@@ -4,9 +4,12 @@ import uniqid from 'uniqid'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import GroupIcon from '@material-ui/icons/Group'
 import DateRangeIcon from '@material-ui/icons/DateRange'
+import { useLanguage } from '../../contexts/language'
+import { getLocalizedValue } from '../../utils/i18n'
 import './ProjectContainer.css'
 
 const ProjectContainer = ({ project, allProjects }) => {
+  const { language, strings } = useLanguage()
   const [hoveredSkill, setHoveredSkill] = useState(null)
   const history = useHistory()
 
@@ -44,32 +47,32 @@ const ProjectContainer = ({ project, allProjects }) => {
               ? project.image
               : `${process.env.PUBLIC_URL}/images/${project.image}`
           }
-          alt={`${project.name} screenshot`}
+          alt={`${getLocalizedValue(project.name, language)} screenshot`}
           className='project__image'
         />
       )}
 
       <div className='project__content'>
-        <h3>{project.name}</h3>
+        <h3>{getLocalizedValue(project.name, language)}</h3>
 
         <div className='project__metadata'>
-          <span className='metadata-badge' title='Team Size'>
+          <span className='metadata-badge' title={strings.personTooltip}>
             <GroupIcon className='metadata-icon' /> {project.teamSize}
           </span>
-          <span className='metadata-badge' title='Role'>
-            {project.role}
+          <span className='metadata-badge' title={strings.roleTooltip}>
+            {getLocalizedValue(project.role, language)}
           </span>
-          <span className='metadata-badge' title='Year'>
+          <span className='metadata-badge' title={strings.yearTooltip}>
             <DateRangeIcon className='metadata-icon' /> {project.year}
           </span>
           {project.wip && (
-            <span className='metadata-badge wip-badge' title='Work in Progress'>
+            <span className='metadata-badge wip-badge' title={strings.wipTooltip}>
               WIP
             </span>
           )}
         </div>
 
-        <p className='project__description'>{project.description}</p>
+        <p className='project__description'>{getLocalizedValue(project.description, language)}</p>
 
         <div className='project__footer'>
           {project.stack && (
@@ -91,7 +94,7 @@ const ProjectContainer = ({ project, allProjects }) => {
             {project.sourceCode && (
               <a
                 href={project.sourceCode}
-                aria-label='source code'
+                aria-label={strings.sourceCodeLabel}
                 className='link link--icon'
                 onClick={(e) => e.stopPropagation()}
                 target='_blank'
@@ -104,13 +107,13 @@ const ProjectContainer = ({ project, allProjects }) => {
             {project.livePreview && (
               <a
                 href={project.livePreview}
-                aria-label='live preview'
+                aria-label={strings.livePreviewLabel}
                 className='btn btn--live-demo'
                 onClick={(e) => e.stopPropagation()}
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                Live Demo
+                {strings.liveDemo}
               </a>
             )}
           </div>
