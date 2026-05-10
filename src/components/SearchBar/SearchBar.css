@@ -3,6 +3,8 @@
   width: 100%;
   max-width: 300px;
   margin-right: 1.5em;
+  z-index: 1001;
+  overflow: visible !important;
 }
 
 .search-input-wrapper {
@@ -14,6 +16,7 @@
   border-radius: 12px;
   padding: 0.6em 0.8em;
   transition: all 0.2s ease;
+  overflow: visible !important;
 }
 
 .search-input-wrapper:focus-within {
@@ -71,8 +74,10 @@
   margin-top: -2px;
   max-height: 400px;
   overflow-y: auto;
-  z-index: 1000;
-  box-shadow: var(--shadow);
+  z-index: 9999;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+  will-change: z-index;
 }
 
 .search-result-item {

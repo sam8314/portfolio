@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
 import CloseIcon from '@material-ui/icons/Close'
@@ -12,6 +12,8 @@ const SearchBar = () => {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
   const [showResults, setShowResults] = useState(false)
+  const [position, setPosition] = useState({ top: 0, left: 0, width: 0 })
+  const searchBarRef = useRef(null)
   const history = useHistory()
 
   useEffect(() => {
@@ -51,6 +53,17 @@ const SearchBar = () => {
     setShowResults(true)
   }, [query])
 
+  useEffect(() => {
+    if (showResults && searchBarRef.current) {
+      const rect = searchBarRef.current.getBoundingClientRect()
+      setPosition({
+        top: rect.bottom,
+        left: rect.left,
+        width: rect.width,
+      })
+    }
+  }, [showResults])
+
   const handleResultClick = (result) => {
     if (result.type === 'project') {
       history.push(`/project/${result.id}`)
@@ -72,7 +85,7 @@ const SearchBar = () => {
   }
 
   return (
-    <div className='search-bar'>
+    <div className='search-bar' ref={searchBarRef}>
       <div className='search-input-wrapper'>
         <SearchIcon className='search-icon' />
         <input
@@ -96,7 +109,15 @@ const SearchBar = () => {
       </div>
 
       {showResults && results.length > 0 && (
-        <div className='search-results'>
+        <div
+          className='search-results'
+          style={{
+            position: 'fixed',
+            top: `${position.top}px`,
+            left: `${position.left}px`,
+            width: `${position.width}px`,
+          }}
+        >
           {results.map((result, index) => (
             <div
               key={index}
@@ -118,7 +139,15 @@ const SearchBar = () => {
       )}
 
       {showResults && query && results.length === 0 && (
-        <div className='search-results'>
+        <div
+          className='search-results'
+          style={{
+            position: 'fixed',
+            top: `${position.top}px`,
+            left: `${position.left}px`,
+            width: `${position.width}px`,
+          }}
+        >
           <div className='search-no-results'>{strings.noResults}</div>
         </div>
       )}

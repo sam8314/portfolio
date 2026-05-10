@@ -10,6 +10,7 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 import { useState, useRef } from 'react'
 import { useLanguage } from '../../contexts/language'
 import { getLocalizedValue } from '../../utils/i18n'
+import { useDropAnimation } from '../../hooks/useDropAnimation'
 import './ProjectDetail.css'
 
 const ProjectDetail = () => {
@@ -20,6 +21,10 @@ const ProjectDetail = () => {
   const [zoomedImage, setZoomedImage] = useState(null)
   const [currentSlide, setCurrentSlide] = useState(0)
   const slideshowRef = useRef(null)
+  const containerRef = useDropAnimation()
+  const headerRef = useDropAnimation(100)
+  const slideshowRef2 = useDropAnimation(200)
+  const descRef = useDropAnimation(300)
 
   const handleImageClick = (index) => {
     setZoomedImage(index)
@@ -144,25 +149,29 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className='project-detail'>
+      <div className='project-detail' ref={containerRef}>
+        <div className='back-arrow'>
+          <a href='/' aria-label='back'>
+            <ArrowBackIcon fontSize='large' />
+          </a>
+        </div>
         <div className='project-detail__container'>
           <h2>{strings.projectNotFound}</h2>
-          <button onClick={() => history.push('/')} className='btn btn--outline'>
-            <ArrowBackIcon /> {strings.backToHome}
-          </button>
         </div>
       </div>
     )
   }
 
   return (
-    <div className='project-detail'>
+    <div className='project-detail' ref={containerRef}>
+      <div className='back-arrow'>
+        <a href='/' aria-label='back'>
+          <ArrowBackIcon fontSize='large' />
+        </a>
+      </div>
       <div className='project-detail__container'>
-        <button onClick={() => history.push('/')} className='btn btn--outline back-btn'>
-          <ArrowBackIcon /> {strings.backToHomepage}
-        </button>
 
-        <div className='project-detail__header'>
+        <div className='project-detail__header' ref={headerRef}>
           <h1>{getLocalizedValue(project.name, language)}</h1>
           <div className='project-detail__meta'>
             <span className='meta-badge'>
@@ -179,7 +188,7 @@ const ProjectDetail = () => {
         </div>
 
         {project.images && project.images.length > 0 && (
-          <div className='project-detail__slideshow'>
+          <div className='project-detail__slideshow' ref={slideshowRef2}>
             <div className='slideshow-main'>
               {project.images.length > 1 && (
                 <button className='slide-arrow left' onClick={() => setCurrentSlide((s) => (s - 1 + project.images.length) % project.images.length)}>
@@ -253,7 +262,7 @@ const ProjectDetail = () => {
           </div>
         )}
 
-        <div className='project-detail__content'>
+        <div className='project-detail__content' ref={descRef}>
           <section className='detail-section'>
             <h2>{strings.overview}</h2>
             <p>{getLocalizedValue(project.detailedDescription, language)}</p>

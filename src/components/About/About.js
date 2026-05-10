@@ -3,14 +3,16 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import { about } from '../../portfolio'
 import { useLanguage } from '../../contexts/language'
 import { getLocalizedValue } from '../../utils/i18n'
+import { useDropAnimation } from '../../hooks/useDropAnimation'
 import './About.css'
 
 const About = () => {
   const { language, strings } = useLanguage()
   const { name, role, description, resume, social, picture } = about
+  const animationRef = useDropAnimation()
 
   return (
-    <div className='about center'>
+    <div className='about center' ref={animationRef}>
       <div className='about__header'>
         {picture && (
           <img
@@ -26,9 +28,9 @@ const About = () => {
 
       <div className='about__intro'>
         {name && (
-          <h1>
+          <h2>
             {strings.introGreeting} <span className='about__name'>{name}</span>
-          </h1>
+          </h2>
         )}
 
         {role && <h2 className='about__role'>{getLocalizedValue(role, language)}</h2>}
