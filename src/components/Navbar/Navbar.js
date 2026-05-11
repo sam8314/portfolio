@@ -57,16 +57,16 @@ const Navbar = () => {
             </Link>
           </li>
         ) : null}
+        <li className='nav__list-item'>
+          <Link
+            to='/education'
+            onClick={toggleNavList}
+            className='link link--nav'
+          >
+            {strings.navEducation}
+          </Link>
+        </li>
       </ul>
-
-      <button
-        type='button'
-        onClick={toggleTheme}
-        className='btn btn--icon nav__theme'
-        aria-label='toggle theme'
-      >
-        {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
-      </button>
 
       <button
         type='button'
@@ -75,6 +75,15 @@ const Navbar = () => {
         aria-label={strings.toggleLanguageLabel}
       >
         {strings.languageButton}
+      </button>
+
+      <button
+        type='button'
+        onClick={toggleTheme}
+        className='btn btn--icon nav__theme'
+        aria-label='toggle theme'
+      >
+        {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
       </button>
 
       <button

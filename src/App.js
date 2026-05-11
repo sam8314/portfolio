@@ -13,6 +13,7 @@ import Skills from './components/Skills/Skills'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
+import Education from './components/Education/Education'
 import ProjectDetail from './components/ProjectDetail/ProjectDetail'
 import './App.css'
 
@@ -52,6 +53,7 @@ const App = () => {
         <main>
           <Switch>
             <Route exact path='/' component={HomePage} />
+            <Route path='/education' component={Education} />
             <Route path='/project/:projectId' component={ProjectDetail} />
           </Switch>
         </main>

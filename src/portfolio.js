@@ -330,30 +330,56 @@ La base de données est conçue autour des exigences du projet : cursus flexible
       fr: 'FastTyper',
     },
     description: {
-      en: 'A JS webapp that helps users grow their typing speed',
-      fr: 'Une application web JS qui aide les utilisateurs à augmenter leur vitesse de frappe',
+      en: 'A typing speed trainer built while following the OpenClassrooms JavaScript course.',
+      fr: 'Un entraînement de vitesse de frappe développé en suivant le cours JavaScript d’OpenClassrooms.',
     },
     stack: ['JavaScript', 'HTML', 'CSS'],
     sourceCode: 'https://github.com/sam8314/fast-typer',
     livePreview: '',
     teamSize: '1',
     role: {
-      en: 'Dev',
-      fr: 'Dév',
+      en: 'Developer',
+      fr: 'Développeur',
     },
     year: '2026',
-    wip: true,
+    wip: false,
     detailedDescription: {
-      en: '',
-      fr: '',
+      en: 'FastTyper was created as part of the OpenClassrooms course "Apprenez à programmer avec JavaScript". The app focuses on user input handling, real-time typing metrics, and DOM updates to provide a smooth typing practice experience.',
+      fr: 'FastTyper a été créé dans le cadre du cours OpenClassrooms « Apprenez à programmer avec JavaScript ». L’application met l’accent sur la gestion des entrées utilisateur, les métriques de frappe en temps réel et la mise à jour du DOM pour offrir une expérience d’entraînement fluide.',
     },
-    features: [],
-    challenges: [],
+    features: [
+      {
+        en: 'Real-time typing speed and accuracy feedback',
+        fr: 'Retour en temps réel sur la vitesse et la précision de frappe',
+      },
+      {
+        en: 'Dynamic text generation based on JavaScript training exercises',
+        fr: 'Génération dynamique de texte basée sur les exercices de formation JavaScript',
+      },
+      {
+        en: 'Responsive interface built with HTML and CSS',
+        fr: 'Interface responsive créée avec HTML et CSS',
+      },
+    ],
+    challenges: [
+      {
+        en: 'Managing keyboard input and preventing default browser behavior',
+        fr: 'Gestion des entrées clavier et prévention du comportement par défaut du navigateur',
+      },
+      {
+        en: 'Updating the DOM efficiently while tracking user progress',
+        fr: 'Mise à jour efficace du DOM tout en suivant la progression de l’utilisateur',
+      },
+      {
+        en: 'Building a clean UI with stateful JavaScript logic',
+        fr: 'Conception d’une interface claire avec une logique JavaScript basée sur l’état',
+      },
+    ],
     images: [],
     sprints: [
-      { title: { en: 'Sprint 1:', fr: 'Sprint 1 :' }, description: { en: '', fr: '' } },
-      { title: { en: 'Sprint 1:', fr: 'Sprint 1 :' }, description: { en: '', fr: '' } },
-      { title: { en: 'Sprint 1:', fr: 'Sprint 1 :' }, description: { en: '', fr: '' } },
+      { title: { en: 'Sprint 1: Typing mechanics', fr: 'Sprint 1 : Mécanique de frappe' }, description: { en: 'Set up text display, keyboard event handling, and basic timer logic.', fr: 'Mise en place de l’affichage du texte, de la gestion des événements clavier et de la logique de minuterie de base.' } },
+      { title: { en: 'Sprint 2: Feedback and scoring', fr: 'Sprint 2 : Feedback et score' }, description: { en: 'Added speed/accuracy indicators and score tracking to improve practice sessions.', fr: 'Ajout d’indicateurs de vitesse/ précision et du suivi du score pour améliorer les sessions d’entraînement.' } },
+      { title: { en: 'Sprint 3: Polish and responsiveness', fr: 'Sprint 3 : Finition et responsive' }, description: { en: 'Refined the UI, responsive layout, and course-based JavaScript behavior.', fr: 'Affinement de l’interface, mise en page responsive et comportement JavaScript inspiré du cours.' } },
     ],
   },
   {
@@ -414,6 +440,309 @@ La base de données est conçue autour des exigences du projet : cursus flexible
   },
 ]
 
+const educationHistory = [
+  {
+    id: 'kth',
+    school: {
+      en: 'Royal Institute of Technology, Sweden (KTH)',
+      fr: 'Ecole Polytechnique Royale de Suède (KTH)',
+    },
+    degree: {
+      en: 'Bachelor of Science - BS, Information Technology',
+      fr: 'Bachelor of Science - BS, Informatique',
+    },
+    period: '08/2023 – 06/2027',
+    activities: {
+      en: 'Chairperson of the committee for equality, diversity and equal conditions; Board member of the university chapter.',
+      fr: 'Présidente du comité pour l’égalité, la diversité et des conditions équitables ; Membre du conseil du chapitre universitaire.',
+    },
+    skills: {
+      en: ['Redux.js', 'RISC-V', 'React.js', 'Statistical Analysis Tools', 'Java', 'MIPS Assembly', 'SQL databases', 'C', 'MATLAB', 'JavaScript', 'PostgreSQL', 'Logisim', 'Algorithmic problem solving', 'Rust', 'Project management', 'SQL'],
+      fr: ['Redux.js', 'RISC-V', 'React.js', 'Outils d’analyse statistique', 'Java', 'Assembleur MIPS', 'Bases de données SQL', 'C', 'MATLAB', 'JavaScript', 'PostgreSQL', 'Logisim', 'Résolution de problèmes algorithmiques', 'Rust', 'Gestion de projet', 'SQL'],
+    },
+    courses: [
+      {
+        name: 'Programming I',
+        topics: 'Java, algorithmic problem solving, object oriented design',
+      },
+      {
+        name: 'Digital Design',
+        topics: 'CMOS circuit design, Logisim',
+      },
+      {
+        name: 'Embedded Electronics',
+        topics: 'Electrical circuit analysis',
+      },
+      {
+        name: 'Intro to IT',
+        topics: 'Teamwork, Version Control',
+      },
+      {
+        name: 'Discrete Maths',
+        topics: 'Error correcting codes, Hamming codes, graph theory',
+      },
+      {
+        name: 'Algebra and Geometry',
+        topics: '',
+      },
+      {
+        name: 'Calculus in One Variable',
+        topics: '',
+      },
+      {
+        name: 'Basic Course in Maths',
+        topics: '',
+      },
+      {
+        name: 'Algorithms and Data Structures',
+        topics: 'Algorithmic in C',
+      },
+      {
+        name: 'Calculus in Several Variables',
+        topics: '',
+      },
+      {
+        name: 'Electromagnetism and Waves',
+        topics: '',
+      },
+      {
+        name: 'Industrial Management',
+        topics: 'Product costing, CI analysis, bookkeeping, accounting, annual report, financial analysis',
+      },
+      {
+        name: 'Intercultural Competence',
+        topics: '',
+      },
+      {
+        name: 'Probability Theory and Statistics',
+        period: 'P1',
+        topics: 'Matlab',
+      },
+      {
+        name: 'Computer Hardware Engineering',
+        period: 'P1',
+        topics: 'C, MIPS, RISC-V, MARS simulator, RARS simulator, Logisim',
+      },
+      {
+        name: 'Data Storage Paradigms',
+        period: 'P2',
+        topics: 'SQL, PostgreSQL, Maven, pgAdmin4',
+      },
+      {
+        name: 'Operating Systems',
+        period: 'P2',
+        topics: '',
+      },
+      {
+        name: 'Compilers and Execution Environments',
+        period: 'P2',
+        topics: 'Rust',
+      },
+      {
+        name: 'Concurrent Programming',
+        period: 'P3',
+        topics: '',
+      },
+      {
+        name: 'Networks and Communication',
+        period: 'P3',
+        topics: '',
+      },
+      {
+        name: 'Digitalisation and Innovation',
+        period: 'P3',
+        topics: '',
+      },
+      {
+        name: 'Project in Info and Com Tech',
+        period: 'P4',
+        topics: '',
+      },
+      {
+        name: 'Interaction Programming and Dynamic Web',
+        period: 'P2',
+        topics: 'JS, React, Redux, HTML, CSS, JSX',
+      },
+      {
+        name: 'Degree Project in IT',
+        period: 'P1/P2 or P3/P4',
+        topics: '',
+      },
+      {
+        name: 'Ethical Hacking 1',
+        period: 'P1',
+        topics: '',
+      },
+      {
+        name: 'Ethical Hacking 2',
+        period: 'P2',
+        topics: '',
+      },
+      {
+        name: 'Introduction to Computer Security',
+        period: 'P4',
+        topics: '',
+      },
+    ],
+  },
+  {
+    id: 'grenoble-inp',
+    school: {
+      en: 'INP Phelma, Grenoble',
+      fr: 'INP Phelma, Grenoble',
+    },
+    degree: {
+      en: "Engineering diploma, Electronic & Communications Engineering",
+      fr: "Diplôme d'ingénieur, Ingénierie électronique et des communications",
+    },
+    period: '09/2021 – 06/2022',
+    activities: {
+      en: 'Astronomy club member.',
+      fr: 'Membre du club d’astronomie.',
+    },
+    firstYearCourses: {
+      en: ['Data structures', 'Algorithmic', 'Probability and statistics', 'Analog and digital electronics', 'Automation', 'Computers and microprocessors', 'Signal processing'],
+      fr: ['Structures de données', 'Algorithmique', 'Probabilités et statistiques', 'Électronique analogique et numérique', 'Automatisation', 'Ordinateurs et microprocesseurs', 'Traitement du signal'],
+    },
+    skills: {
+      en: ['GNU Octave', 'C', 'GitLab', 'Signal processing', 'Bash', 'Object-oriented programming'],
+      fr: ['GNU Octave', 'C', 'GitLab', 'Traitement du signal', 'Bash', 'Programmation orientée objet'],
+    },
+  },
+  {
+    id: 'lycee-faiderbe',
+    school: {
+      en: 'Lycée Faidherbe, Lille',
+      fr: 'Lycée Faidherbe, Lille',
+    },
+    degree: {
+      en: 'Undergraduate courses for national competitive exams in Physics, Mathematics and Engineering',
+      fr: 'Cours préparatoires aux concours nationaux en Physique, Mathématiques et Ingénierie',
+    },
+    period: '09/2019 – 06/2021',
+    activities: {
+      en: 'Preparation for entrance to Grenoble INP - Phelma.',
+      fr: 'Préparation à l’intégration de Grenoble INP - Phelma.',
+    },
+    skills: {
+      en: ['Keras', 'WordPress', 'Python', 'SQL databases', 'TensorFlow', 'SQL'],
+      fr: ['Keras', 'WordPress', 'Python', 'Bases de données SQL', 'TensorFlow', 'SQL'],
+    },
+  },
+  {
+    id: 'lycee-fenelon',
+    school: {
+      en: 'Lycée Fénelon, Lille',
+      fr: 'Lycée Fénelon, Lille',
+    },
+    degree: {
+      en: 'Baccalauréat of Science, Maths Major, Graduated with Highest Honors',
+      fr: 'Baccalauréat scientifique, spécialité Mathématiques, mention Très Bien',
+    },
+    period: '09/2016 - 06/2019',
+    activities: {
+      en: 'Member of the ICT and robotics club (2h per week)',
+      fr: "Membre du club ICN d'informatique et robotique (2h par semaine)",
+    },
+    skills: {
+      en: ['Game dev', 'Unity', 'Android Studio', 'mobile app dev'],
+      fr: ['Game dev', 'Unity', 'Android Studio', 'applications mobiles'],
+    },
+  },
+]
+
+const standaloneCourses = [
+  {
+    title: {
+      en: 'Apprenez à programmer avec JavaScript',
+      fr: 'Apprenez à programmer avec JavaScript',
+    },
+    provider: 'OpenClassrooms',
+    year: '2026',
+    notes: {
+      en: 'Project-based JavaScript training completed during FastTyper development.',
+      fr: 'Formation JavaScript basée sur des projets, réalisée pendant le développement de FastTyper.',
+    },
+  },
+  {
+    title: {
+      en: 'Modélisez vos bases de données',
+      fr: 'Modélisez vos bases de données',
+    },
+    provider: 'OpenClassrooms',
+    year: '2025',
+    link: 'https://openclassrooms.com/fr/courses/6938711-modelisez-vos-bases-de-donnees',
+    notes: {
+      en: 'Database modeling course covering relational databases and design principles.',
+      fr: 'Cours de modélisation de bases de données couvrant les bases de données relationnelles et les principes de conception.',
+    },
+  },
+  {
+    title: {
+      en: 'Gérez du code avec Git et GitHub',
+      fr: 'Gérez du code avec Git et GitHub',
+    },
+    provider: 'OpenClassrooms',
+    year: '2016',
+    link: 'https://openclassrooms.com/fr/courses/7162856-gerez-du-code-avec-git-et-github',
+    notes: {
+      en: 'Version control and collaboration using Git and GitHub.',
+      fr: 'Contrôle de version et collaboration avec Git et GitHub.',
+    },
+  },
+  {
+    title: {
+      en: 'Concevez votre réseau TCP/IP',
+      fr: 'Concevez votre réseau TCP/IP',
+    },
+    provider: 'OpenClassrooms',
+    year: '2022',
+    link: 'https://openclassrooms.com/fr/courses/6944606-concevez-votre-reseau-tcp-ip',
+    notes: {
+      en: 'Network design and TCP/IP protocol fundamentals.',
+      fr: 'Conception de réseau et fondamentaux des protocoles TCP/IP.',
+    },
+  },
+  {
+    title: {
+      en: 'Analysez les signaux 1D',
+      fr: 'Analysez les signaux 1D',
+    },
+    provider: 'OpenClassrooms',
+    year: '2021',
+    notes: {
+      en: 'Signal processing course focusing on 1D signals.',
+      fr: 'Cours de traitement du signal axé sur les signaux 1D.',
+    },
+  },
+  {
+    title: {
+      en: 'Apprenez à programmer en C',
+      fr: 'Apprenez à programmer en C',
+    },
+    provider: 'OpenClassrooms',
+    year: '2014',
+    notes: {
+      en: 'Introduction to programming in C language.',
+      fr: 'Introduction à la programmation en langage C.',
+    },
+  },
+  {
+    title: {
+      en: 'Scrum Fundamentals Certified',
+      fr: 'Scrum Fundamentals Certified',
+    },
+    provider: 'ScrumStudy',
+    year: '2026',
+    link: 'https://www.scrumstudy.com/certification/scrum-fundamentals-certified',
+    wip: true,
+    notes: {
+      en: 'Currently pursuing Scrum Fundamentals certification.',
+      fr: 'Actuellement en cours de certification Scrum Fundamentals.',
+    },
+  },
+]
+
 const skills = [
   'Python', 'Java', 'JavaScript/TypeScript', 'React', 'PostgreSQL', 'HTML/CSS',
   'JDBC', 'Maven', 'REST APIs', 'Unit Testing',
@@ -427,4 +756,4 @@ const contact = {
   email: 'sa.serbouti@protonmail.com',
 }
 
-export { header, about, projects, skills, contact }
+export { header, about, projects, educationHistory, standaloneCourses, skills, contact }

@@ -151,7 +151,7 @@ const ProjectDetail = () => {
     return (
       <div className='project-detail' ref={containerRef}>
         <div className='back-arrow'>
-          <a href='/' aria-label='back'>
+          <a href='/portfolio' aria-label='back'>
             <ArrowBackIcon fontSize='large' />
           </a>
         </div>
@@ -164,11 +164,13 @@ const ProjectDetail = () => {
 
   return (
     <div className='project-detail' ref={containerRef}>
+      
       <div className='back-arrow'>
-        <a href='/' aria-label='back'>
+        <a href='/portfolio' aria-label='back'>
           <ArrowBackIcon fontSize='large' />
         </a>
       </div>
+
       <div className='project-detail__container'>
 
         <div className='project-detail__header' ref={headerRef}>
