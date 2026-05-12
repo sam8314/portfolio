@@ -16,6 +16,7 @@ import Footer from './components/Footer/Footer'
 import Education from './components/Education/Education'
 import ProjectDetail from './components/ProjectDetail/ProjectDetail'
 import './App.css'
+import DarkVeilBackground from './components/Background/DarkVeilBackground'
 
 const HomePage = () => (
   <>
@@ -46,6 +47,7 @@ const App = () => {
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
+      <DarkVeilBackground speed={1.2} />
       <div id='top' className={`${themeName} app`}>
         <Header />
         <ScrollToHash />

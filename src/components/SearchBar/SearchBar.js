@@ -1,33 +1,28 @@
-import { useState, useEffect, useRef, useContext } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import { createPortal } from 'react-dom'
 import SearchIcon from '@material-ui/icons/Search'
 import CloseIcon from '@material-ui/icons/Close'
 import { projects, skills } from '../../portfolio'
 import { useLanguage } from '../../contexts/language'
-import { ThemeContext } from '../../contexts/theme'
 import { getLocalizedValue } from '../../utils/i18n'
 import './SearchBar.css'
 
 const SearchBar = () => {
   const { language, strings } = useLanguage()
-  const [{ themeName }] = useContext(ThemeContext)
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
   const [isFullPage, setIsFullPage] = useState(false)
-  const searchBarRef = useRef(null)
   const history = useHistory()
 
   useEffect(() => {
     if (query.trim() === '') {
       setResults([])
-      setIsFullPage(false)
       return
     }
 
     const lowerQuery = query.toLowerCase()
 
-    // Search through projects
     const projectResults = projects
       .filter(
         (p) =>
@@ -42,7 +37,6 @@ const SearchBar = () => {
         description: getLocalizedValue(p.description, language),
       }))
 
-    // Search through skills
     const skillResults = skills
       .filter((s) => s.toLowerCase().includes(lowerQuery))
       .map((s) => ({
@@ -51,15 +45,16 @@ const SearchBar = () => {
         title: s,
       }))
 
-    setResults([...projectResults, ...skillResults].slice(0, 8)) // Limit to 8 results
-    setIsFullPage(true)
-  }, [query])
+    setResults([...projectResults, ...skillResults].slice(0, 8))
+  }, [query, language])
 
   useEffect(() => {
     if (isFullPage) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'auto'
+      setQuery('')
+      setResults([])
     }
 
     return () => {
@@ -70,73 +65,49 @@ const SearchBar = () => {
   const handleResultClick = (result) => {
     if (result.type === 'project') {
       history.push(`/project/${result.id}`)
-      setQuery('')
-      setResults([])
       setIsFullPage(false)
     } else if (result.type === 'skill') {
       history.push('/#skills')
-      setQuery('')
-      setResults([])
       setIsFullPage(false)
     }
-  }
-
-  const handleClear = () => {
-    setQuery('')
-    setResults([])
-    setIsFullPage(false)
   }
 
   const handleSearchIconClick = () => {
     setIsFullPage(true)
   }
 
+  const handleClose = () => {
+    setIsFullPage(false)
+  }
+
   const portalTarget = typeof document !== 'undefined' ? document.querySelector('.app') : null
-  const searchBarClass = `search-bar search-ui search-ui--${themeName}`
-  const searchOverlayClass = `search-fullpage-overlay search-ui search-ui--${themeName}`
-  const searchContentClass = `search-fullpage-content search-ui search-ui--${themeName}`
 
   return (
     <>
-      {!isFullPage && (
-        <div className={searchBarClass} ref={searchBarRef}>
-          <div className='search-input-wrapper'>
-            <SearchIcon className='search-icon' onClick={handleSearchIconClick} style={{ cursor: 'pointer' }} />
-            <input
-              type='text'
-              placeholder={strings.searchPlaceholder}
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              className='search-input'
-            />
-            {query && (
-              <button
-                onClick={handleClear}
-                className='clear-btn'
-                aria-label='clear search'
-              >
-                <CloseIcon />
-              </button>
-            )}
-          </div>
-        </div>
-      )}
+      <button 
+        className='search-icon-button'
+        onClick={handleSearchIconClick}
+        aria-label={strings.searchPlaceholder || 'Search'}
+        title={strings.searchPlaceholder || 'Search'}
+      >
+        <SearchIcon />
+      </button>
 
       {isFullPage && portalTarget && createPortal(
-        <div className={searchOverlayClass}>
-          <div className={searchContentClass}>
+        <div className='search-fullpage-overlay'>
+          <div className='search-fullpage-content'>
             <div className='search-fullpage-bar'>
               <SearchIcon className='search-fullpage-icon' />
               <input
                 type='text'
-                placeholder={strings.searchPlaceholder}
+                placeholder={strings.searchPlaceholder || 'Search projects and skills...'}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 className='search-fullpage-input'
                 autoFocus
               />
               <button
-                onClick={() => setIsFullPage(false)}
+                onClick={handleClose}
                 className='search-fullpage-close'
                 aria-label='close search'
               >
@@ -152,7 +123,7 @@ const SearchBar = () => {
                     onClick={() => handleResultClick(result)}
                     role='button'
                     tabIndex={0}
-                    onKeyPress={(e) => {
+                    onKeyDown={(e) => {
                       if (e.key === 'Enter') handleResultClick(result)
                     }}
                   >
@@ -165,7 +136,7 @@ const SearchBar = () => {
               </div>
             )}
             {query && results.length === 0 && (
-              <div className='search-fullpage-no-results'>{strings.noResults}</div>
+              <div className='search-fullpage-no-results'>{strings.noResults || 'No results found'}</div>
             )}
           </div>
         </div>,

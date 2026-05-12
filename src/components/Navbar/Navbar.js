@@ -1,32 +1,18 @@
-import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Brightness2Icon from '@material-ui/icons/Brightness2'
-import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
-import MenuIcon from '@material-ui/icons/Menu'
-import CloseIcon from '@material-ui/icons/Close'
-import { ThemeContext } from '../../contexts/theme'
 import { useLanguage } from '../../contexts/language'
 import { projects, skills, contact } from '../../portfolio'
 import './Navbar.css'
 
 const Navbar = () => {
-  const [{ themeName, toggleTheme }] = useContext(ThemeContext)
-  const { language, toggleLanguage, strings } = useLanguage()
-  const [showNavList, setShowNavList] = useState(false)
-
-  const toggleNavList = () => setShowNavList(!showNavList)
+  const { strings } = useLanguage()
 
   return (
     <nav className='center nav'>
-      <ul
-        style={{ display: showNavList ? 'flex' : null }}
-        className='nav__list'
-      >
+      <ul className='nav__list'>
         {projects.length ? (
           <li className='nav__list-item'>
             <Link
               to={{ pathname: '/', hash: '#projects' }}
-              onClick={toggleNavList}
               className='link link--nav'
             >
               {strings.navProjects}
@@ -38,7 +24,6 @@ const Navbar = () => {
           <li className='nav__list-item'>
             <Link
               to={{ pathname: '/', hash: '#skills' }}
-              onClick={toggleNavList}
               className='link link--nav'
             >
               {strings.navSkills}
@@ -50,7 +35,6 @@ const Navbar = () => {
           <li className='nav__list-item'>
             <Link
               to={{ pathname: '/', hash: '#contact' }}
-              onClick={toggleNavList}
               className='link link--nav'
             >
               {strings.navContact}
@@ -60,40 +44,12 @@ const Navbar = () => {
         <li className='nav__list-item'>
           <Link
             to='/education'
-            onClick={toggleNavList}
             className='link link--nav'
           >
             {strings.navEducation}
           </Link>
         </li>
       </ul>
-
-      <button
-        type='button'
-        onClick={toggleLanguage}
-        className='btn btn--icon nav__lang'
-        aria-label={strings.toggleLanguageLabel}
-      >
-        {strings.languageButton}
-      </button>
-
-      <button
-        type='button'
-        onClick={toggleTheme}
-        className='btn btn--icon nav__theme'
-        aria-label='toggle theme'
-      >
-        {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
-      </button>
-
-      <button
-        type='button'
-        onClick={toggleNavList}
-        className='btn btn--icon nav__hamburger'
-        aria-label='toggle navigation'
-      >
-        {showNavList ? <CloseIcon /> : <MenuIcon />}
-      </button>
     </nav>
   )
 }

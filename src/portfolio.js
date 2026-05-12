@@ -522,8 +522,8 @@ Innovation clé : La fonction d'efficacité (temps⁻¹ + R_pearson + RMSLE) éq
     livePreview: '',
     teamSize: '1',
     role: {
-      en: 'Developer',
-      fr: 'Développeur',
+      en: 'Dev',
+      fr: 'Dev',
     },
     year: '2026',
     wip: false,

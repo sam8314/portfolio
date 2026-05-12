@@ -206,3 +206,58 @@ button {
   opacity: 0;
   transform: translateY(-60px);
 }
+
+/* Override any backgrounds in the header */
+.header,
+.header *,
+.header button,
+.header a,
+.header div,
+.header svg,
+.home-icon,
+.home-icon *,
+.header__lang,
+.header__lang *,
+.navbar,
+.navbar *,
+.navbar a,
+.navbar button,
+.navbar .link--nav,
+.search-icon-button,
+.search-icon-button * {
+  background-color: transparent !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Keep the header's own background */
+.header {
+  background: rgba(var(--clr-bg-rgb), 0.7) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Keep the noise overlay */
+.header::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E") !important;
+}
+
+/* Remove any Material-UI button backgrounds */
+.MuiButtonBase-root,
+.MuiIconButton-root,
+.MuiButton-root {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Remove hover backgrounds */
+.MuiButtonBase-root:hover,
+.MuiIconButton-root:hover,
+.MuiButton-root:hover {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Remove ripple effects */
+.MuiTouchRipple-root {
+  display: none !important;
+}
