@@ -14,8 +14,6 @@ const Contact = () => {
     email: '',
     message: ''
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null)
 
   if (!contact.email) return null
 
@@ -24,31 +22,17 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus(null)
-
-    // Here you would typically send the form data to a backend service
-    // For now, we'll just log it and show a success message
-    try {
-      // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
-      console.log('Form data:', formData)
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      setSubmitStatus('success')
-      setFormData({ firstName: '', lastName: '', email: '', message: '' })
-      
-      // Clear success message after 5 seconds
-      setTimeout(() => setSubmitStatus(null), 5000)
-    } catch (error) {
-      setSubmitStatus('error')
-      setTimeout(() => setSubmitStatus(null), 5000)
-    } finally {
-      setIsSubmitting(false)
-    }
+    
+    // Create mailto link with form data
+    const subject = `Portfolio message from ${formData.firstName} ${formData.lastName}`
+    const body = `Name: ${formData.firstName} ${formData.lastName}%0A%0AEmail: ${formData.email}%0A%0AMessage:%0A${formData.message}`
+    
+    window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${body}`
+    
+    // Optional: Clear form after "sending"
+    setFormData({ firstName: '', lastName: '', email: '', message: '' })
   }
 
   return (
@@ -57,7 +41,7 @@ const Contact = () => {
         <div className='contact__header'>
           <h2 className='section__title'>{strings.contactTitle}</h2>
           <p className='contact__description'>
-            {strings.contactDescription || "I would love to hear from you. For projects, internships, hackathon..."}
+            {strings.contactDescription || "I would love to hear from you."}
           </p>
         </div>
 
@@ -75,7 +59,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className='contact__input'
-                placeholder={strings.firstNamePlaceholder || 'First name'}
+                placeholder="First name"
               />
             </div>
 
@@ -91,7 +75,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className='contact__input'
-                placeholder={strings.lastNamePlaceholder || 'Last name'}
+                placeholder="Last name"
               />
             </div>
           </div>
@@ -108,7 +92,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               className='contact__input'
-              placeholder={strings.emailPlaceholder || 'you@example.com'}
+              placeholder="you@example.com"
             />
           </div>
 
@@ -124,31 +108,17 @@ const Contact = () => {
               required
               rows={5}
               className='contact__textarea'
-              placeholder={strings.messagePlaceholder || 'Leave me a message...'}
+              placeholder="Your message..."
             />
           </div>
 
-          {submitStatus === 'success' && (
-            <div className='contact__success'>
-              {strings.successMessage || 'Thank you! Your message has been sent successfully.'}
-            </div>
-          )}
-
-          {submitStatus === 'error' && (
-            <div className='contact__error'>
-              {strings.errorMessage || 'Something went wrong. Please try again or write at sa.serbouti@protonmail.com'}
-            </div>
-          )}
-
-          <button type='submit' className='contact__submit' disabled={isSubmitting}>
-            {isSubmitting ? (
-              'Sending...'
-            ) : (
-              <>
-                <SendIcon /> {strings.sendButton || 'Send message'}
-              </>
-            )}
+          <button type='submit' className='contact__submit'>
+            <SendIcon /> {strings.sendButton || 'Open Email Client'}
           </button>
+          
+          <p className='contact__note' style={{ fontSize: '0.8rem', textAlign: 'center', marginTop: '1rem', opacity: 0.7 }}>
+            This will open your email client. Just click send!
+          </p>
         </form>
       </div>
     </section>
