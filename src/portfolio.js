@@ -25,7 +25,7 @@ const about = {
 const projects = [
   {
     id: 'housebite',
-    type: 'fullstack',
+    type: 'Web Dev',
     typeColor: '#3498db',
     name: {
       en: 'HouseBite, Virtual Pantry Manager',
@@ -247,7 +247,7 @@ const projects = [
   },
   {
     id: 'university-staff',
-    type: 'backend',
+    type: 'Database engineering',
     typeColor: '#9b59b6',
     name: {
       en: 'University Staff Management App',
@@ -333,7 +333,7 @@ La base de données est conçue autour des exigences du projet : cursus flexible
   },
   {
   id: 'soundgood-music-school',
-  type: 'backend',
+    type: 'Database engineering',
   typeColor: '#9b59b6',
   name: {
     en: 'SoundGood Music School Database System',
@@ -427,8 +427,8 @@ Le projet comprend quatre requêtes analytiques : nombre de cours par mois et pa
 },
 {
   id: 'tipe-regression-optimization',
-  type: 'datascience',
-  typeColor: '#f39c12',
+    type: 'dataAnalysis',
+    typeColor: '#2ecc71',
   name: {
     en: 'Regression Optimization for Sensor Parameters',
     fr: 'Optimisation du choix de régression pour paramètres de capteurs',
@@ -507,8 +507,8 @@ Innovation clé : La fonction d'efficacité (temps⁻¹ + R_pearson + RMSLE) éq
 },
   {
     id: 'fast-typer',
-    type: 'frontend',
-    typeColor: '#1abc9c',
+    type: 'Web Dev',
+    typeColor: '#3498db',
     name: {
       en: 'FastTyper',
       fr: 'FastTyper',
@@ -628,7 +628,7 @@ Innovation clé : La fonction d'efficacité (temps⁻¹ + R_pearson + RMSLE) éq
   },
   {
   id: 'android-wallpaper-changer',
-  type: 'mobile',
+  type: 'mobile dev',
   typeColor: '#e67e22',
   name: {
     en: 'Android Wallpaper Changer',

@@ -63,6 +63,7 @@ const Projects = () => {
                 }}
               >
                 <span className='filter-bubble__dot' style={{ backgroundColor: item.color }}></span>
+                <span> </span>
                 <span className='filter-bubble__text'>
                   {item.type.charAt(0).toUpperCase() + item.type.slice(1).replace(/([A-Z])/g, ' $1')}
                 </span>
