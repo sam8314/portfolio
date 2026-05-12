@@ -1,5 +1,6 @@
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import DescriptionIcon from '@material-ui/icons/Description'
 import { about } from '../../portfolio'
 import { useLanguage } from '../../contexts/language'
 import { getLocalizedValue } from '../../utils/i18n'
@@ -27,16 +28,19 @@ const About = () => {
       </div>
 
       <div className='about__contact center'>
-        {resume && (
-          <a href={resume} target='_blank' rel='noopener noreferrer'>
-            <span type='button' className='btn btn--outline'>
-              {strings.resumeButton}
-            </span>
-          </a>
-        )}
-
         {social && (
           <>
+            {resume && (
+              <a
+                href={resume}
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='resume'
+                className='link link--icon'
+              >
+                <DescriptionIcon />
+              </a>
+            )}
             {social.github && (
               <a
                 href={social.github}
