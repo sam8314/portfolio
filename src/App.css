@@ -24,23 +24,6 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
-.light .app::before {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Light theme with RGB variables */
-.light {
-  --clr-bg: #fcfcfc;
-  --clr-bg-rgb: 252, 252, 252;
-  --clr-bg-alt: #fff;
-  --clr-fg: #555;
-  --clr-fg-rgb: 85, 85, 85;
-  --clr-fg-alt: #444;
-  --clr-primary: #652aca;
-  --clr-primary-rgb: 101, 42, 202;
-  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
 /* Dark theme with RGB variables */
 .dark {
   --clr-bg: #1f1638;

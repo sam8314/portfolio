@@ -4,32 +4,16 @@ import PropTypes from 'prop-types'
 const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
-  const [themeName, setThemeName] = useState('light')
+  const [themeName, setThemeName] = useState('dark')
 
   useEffect(() => {
-    // First, check if user has a saved preference in localStorage
-    const savedTheme = localStorage.getItem('themeName')
-    if (savedTheme) {
-      setThemeName(savedTheme)
-      return
-    }
-
-    // Otherwise, use system preference
-    const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    setThemeName(darkMediaQuery.matches ? 'dark' : 'light')
-    darkMediaQuery.addEventListener('change', (e) => {
-      setThemeName(e.matches ? 'dark' : 'light')
-    })
+    // Always set to dark mode
+    setThemeName('dark')
+    localStorage.setItem('themeName', 'dark')
   }, [])
 
-  const toggleTheme = () => {
-    const name = themeName === 'dark' ? 'light' : 'dark'
-    localStorage.setItem('themeName', name)
-    setThemeName(name)
-  }
-
   return (
-    <ThemeContext.Provider value={[{ themeName, toggleTheme }]}>
+    <ThemeContext.Provider value={[{ themeName }]}>
       {children}
     </ThemeContext.Provider>
   )
