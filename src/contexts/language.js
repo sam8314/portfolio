@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useEffect } from 'react'
 
 const LanguageContext = createContext()
 
@@ -58,6 +58,7 @@ const translations = {
     sourceCodeLabel: 'Source code',
     livePreviewLabel: 'Live preview',
     pdfFallback: 'Open in a new tab',
+    link: 'Link',
   },
   fr: {
     navProjects: 'Projets',
@@ -114,11 +115,21 @@ const translations = {
     sourceCodeLabel: 'Code source',
     livePreviewLabel: 'Aperçu',
     pdfFallback: 'Ouvrir dans un nouvel onglet',
+    link: 'Lien',
   },
 }
 
 const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en')
+  const [language, setLanguage] = useState(() => {
+    // Initialize from localStorage, default to 'en' if not found
+    return localStorage.getItem('language') || 'en'
+  })
+
+  // Save to localStorage whenever language changes
+  useEffect(() => {
+    localStorage.setItem('language', language)
+  }, [language])
+
   const toggleLanguage = () => {
     setLanguage((prevLang) => (prevLang === 'en' ? 'fr' : 'en'))
   }

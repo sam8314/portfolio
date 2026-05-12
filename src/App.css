@@ -152,3 +152,24 @@ university-app.png
     margin-top: 4em;
   }
 }
+
+/* Add padding to the main content area to account for fixed header */
+#root > div:first-child {
+  padding-top: 5em;
+}
+
+/* Or if you have a main container */
+.main-content {
+  padding-top: 5em;
+}
+
+html {
+  scroll-padding-top: 5em;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: 6em; /* Match your mobile header height */
+  }
+}

@@ -1,40 +1,12 @@
 .project-detail {
   min-height: 100vh;
   padding: 4em 2em;
+  margin-top: 60px;
 }
 
 .project-detail__container {
   max-width: 1100px;
   margin: 0 auto;
-}
-
-.back-arrow {
-  position: fixed;
-  top: 1em;
-  background-color: transparent;
-  z-index: 100;
-}
-
-.back-arrow a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--clr-fg);
-  text-decoration: none;
-  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-  font-size: 1.2rem;
-}
-
-.back-arrow a:hover,
-.back-arrow a:focus {
-  color: var(--clr-primary);
-  transform: translateX(-4px);
-}
-
-@media (max-width: 900px) {
-  .back-arrow {
-    display: none;
-  }
 }
 
 .project-detail__header {
@@ -324,7 +296,6 @@
   outline: 3px solid rgba(128,0,128,0.12);
 }
 
-/* FIX 1: Removed ugly background from chevron arrows */
 .slide-arrow {
   position: absolute;
   top: 50%;
@@ -370,7 +341,6 @@
   gap: 0.5em;
 }
 
-/* FIX 2 & 3: Improved zoom modal with better spacing and consistent background */
 .image-zoom-modal {
   position: fixed;
   top: 0;
@@ -471,7 +441,6 @@
   margin-top: 0;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .project-detail {
     padding: 2em 1em;
@@ -513,7 +482,6 @@
     grid-template-columns: 1fr;
   }
 
-  /* Responsive zoom modal adjustments */
   .zoom-arrow.left {
     left: -40px;
   }

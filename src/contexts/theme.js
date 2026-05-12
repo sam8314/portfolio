@@ -7,11 +7,19 @@ const ThemeProvider = ({ children }) => {
   const [themeName, setThemeName] = useState('light')
 
   useEffect(() => {
-    const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    // First, check if user has a saved preference in localStorage
+    const savedTheme = localStorage.getItem('themeName')
+    if (savedTheme) {
+      setThemeName(savedTheme)
+      return
+    }
+
+    // Otherwise, use system preference
+    const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     setThemeName(darkMediaQuery.matches ? 'dark' : 'light')
     darkMediaQuery.addEventListener('change', (e) => {
       setThemeName(e.matches ? 'dark' : 'light')
-    });
+    })
   }, [])
 
   const toggleTheme = () => {

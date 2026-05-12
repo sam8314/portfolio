@@ -38,7 +38,13 @@ const ProjectContainer = ({ project, allProjects }) => {
   }
 
   return (
-    <div className='project' onClick={handleCardClick}>
+    <div
+      className='project'
+      onClick={handleCardClick}
+      style={{
+        borderTop: project.typeColor ? `4px solid ${project.typeColor}` : 'none',
+      }}
+    >
 
       {project.image && (
         <img

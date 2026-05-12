@@ -1,6 +1,5 @@
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { projects } from '../../portfolio'
-import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LaunchIcon from '@material-ui/icons/Launch'
 import CloseIcon from '@material-ui/icons/Close'
@@ -15,7 +14,6 @@ import './ProjectDetail.css'
 
 const ProjectDetail = () => {
   const { projectId } = useParams()
-  const history = useHistory()
   const { language, strings } = useLanguage()
   const project = projects.find((p) => p.id === projectId)
   const [zoomedImage, setZoomedImage] = useState(null)
@@ -150,11 +148,6 @@ const ProjectDetail = () => {
   if (!project) {
     return (
       <div className='project-detail' ref={containerRef}>
-        <div className='back-arrow'>
-          <a href='/portfolio' aria-label='back'>
-            <ArrowBackIcon fontSize='large' />
-          </a>
-        </div>
         <div className='project-detail__container'>
           <h2>{strings.projectNotFound}</h2>
         </div>
@@ -164,15 +157,7 @@ const ProjectDetail = () => {
 
   return (
     <div className='project-detail' ref={containerRef}>
-      
-      <div className='back-arrow'>
-        <a href='/portfolio' aria-label='back'>
-          <ArrowBackIcon fontSize='large' />
-        </a>
-      </div>
-
       <div className='project-detail__container'>
-
         <div className='project-detail__header' ref={headerRef}>
           <h1>{getLocalizedValue(project.name, language)}</h1>
           <div className='project-detail__meta'>
