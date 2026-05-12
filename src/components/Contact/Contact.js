@@ -14,6 +14,7 @@ const Contact = () => {
     email: '',
     message: ''
   })
+  const [submitStatus, setSubmitStatus] = useState(null)
 
   if (!contact.email) return null
 
@@ -26,13 +27,24 @@ const Contact = () => {
     e.preventDefault()
     
     // Create mailto link with form data
-    const subject = `Portfolio message from ${formData.firstName} ${formData.lastName}`
-    const body = `Name: ${formData.firstName} ${formData.lastName}%0A%0AEmail: ${formData.email}%0A%0AMessage:%0A${formData.message}`
+    const subject = encodeURIComponent(`Portfolio message from ${formData.firstName} ${formData.lastName}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.firstName} ${formData.lastName}\n\n` +
+      `Email: ${formData.email}\n\n` +
+      `Message:\n${formData.message}`
+    )
     
-    window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${body}`
+    const mailtoLink = `mailto:${contact.email}?subject=${subject}&body=${body}`
     
-    // Optional: Clear form after "sending"
+    // Try to open mailto link
+    window.location.href = mailtoLink
+    
+    // Show success message
+    setSubmitStatus('success')
     setFormData({ firstName: '', lastName: '', email: '', message: '' })
+    
+    // Clear success message after 5 seconds
+    setTimeout(() => setSubmitStatus(null), 5000)
   }
 
   return (
@@ -41,7 +53,7 @@ const Contact = () => {
         <div className='contact__header'>
           <h2 className='section__title'>{strings.contactTitle}</h2>
           <p className='contact__description'>
-            {strings.contactDescription || "I would love to hear from you."}
+            {strings.contactDescription || "I would love to hear from you. For projects, internships, hackathons..."}
           </p>
         </div>
 
@@ -112,12 +124,22 @@ const Contact = () => {
             />
           </div>
 
+          {submitStatus === 'success' && (
+            <div className='contact__success'>
+              Email client opened! Please check your email app and click send.
+            </div>
+          )}
+
           <button type='submit' className='contact__submit'>
             <SendIcon /> {strings.sendButton || 'Open Email Client'}
           </button>
           
           <p className='contact__note' style={{ fontSize: '0.8rem', textAlign: 'center', marginTop: '1rem', opacity: 0.7 }}>
-            This will open your email client. Just click send!
+            This will open your default email client. Just review and click send!
+          </p>
+
+          <p className='contact__direct-email'>
+            Or email me directly at: <a href={`mailto:${contact.email}`}>{contact.email}</a>
           </p>
         </form>
       </div>
