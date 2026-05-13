@@ -1,7 +1,7 @@
 import Navbar from '../Navbar/Navbar'
 import SearchBar from '../SearchBar/SearchBar'
 import { useDropAnimation } from '../../hooks/useDropAnimation'
-import HomeIcon from '@material-ui/icons/Home'
+import HomeIcon from '@mui/icons-material/Home'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../../contexts/language'
 import './Header.css'

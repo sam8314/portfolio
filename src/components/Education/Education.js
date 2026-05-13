@@ -1,8 +1,8 @@
 import { useLanguage } from '../../contexts/language'
 import { educationHistory, standaloneCourses } from '../../portfolio'
 import './Education.css'
-import SchoolIcon from '@material-ui/icons/School'
-import LinkIcon from '@material-ui/icons/Link'
+import SchoolIcon from '@mui/icons-material/School'
+import LinkIcon from '@mui/icons-material/Link'
 
 const Education = () => {
   const { language, strings } = useLanguage()

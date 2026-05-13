@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import uniqid from 'uniqid'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import GroupIcon from '@material-ui/icons/Group'
-import DateRangeIcon from '@material-ui/icons/DateRange'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import GroupIcon from '@mui/icons-material/Group'
+import DateRangeIcon from '@mui/icons-material/DateRange'
 import { useLanguage } from '../../contexts/language'
 import { getLocalizedValue } from '../../utils/i18n'
 import './ProjectContainer.css'
@@ -59,7 +59,7 @@ const ProjectContainer = ({ project, allProjects }) => {
       )}
 
       <div className='project__content'>
-        <h3>{getLocalizedValue(project.name, language)}</h3>
+        <h3 className='project__title'>{getLocalizedValue(project.name, language)}</h3>
 
         <div className='project__metadata'>
           <span className='metadata-badge' title={strings.personTooltip}>
@@ -83,7 +83,7 @@ const ProjectContainer = ({ project, allProjects }) => {
         <div className='project__footer'>
           {project.stack && (
             <ul className='project__stack'>
-              {project.stack.map((item) => (
+              {project.stack.slice(0, 7).map((item) => (
                 <li
                   key={uniqid()}
                   className='project__stack-item'
@@ -114,7 +114,7 @@ const ProjectContainer = ({ project, allProjects }) => {
               <a
                 href={project.livePreview}
                 aria-label={strings.livePreviewLabel}
-                className='btn btn--live-demo'
+                className='project__live-demo-link'
                 onClick={(e) => e.stopPropagation()}
                 target='_blank'
                 rel='noopener noreferrer'

@@ -1,6 +1,6 @@
 /* Remove the duplicate .app definition at the top and keep only this */
 .app {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Raleway', sans-serif;
   line-height: 1.5;
   color: var(--clr-fg);
   min-height: 100vh;
@@ -32,7 +32,7 @@
   --clr-fg: #d3c9ff;
   --clr-fg-rgb: 211, 201, 255;
   --clr-fg-alt: #f2e9ff;
-  --clr-primary: #c084fc;
+  --clr-primary: #8050b1;
   --clr-primary-rgb: 192, 132, 252;
   --shadow: rgba(0, 0, 0, 0.18) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
@@ -194,34 +194,3 @@ body {
   }
 }
 
-/* Remove all button backgrounds globally */
-button,
-.btn,
-.btn--icon,
-.btn--plain,
-.btn--outline,
-button:hover,
-.btn:hover,
-.btn--icon:hover,
-.btn--plain:hover,
-.btn--outline:hover {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-/* Remove backgrounds from all links in header */
-.header a,
-.header button,
-.navbar a,
-.navbar button {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-/* Remove any pseudo-element backgrounds */
-.header a::before,
-.header button::before,
-.navbar a::before,
-.navbar button::before {
-  display: none !important;
-}

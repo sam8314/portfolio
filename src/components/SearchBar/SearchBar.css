@@ -3,14 +3,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(var(--clr-fg-rgb), 0.1);
+  background: transparent;
   border: none;
   border-radius: 50%;
   width: 36px;
   height: 36px;
   cursor: pointer;
   color: var(--clr-fg);
-  transition: all 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
   padding: 0;
   flex-shrink: 0;
 }
@@ -18,7 +18,7 @@
 .search-icon-button:hover {
   color: var(--clr-primary);
   transform: scale(1.05);
-  background: rgba(var(--clr-primary-rgb), 0.15);
+  background: transparent;
 }
 
 .search-icon-button svg {

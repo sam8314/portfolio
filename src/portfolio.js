@@ -444,8 +444,8 @@ Le projet comprend quatre requêtes analytiques : nombre de cours par mois et pa
   images: [],
   teamSize: 1,
   role: {
-    en: 'Researcher & Developer',
-    fr: 'Chercheuse & Développeuse',
+    en: 'Dev',
+    fr: 'Dev',
   },
   year: 2021,
   wip: false,

@@ -27,24 +27,59 @@
 
 .meta-badge {
   padding: 0.5em 1em;
-  background: var(--clr-bg-alt);
   border-radius: 12px;
   font-size: 0.9rem;
-  box-shadow: var(--shadow);
+  
+  /* Glassmorphism effect */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  color: var(--clr-fg);
 }
 
 .wip-badge {
-  background: #ff9800;
+  background: rgba(255, 152, 0, 0.9);
   color: white;
   font-weight: bold;
+  border: none;
 }
 
 .project-detail__slideshow {
   margin-bottom: 3em;
-  background: var(--clr-bg-alt);
   padding: 2em;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
+  border-radius: 18px;
+  
+  /* Glassmorphism effect */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Noise overlay for slideshow */
+.project-detail__slideshow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 18px;
+}
+
+.project-detail__slideshow > * {
+  position: relative;
+  z-index: 1;
 }
 
 .slideshow-container {
@@ -75,11 +110,19 @@
   gap: 2.5em;
 }
 
+.detail-section {
+  /* Transparent background - no glassmorphism */
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
 .detail-section h2 {
   margin-bottom: 1em;
   color: var(--clr-primary);
   border-bottom: 2px solid var(--clr-primary);
   padding-bottom: 0.5em;
+  display: inline-block;
 }
 
 .detail-section p {
@@ -119,17 +162,25 @@
 
 .tech-badge {
   padding: 0.5em 1em;
-  background: var(--clr-bg-alt);
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
+  transition: all 0.3s ease;
+  
+  /* Glassmorphism effect for tech badges */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--clr-fg-alt);
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 .tech-badge:hover {
+  background: var(--clr-primary);
+  color: white;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .sprints-stepper {
@@ -169,7 +220,7 @@
   justify-content: center;
   font-weight: bold;
   font-size: 1.1rem;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   position: absolute;
   left: -3em;
   z-index: 1;
@@ -177,10 +228,22 @@
 
 .sprint-step__content {
   flex: 1;
-  background: var(--clr-bg-alt);
   padding: 1.5em;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+  border-radius: 12px;
+  
+  /* Glassmorphism effect for sprint steps */
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sprint-step__content:hover {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
 
 .sprint-step__content h3 {
@@ -202,13 +265,25 @@
 }
 
 .pdf-report-card {
-  background: var(--clr-bg-alt);
   padding: 1.25em;
   border-radius: 12px;
-  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
   gap: 1em;
+  
+  /* Glassmorphism effect for PDF cards */
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.pdf-report-card:hover {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
 
 .pdf-report-preview {
@@ -267,7 +342,7 @@
   width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
@@ -286,23 +361,25 @@
   border-radius: 6px;
   opacity: 0.7;
   cursor: pointer;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .thumb.active {
   transform: translateY(-4px);
   opacity: 1;
-  outline: 3px solid rgba(128,0,128,0.12);
+  outline: 3px solid var(--clr-primary);
+  outline-offset: 2px;
 }
 
 .slide-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   color: var(--clr-fg-alt);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   width: 44px;
   height: 44px;
@@ -315,8 +392,9 @@
 }
 
 .slide-arrow:hover { 
-  background: rgba(0,0,0,0.1);
-  transform: translateY(-50%) scale(1.05); 
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.05);
+  color: var(--clr-primary);
 }
 
 .slide-arrow.left { 
@@ -339,6 +417,77 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
+  padding: 0.8em 1.4em;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Glassmorphism for outline button */
+.project-links .btn--outline {
+  color: var(--clr-primary);
+  border: 2px solid var(--clr-primary);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.project-links .btn--outline:hover {
+  color: var(--clr-bg);
+  transform: translateY(-2px);
+}
+
+.project-links .btn--outline::before {
+  content: '';
+  position: absolute;
+  background-color: var(--clr-primary);
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: right 0.2s ease-in-out;
+}
+
+.project-links .btn--outline:hover::before {
+  right: 0;
+}
+
+/* Glassmorphism for live demo button */
+.project-links .btn--live-demo {
+  color: var(--clr-primary);
+  border: 2px solid var(--clr-primary);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.project-links .btn--live-demo:hover {
+  color: var(--clr-bg);
+  transform: translateY(-2px);
+}
+
+.project-links .btn--live-demo::before {
+  content: '';
+  position: absolute;
+  background-color: var(--clr-primary);
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: right 0.2s ease-in-out;
+}
+
+.project-links .btn--live-demo:hover::before {
+  right: 0;
 }
 
 .image-zoom-modal {
@@ -394,8 +543,9 @@
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
   color: white;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -410,6 +560,7 @@
 .zoom-arrow:hover {
   background: rgba(0, 0, 0, 0.9);
   transform: translateY(-50%) scale(1.1);
+  color: var(--clr-primary);
 }
 
 .zoom-arrow.left {
@@ -436,11 +587,49 @@
   text-align: center;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.9);
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   padding: 0.5rem;
+  border-radius: 8px;
   margin-top: 0;
 }
 
+.documents-note {
+  margin-bottom: 1.5em;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Dark theme adjustments */
+.dark .meta-badge,
+.dark .project-detail__slideshow,
+.dark .sprint-step__content,
+.dark .pdf-report-card {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .sprint-step__content:hover,
+.dark .pdf-report-card:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .tech-badge {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dark .tech-badge:hover {
+  background: var(--clr-primary);
+  color: white;
+}
+
+.dark .project-links .btn--outline,
+.dark .project-links .btn--live-demo {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .project-detail {
     padding: 2em 1em;
@@ -449,6 +638,10 @@
   .project-detail__meta {
     flex-direction: column;
     gap: 0.5em;
+  }
+  
+  .project-detail__slideshow {
+    padding: 1em;
   }
 
   .slide-arrow {
@@ -505,5 +698,10 @@
   .zoom-caption {
     bottom: -60px;
     font-size: 0.8rem;
+  }
+  
+  .tech-badge {
+    font-size: 0.75rem;
+    padding: 0.4em 0.8em;
   }
 }

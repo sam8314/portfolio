@@ -21,7 +21,7 @@
   padding: 0;
   font-size: 0.95rem;
   white-space: nowrap;
-  background: transparent !important;
+  background: none;
   color: var(--clr-fg);
   text-decoration: none;
   transition: color 0.2s ease-in-out;
@@ -40,7 +40,7 @@
 
 /* Remove any button backgrounds */
 button, .btn, .btn--icon {
-  background: transparent !important;
+  background: none;
 }
 
 /* Responsive */

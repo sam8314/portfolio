@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import uniqid from 'uniqid'
-import TuneIcon from '@material-ui/icons/Tune'
+import TuneIcon from '@mui/icons-material/Tune'
 import { projects } from '../../portfolio'
 import ProjectContainer from '../ProjectContainer/ProjectContainer'
 import { useLanguage } from '../../contexts/language'

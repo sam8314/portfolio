@@ -47,7 +47,7 @@ const App = () => {
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <DarkVeilBackground speed={1.2} />
+      <DarkVeilBackground speed={2} />
       <div id='top' className={`${themeName} app`}>
         <Header />
         <ScrollToHash />

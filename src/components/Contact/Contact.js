@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { contact } from '../../portfolio'
 import { useLanguage } from '../../contexts/language'
 import { useDropAnimation } from '../../hooks/useDropAnimation'
-import SendIcon from '@material-ui/icons/Send'
+import SendIcon from '@mui/icons-material/Send'
 import './Contact.css'
 
 const Contact = () => {

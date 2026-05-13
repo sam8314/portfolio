@@ -50,6 +50,7 @@
 .contact__form-group {
   flex: 1;
   min-width: 200px;
+  position: relative;
 }
 
 .contact__label {
@@ -68,29 +69,73 @@
 .contact__textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: var(--clr-bg-alt);
-  border: 2px solid transparent;
-  border-radius: 12px;
   font-size: 1rem;
   color: var(--clr-fg);
-  transition: all 0.2s ease-in-out;
   font-family: inherit;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  
+  /* Glassmorphism effect matching header */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  
+  /* Remove default outline */
+  outline: none;
 }
 
+/* Noise overlay for inputs */
+.contact__input::before,
+.contact__textarea::before {
+  display: none;
+}
+
+/* Add noise effect via background image */
+.contact__input,
+.contact__textarea {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px;
+  background-blend-mode: overlay;
+}
+
+/* Darker background when typing/focused */
 .contact__input:focus,
 .contact__textarea:focus {
-  outline: none;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px) saturate(190%);
+  -webkit-backdrop-filter: blur(12px);
   border-color: var(--clr-primary);
-  background: var(--clr-bg);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
+/* Hover effect */
 .contact__input:hover,
 .contact__textarea:hover {
   border-color: rgba(var(--clr-primary-rgb), 0.3);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Autofill style overrides */
+.contact__input:-webkit-autofill,
+.contact__input:-webkit-autofill:hover,
+.contact__input:-webkit-autofill:focus,
+.contact__textarea:-webkit-autofill,
+.contact__textarea:-webkit-autofill:hover,
+.contact__textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--clr-fg);
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0.6) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  background: rgba(0, 0, 0, 0.6);
+  border-color: var(--clr-primary);
 }
 
 .contact__textarea {
   resize: vertical;
+  min-height: 120px;
 }
 
 .contact__submit {
@@ -99,7 +144,6 @@
   justify-content: center;
   gap: 0.75rem;
   padding: 0.9rem 2rem;
-  background: var(--clr-primary);
   color: white;
   border: none;
   border-radius: 12px;
@@ -108,11 +152,31 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact__submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.contact__submit:hover:not(:disabled)::before {
+  transform: translateX(0);
 }
 
 .contact__submit:hover:not(:disabled) {
   transform: translateY(-2px);
   filter: brightness(1.05);
+  box-shadow: 0 4px 12px rgba(var(--clr-primary-rgb), 0.3);
 }
 
 .contact__submit:disabled {
@@ -123,11 +187,13 @@
 .contact__success {
   background: rgba(40, 167, 69, 0.1);
   border: 1px solid #28a745;
- color: #28a745;
-  padding: 1rem;
-  border-radius: 12px;
+  color: #28a745;
+  padding: 0.75rem;
+  border-radius: 8px;
   text-align: center;
   font-size: 0.9rem;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(5px);
 }
 
 .contact__error {
@@ -138,6 +204,57 @@
   border-radius: 12px;
   text-align: center;
   font-size: 0.9rem;
+  backdrop-filter: blur(5px);
+}
+
+.contact__direct-email {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.contact__direct-email a {
+  color: var(--clr-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.contact__direct-email a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--clr-primary);
+  transition: width 0.2s ease-in-out;
+}
+
+.contact__direct-email a:hover {
+  color: var(--clr-primary);
+}
+
+.contact__direct-email a:hover::before {
+  width: 100%;
+}
+
+/* Dark theme adjustments */
+.dark .contact__input,
+.dark .contact__textarea {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .contact__input:focus,
+.dark .contact__textarea:focus {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: var(--clr-primary);
+}
+
+.dark .contact__input:hover,
+.dark .contact__textarea:hover {
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* Responsive */
@@ -162,29 +279,10 @@
   .contact__description {
     font-size: 1rem;
   }
-}
-.contact__success {
-  background: rgba(40, 167, 69, 0.1);
-  border: 1px solid #28a745;
-  color: #28a745;
-  padding: 0.75rem;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.contact__direct-email {
-  text-align: center;
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-}
-
-.contact__direct-email a {
-  color: var(--clr-primary);
-  text-decoration: none;
-}
-
-.contact__direct-email a:hover {
-  text-decoration: underline;
+  
+  .contact__input,
+  .contact__textarea {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.9rem;
+  }
 }
