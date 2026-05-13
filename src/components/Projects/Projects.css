@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
 }
 
@@ -15,7 +15,7 @@
   border: none;
   cursor: pointer;
   color: var(--clr-fg);
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: transform 0.9s ease, color 0.9s ease;
   padding: 0.5rem;
   font-size: 1.5rem;
 }
@@ -28,13 +28,14 @@
 .projects__filters {
   max-width: 800px;
   width: 95%;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
   padding: 0;
-  animation: slideDown 0.3s ease;
+  animation: slideDown 0.9s ease;
+  margin-top: -1em;
 }
 
 @keyframes slideDown {
@@ -56,25 +57,35 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  
-  border: 0;
-  background-color: var(--clr-bg-alt);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-  font-size: 0.9rem;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 500;
-  text-transform: initial;
+  transition: all 0.3s ease;
+  
+  /* Glassmorphism effect - matching tech badges */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--clr-fg-alt);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .projects__filter-bubble:hover {
-  transform: translateY(-4px);
+  background: var(--clr-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .projects__filter-bubble.active {
-  background: linear-gradient(135deg, var(--dot-color) 0%, var(--dot-color) 100%);
-  color: #ffffff;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px 0px;
+  background: var(--clr-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .filter-bubble__dot {
@@ -98,6 +109,22 @@
   justify-items: stretch;
 }
 
+/* Dark theme adjustments */
+.dark .projects__filter-bubble {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .projects__filter-bubble:hover {
+  background: var(--clr-primary);
+  color: white;
+}
+
+.dark .projects__filter-bubble.active {
+  background: var(--clr-primary);
+  color: white;
+}
+
 @media (max-width: 768px) {
   .projects__header-top {
     gap: 1rem;
@@ -106,13 +133,14 @@
   .projects__filters {
     gap: 0.5rem;
   }
+  
+  .projects__filter-bubble {
+    font-size: 0.75rem;
+    padding: 0.4em 0.8em;
+  }
 }
 
-.projects__header-top {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
+/* Section title styles */
 .section__title {
   display: inline-flex;
   align-items: center;

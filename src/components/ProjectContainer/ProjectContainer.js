@@ -93,6 +93,11 @@ const ProjectContainer = ({ project, allProjects }) => {
                   {item}
                 </li>
               ))}
+              {project.stack.length > 7 && (
+                <li className='project__stack-item project__stack-more'>
+                  +{project.stack.length - 7} more
+                </li>
+              )}
             </ul>
           )}
 

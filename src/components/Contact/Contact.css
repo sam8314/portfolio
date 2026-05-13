@@ -163,9 +163,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.1);
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
   pointer-events: none;
 }
 
@@ -175,8 +173,6 @@
 
 .contact__submit:hover:not(:disabled) {
   transform: translateY(-2px);
-  filter: brightness(1.05);
-  box-shadow: 0 4px 12px rgba(var(--clr-primary-rgb), 0.3);
 }
 
 .contact__submit:disabled {
