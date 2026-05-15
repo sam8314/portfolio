@@ -518,7 +518,7 @@
 }
 
 .close-zoom:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
 
 .zoom-arrow {
@@ -544,6 +544,7 @@
   background: rgba(0, 0, 0, 0.9);
   transform: translateY(-50%) scale(1.1);
   color: var(--clr-primary);
+  transform: scale(1.1);
 }
 
 .zoom-arrow.left {

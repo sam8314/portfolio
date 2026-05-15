@@ -1,5 +1,5 @@
 const header = {
-  homepage: 'https://sam8314.github.io/portfolio', // Update this to your GitHub Pages URL
+  homepage: 'https://sam8314.github.io/portfolio',
   title: 'Samia Serbouti',
 }
 
@@ -14,7 +14,7 @@ const about = {
     en: `Engineering student at KTH with hands-on experience in PostgreSQL, Python, and full-stack development. Strong foundation in database systems, algorithms, and software engineering. Passionate about sustainable digitalization and data-driven solutions for real-world problems. My coursework includes Databases, Software Engineering, Data Structures, Algorithms, and Computer Networks. I'm actively improving skills in DevOps practices, data analysis, and security fundamentals, with a goal of contributing across the data-infrastructure-security stack.`,
     fr: `Étudiante en ingénierie à KTH avec une expérience pratique en PostgreSQL, Python et développement full-stack. Solide formation en systèmes de bases de données, algorithmique et génie logiciel. Passionnée par la digitalisation durable et les solutions axées sur les données pour des problèmes réels. Mes cours incluent Bases de données, Génie logiciel, Structures de données, Algorithmique et Réseaux informatiques. Je développe activement des compétences en pratiques DevOps, analyse de données et fondamentaux de la sécurité, avec l'objectif de contribuer à la pile données-infrastructure-sécurité.`,
   },
-  resume: `${process.env.PUBLIC_URL}/Resume_Serbouti.pdf`, // Local PDF file in public folder
+  resume: `${process.env.PUBLIC_URL}/Resume_Serbouti.pdf`,
   social: {
     linkedin: 'https://www.linkedin.com/in/samia-serbouti-0595b1229',
     github: 'https://github.com/sam8314',
@@ -23,6 +23,7 @@ const about = {
 }
 
 const projects = [
+  /*HOUSEBITE*/
   {
     id: 'housebite',
     type: 'Web Dev',
@@ -32,17 +33,17 @@ const projects = [
       fr: 'HouseBite, gestionnaire de garde-manger virtuel',
     },
     description: {
-      en: 'A progressive web app that turns your household into a shared smart pantry: tracking expiry dates, suggesting recipes to reduce waste, scanning receipts, and managing shared budgets. Built for households to waste less and spend less.',
-      fr: 'Une application web progressive qui transforme votre foyer en garde-manger partagé intelligent : suivi des dates de péremption, suggestions de recettes pour réduire le gaspillage, scan des reçus et gestion du budget commun. Conçue pour aider les ménages à gaspiller moins et à dépenser moins.',
+      en: 'A progressive web app that turns households into a shared smart pantries: tracking expiry dates, suggesting recipes to reduce waste, scanning receipts, and managing shared budgets. Built for households to waste less and spend less.',
+      fr: 'Une application web progressive qui transforme en foyer en garde-manger partagé intelligent : suivi des dates de péremption, suggestions de recettes pour réduire le gaspillage, scan des reçus et gestion du budget commun. Conçue pour aider les ménages à gaspiller et dépenser moins.',
     },
-    stack: ['React 19', 'TypeScript', 'Vite', 'Supabase', 'PostgreSQL', 'Mantine UI', 'Spoonacular API', 'Docker', 'OpenAI OCR', 'PWA'],
+    stack: ['React 19', 'TypeScript', 'Vite', 'Supabase', 'PostgreSQL', 'Mantine UI', 'Spoonacular API', 'Docker', 'OpenAI OCR', 'PWA', 'HTML', 'CSS', 'REST APIs'],
     sourceCode: '',
     livePreview: 'https://housebite.app/',
     image: '',
     teamSize: 7,
     role: {
       en: 'Product Owner',
-      fr: 'Responsable produit',
+      fr: 'Product Owner',
     },
     year: 2026,
     wip: false,
@@ -132,6 +133,8 @@ const projects = [
       },
     ],
   },
+
+  /*SLSO*/
   {
     id: 'slso-energy',
     type: 'dataAnalysis',
@@ -213,13 +216,15 @@ const projects = [
       },
     ],
   },
+
+  /*SOCKET PROGRAMMING*/
   {
     id: 'socket-programming',
     type: 'networking',
     typeColor: '#e74c3c',
     name: {
-      en: 'TCP Networking suite',
-      fr: 'Suite de réseautique TCP',
+      en: 'Java Socket TCP Networking suite',
+      fr: 'Suite de réseautique sockets TCP Java',
     },
     description: {
       en: 'A comprehensive networking toolkit demonstrating TCP socket programming, HTTP proxy servers, and concurrent client handling in Java.',
@@ -245,6 +250,8 @@ const projects = [
       { title: { en: 'ConcHTTPAsk', fr: 'ConcHTTPAsk' }, description: { en: 'Multi-threaded HTTP proxy. Production-ready concurrent request handling', fr: 'Proxy HTTP multi-thread. Gestion concurrente prête pour la production' } },
     ]
   },
+
+  /*UNIVERSITY STAFF*/
   {
     id: 'university-staff',
     type: 'Database engineering',
@@ -331,19 +338,21 @@ La base de données est conçue autour des exigences du projet : cursus flexible
       { title: { en: 'Sprint 3: Allocation Logic', fr: 'Sprint 3 : Logique d’allocation' }, description: { en: 'Built layered JDBC app using Maven and Flatlaf UI', fr: 'Création d’une application JDBC en couches avec Maven et interface Flatlaf' } },
     ],
   },
+
+  /*SOUNDGOOOD*/
   {
   id: 'soundgood-music-school',
-    type: 'Database engineering',
+    type: 'Database Engineering',
   typeColor: '#9b59b6',
   name: {
-    en: 'SoundGood Music School Database System',
-    fr: 'Système de base de données pour l\'école de musique SoundGood',
+    en: 'Music School Database System',
+    fr: 'Système de base de données pour une école de musique',
   },
   description: {
     en: 'End-to-end database system for a music school: from conceptual ER modeling to physical PostgreSQL implementation with OLAP queries and performance analysis.',
     fr: 'Système de base de données complet pour une école de musique : de la modélisation conceptuelle ER à l\'implémentation physique PostgreSQL avec requêtes OLAP et analyse de performance.',
   },
-  stack: ['PostgreSQL', 'SQL', 'ER Diagram', 'Astah Professional', 'UML', 'Database Design', 'OLAP', 'Query Optimization', 'EXPLAIN ANALYZE', 'pgAdmin4'],
+  stack: ['PostgreSQL', 'SQL', 'pgAdmin4', 'ER Diagram', 'Astah Professional', 'UML', 'Database Design', 'OLAP', 'Query Optimization'],
   sourceCode: 'https://github.com/sam8314/iv1351/tree/main/seminars',
   livePreview: '',
   image: '',
@@ -356,12 +365,12 @@ La base de données est conçue autour des exigences du projet : cursus flexible
   year: 2024,
   wip: false,
   detailedDescription: {
-    en: `SoundGood Music School Database System is a complete database solution developed for a music school that offers individual lessons, group lessons, and ensembles. The project follows the full database lifecycle: conceptual modeling using ER diagrams with IE notation in Astah Professional, logical and physical design with normalization to 3NF, implementation in PostgreSQL, and analytical querying with performance optimization.
+    en: `This Music School Database System is a complete database solution developed for a music school that offers individual lessons, group lessons, and ensembles. The project follows the full database lifecycle: conceptual modeling using ER diagrams with IE notation in Astah Professional, logical and physical design with normalization to 3NF, implementation in PostgreSQL, and analytical querying with performance optimization.
 
 The database manages student and instructor personal information, lesson scheduling (individual, group, and ensemble), instrument rentals (up to 2 instruments per student for 12 months), sibling discount pricing, and monthly billing for both students and instructors. A key feature is the flexible pricing scheme where different lesson levels (beginner, intermediate, advanced) have different prices that can vary over time.
 
 The project includes four analytical queries: monthly lesson count per type, sibling distribution analysis, instructor workload tracking for the current month, and ensemble occupancy for the upcoming week. Performance analysis using PostgreSQL's EXPLAIN ANALYZE identified optimization opportunities, leading to recommendations for multicolumn indexes and materialized views.`,
-    fr: `Le système de base de données de l'école de musique SoundGood est une solution complète développée pour une école de musique proposant des cours individuels, des cours collectifs et des ensembles. Le projet suit l'ensemble du cycle de vie d'une base de données : modélisation conceptuelle avec diagrammes ER en notation IE dans Astah Professional, conception logique et physique avec normalisation en 3NF, implémentation en PostgreSQL, et requêtes analytiques avec optimisation des performances.
+    fr: `Ce système de base de données d'une école de musique est une solution complète développée pour une école de musique proposant des cours individuels, des cours collectifs et des ensembles. Le projet suit l'ensemble du cycle de vie d'une base de données : modélisation conceptuelle avec diagrammes ER en notation IE dans Astah Professional, conception logique et physique avec normalisation en 3NF, implémentation en PostgreSQL, et requêtes analytiques avec optimisation des performances.
 
 La base de données gère les informations personnelles des étudiants et des professeurs, la planification des cours (individuels, collectifs et ensembles), la location d'instruments (jusqu'à 2 instruments par étudiant pour 12 mois), les réductions pour fratrie, et la facturation mensuelle. Une fonctionnalité clé est le système de tarification flexible où différents niveaux de cours ont des prix différents qui peuvent varier dans le temps.
 
@@ -424,87 +433,91 @@ Le projet comprend quatre requêtes analytiques : nombre de cours par mois et pa
       description: { en: '4 analytical queries. EXPLAIN ANALYZE performance analysis revealing sequential scan bottlenecks. Recommendations: multicolumn index on lesson(given, scheduled_time) and materialized views for daily queries.', fr: '4 requêtes analytiques. Analyse de performance EXPLAIN ANALYZE révélant les goulots d\'étranglement des analyses séquentielles. Recommandations : index multicolonne et vues matérialisées.' },
     },
   ],
-},
-{
-  id: 'tipe-regression-optimization',
-    type: 'dataAnalysis',
-    typeColor: '#2ecc71',
-  name: {
-    en: 'Regression Optimization for Sensor Parameters',
-    fr: 'Optimisation du choix de régression pour paramètres de capteurs',
   },
-  description: {
-    en: 'Machine learning research project using neural networks to automatically select optimal regression methods based on sensor characteristics. Applied to CALIPSO satellite lidar data for atmospheric aerosol profiling.',
-    fr: 'Projet de recherche en apprentissage automatique utilisant des réseaux de neurones pour sélectionner automatiquement la méthode de régression optimale selon les caractéristiques des capteurs. Appliqué aux données lidar du satellite CALIPSO pour le profilage des aérosols atmosphériques.',
-  },
-  stack: ['Python', 'TensorFlow', 'Keras', 'Neural Networks', 'Scikit-learn', 'NumPy', 'SciPy', 'Regression Analysis', 'LSTM', 'Data Science'],
-  sourceCode: '',
-  livePreview: '',
-  image: '',
-  images: [],
-  teamSize: 1,
-  role: {
-    en: 'Dev',
-    fr: 'Dev',
-  },
-  year: 2021,
-  wip: false,
-  detailedDescription: {
-    en: `This research project (TIPE - Travail d'Initiative Personnelle Encadré) for the 2021 competitive exam session addresses a fundamental problem in experimental physics: temporal differentiation of sampled measurements amplifies noise and causes divergence at short timescales. Polynomial regression mitigates this issue but choosing the optimal polynomial degree is often arbitrary and computationally expensive.
 
-I developed a neural network-based system that automatically selects the best regression method based on sensor parameters. The workflow: (1) Generate synthetic sensor data with controlled noise characteristics, (2) Evaluate multiple regression methods (NumPy polynomial fits from degree 0-5, SciPy regression) using a composite efficiency metric combining RMSLE (Root Mean Squared Log Error), Pearson correlation coefficient, and inverse computation time, (3) Train neural network architectures (both Sequential and Functional API with 2 hidden layers) to predict optimal regression from sensor parameters, (4) Apply the trained model to real sensor data, including the CALIPSO satellite's CALIOP lidar receiver (10 MHz digitization rate).
+  /*TIPE*/
+  {
+    id: 'tipe-regression-optimization',
+      type: 'dataAnalysis',
+      typeColor: '#2ecc71',
+    name: {
+      en: 'Regression Optimization for Sensor Parameters',
+      fr: 'Optimisation du choix de régression pour paramètres de capteurs',
+    },
+    description: {
+      en: 'Machine learning research project using neural networks to automatically select optimal regression methods based on sensor characteristics. Applied to CALIPSO satellite lidar data for atmospheric aerosol profiling.',
+      fr: 'Projet de recherche en apprentissage automatique utilisant des réseaux de neurones pour sélectionner automatiquement la méthode de régression optimale selon les caractéristiques des capteurs. Appliqué aux données lidar du satellite CALIPSO pour le profilage des aérosols atmosphériques.',
+    },
+    stack: ['Python', 'TensorFlow', 'Keras', 'Neural Networks', 'Scikit-learn', 'NumPy', 'SciPy', 'Regression Analysis', 'LSTM', 'Data Science'],
+    sourceCode: '',
+    livePreview: '',
+    image: '',
+    images: [],
+    teamSize: 1,
+    role: {
+      en: 'Dev',
+      fr: 'Dev',
+    },
+    year: 2021,
+    wip: false,
+    detailedDescription: {
+      en: `This research project (TIPE - Travail d'Initiative Personnelle Encadré) for the 2021 competitive exam session addresses a fundamental problem in experimental physics: temporal differentiation of sampled measurements amplifies noise and causes divergence at short timescales. Polynomial regression mitigates this issue but choosing the optimal polynomial degree is often arbitrary and computationally expensive.
 
-Key innovation: The efficiency function (time⁻¹ + R_pearson + RMSLE) balances accuracy, correlation, and computational cost. The neural network uses a Dense architecture with ReLU activation, input dimension = number of sensor parameters, and softmax output layer for regression method selection (6 classes: degree 0-5 polynomials + SciPy). Training on 150+ sensor samples achieved successful prediction of optimal regression orders (e.g., linear degree 1 for DHT11 temperature/humidity, degree 4 for HCSR04 ultrasonic sensor).`,
-    fr: `Ce projet de recherche (TIPE - Travail d'Initiative Personnelle Encadré) pour la session 2021 des concours aborde un problème fondamental en physique expérimentale : la dérivation temporelle de mesures échantillonnées amplifie le bruit et provoque des divergences aux temps courts. La régression polynomiale atténue ce problème, mais le choix du degré optimal est souvent arbitraire et coûteux en calcul.
+  I developed a neural network-based system that automatically selects the best regression method based on sensor parameters. The workflow: (1) Generate synthetic sensor data with controlled noise characteristics, (2) Evaluate multiple regression methods (NumPy polynomial fits from degree 0-5, SciPy regression) using a composite efficiency metric combining RMSLE (Root Mean Squared Log Error), Pearson correlation coefficient, and inverse computation time, (3) Train neural network architectures (both Sequential and Functional API with 2 hidden layers) to predict optimal regression from sensor parameters, (4) Apply the trained model to real sensor data, including the CALIPSO satellite's CALIOP lidar receiver (10 MHz digitization rate).
 
-J'ai développé un système basé sur des réseaux de neurones pour sélectionner automatiquement la meilleure méthode de régression en fonction des paramètres du capteur. Le processus : (1) Génération de données synthétiques de capteurs avec caractéristiques de bruit contrôlées, (2) Évaluation de multiples méthodes de régression (polynômes NumPy degrés 0-5, régression SciPy) avec une métrique composite (RMSLE, coefficient de Pearson, temps de calcul inverse), (3) Entraînement de réseaux de neurones (architectures Sequential et Functional API avec 2 couches cachées), (4) Application aux données réelles du lidar CALIOP du satellite CALIPSO (taux de numérisation 10 MHz).
+  Key innovation: The efficiency function (time⁻¹ + R_pearson + RMSLE) balances accuracy, correlation, and computational cost. The neural network uses a Dense architecture with ReLU activation, input dimension = number of sensor parameters, and softmax output layer for regression method selection (6 classes: degree 0-5 polynomials + SciPy). Training on 150+ sensor samples achieved successful prediction of optimal regression orders (e.g., linear degree 1 for DHT11 temperature/humidity, degree 4 for HCSR04 ultrasonic sensor).`,
+      fr: `Ce projet de recherche (TIPE - Travail d'Initiative Personnelle Encadré) pour la session 2021 des concours aborde un problème fondamental en physique expérimentale : la dérivation temporelle de mesures échantillonnées amplifie le bruit et provoque des divergences aux temps courts. La régression polynomiale atténue ce problème, mais le choix du degré optimal est souvent arbitraire et coûteux en calcul.
 
-Innovation clé : La fonction d'efficacité (temps⁻¹ + R_pearson + RMSLE) équilibre précision, corrélation et coût computationnel. Architecture Dense avec activation ReLU, softmax en sortie (6 classes). Entraînement sur 150+ échantillons capteurs a permis des prédictions réussies (degré linéaire 1 pour DHT11, degré 4 pour HCSR04).`,
-  },
-  features: [
-    { en: 'Automatic regression method selection from sensor parameters', fr: 'Sélection automatique de la méthode de régression à partir des paramètres du capteur' },
-    { en: 'Composite efficiency metric: RMSLE + Pearson correlation + inverse time', fr: 'Métrique composite : RMSLE + corrélation de Pearson + inverse du temps' },
-    { en: 'Neural network architectures (Sequential & Functional API with LSTM)', fr: 'Architectures de réseaux de neurones (Sequential & Functional API avec LSTM)' },
-    { en: 'Polynomial regression testing (degree 0-5) from NumPy and SciPy', fr: 'Tests de régression polynomiale (degrés 0-5) de NumPy et SciPy' },
-    { en: 'Application to CALIPSO satellite lidar data (10 MHz digitization)', fr: 'Application aux données lidar du satellite CALIPSO (numérisation 10 MHz)' },
-    { en: 'Sensor database: DHT11, HCSR04, PIR, thermistor, photoresistor', fr: 'Base de données capteurs : DHT11, HCSR04, PIR, thermistance, photorésistance' },
-    { en: 'MinMaxScaler normalization and train-test split evaluation', fr: 'Normalisation MinMaxScaler et évaluation train-test' },
-  ],
-  challenges: [
-    { en: 'Temporal derivation of sampled measurements amplifies noise at short timescales', fr: 'La dérivation temporelle des mesures échantillonnées amplifie le bruit aux temps courts' },
-    { en: 'Arbitrary regression polynomial degree selection in automated analysis pipelines', fr: 'Choix arbitraire du degré polynomial de régression dans les pipelines d\'analyse automatisés' },
-    { en: 'Computational cost of evaluating multiple regression methods per sensor', fr: 'Coût computationnel de l\'évaluation de multiples méthodes de régression par capteur' },
-    { en: 'Limited training data for real sensors → synthetic data generation approach', fr: 'Données d\'entraînement limitées pour capteurs réels → approche de génération de données synthétiques' },
-  ],
-  reportPDFs: [
-    {
-      title: 'TIPE Soutenance - Optimisation du choix de régression',
-      description: {
-        en: 'Full research presentation (40 slides) covering problem motivation, CALIPSO satellite context, neural network architecture design, database generation, training results, and CALIOP lidar application.',
-        fr: 'Présentation complète de recherche (40 diapos) couvrant la motivation du problème, contexte satellite CALIPSO, architecture réseau neuronal, génération de base de données, résultats d\'entraînement et application au lidar CALIOP.',
+  J'ai développé un système basé sur des réseaux de neurones pour sélectionner automatiquement la meilleure méthode de régression en fonction des paramètres du capteur. Le processus : (1) Génération de données synthétiques de capteurs avec caractéristiques de bruit contrôlées, (2) Évaluation de multiples méthodes de régression (polynômes NumPy degrés 0-5, régression SciPy) avec une métrique composite (RMSLE, coefficient de Pearson, temps de calcul inverse), (3) Entraînement de réseaux de neurones (architectures Sequential et Functional API avec 2 couches cachées), (4) Application aux données réelles du lidar CALIOP du satellite CALIPSO (taux de numérisation 10 MHz).
+
+  Innovation clé : La fonction d'efficacité (temps⁻¹ + R_pearson + RMSLE) équilibre précision, corrélation et coût computationnel. Architecture Dense avec activation ReLU, softmax en sortie (6 classes). Entraînement sur 150+ échantillons capteurs a permis des prédictions réussies (degré linéaire 1 pour DHT11, degré 4 pour HCSR04).`,
+    },
+    features: [
+      { en: 'Automatic regression method selection from sensor parameters', fr: 'Sélection automatique de la méthode de régression à partir des paramètres du capteur' },
+      { en: 'Composite efficiency metric: RMSLE + Pearson correlation + inverse time', fr: 'Métrique composite : RMSLE + corrélation de Pearson + inverse du temps' },
+      { en: 'Neural network architectures (Sequential & Functional API with LSTM)', fr: 'Architectures de réseaux de neurones (Sequential & Functional API avec LSTM)' },
+      { en: 'Polynomial regression testing (degree 0-5) from NumPy and SciPy', fr: 'Tests de régression polynomiale (degrés 0-5) de NumPy et SciPy' },
+      { en: 'Application to CALIPSO satellite lidar data (10 MHz digitization)', fr: 'Application aux données lidar du satellite CALIPSO (numérisation 10 MHz)' },
+      { en: 'Sensor database: DHT11, HCSR04, PIR, thermistor, photoresistor', fr: 'Base de données capteurs : DHT11, HCSR04, PIR, thermistance, photorésistance' },
+      { en: 'MinMaxScaler normalization and train-test split evaluation', fr: 'Normalisation MinMaxScaler et évaluation train-test' },
+    ],
+    challenges: [
+      { en: 'Temporal derivation of sampled measurements amplifies noise at short timescales', fr: 'La dérivation temporelle des mesures échantillonnées amplifie le bruit aux temps courts' },
+      { en: 'Arbitrary regression polynomial degree selection in automated analysis pipelines', fr: 'Choix arbitraire du degré polynomial de régression dans les pipelines d\'analyse automatisés' },
+      { en: 'Computational cost of evaluating multiple regression methods per sensor', fr: 'Coût computationnel de l\'évaluation de multiples méthodes de régression par capteur' },
+      { en: 'Limited training data for real sensors → synthetic data generation approach', fr: 'Données d\'entraînement limitées pour capteurs réels → approche de génération de données synthétiques' },
+    ],
+    reportPDFs: [
+      {
+        title: 'TIPE Soutenance - Optimisation du choix de régression',
+        description: {
+          en: 'Full research presentation (40 slides) covering problem motivation, CALIPSO satellite context, neural network architecture design, database generation, training results, and CALIOP lidar application.',
+          fr: 'Présentation complète de recherche (40 diapos) couvrant la motivation du problème, contexte satellite CALIPSO, architecture réseau neuronal, génération de base de données, résultats d\'entraînement et application au lidar CALIOP.',
+        },
+        src: `${process.env.PUBLIC_URL}/reports/tipe/TIPE_soutenance.pdf`,
       },
-      src: `${process.env.PUBLIC_URL}/reports/tipe/TIPE_soutenance.pdf`,
-    },
-  ],
-  sprints: [
-    {
-      title: { en: 'Problem Definition & Literature Review', fr: 'Définition du problème & revue de littérature' },
-      description: { en: 'Identified core problem: temporal derivation of sampled measurements causes noise amplification. Studied regression methods for noise mitigation. Selected CALIPSO satellite as application case for aerosol profile differentiation.', fr: 'Identification du problème central : la dérivation temporelle amplifie le bruit. Étude des méthodes de régression. Sélection du satellite CALIPSO comme cas d\'application pour la différentiation des profils d\'aérosols.' },
-    },
-    {
-      title: { en: 'Regression Efficiency Framework', fr: 'Cadre d\'efficacité des régressions' },
-      description: { en: 'Implemented efficiency evaluation function combining RMSLE (log error), Pearson correlation (trend accuracy), and inverse computation time (speed). Created synthetic sensor data generator with configurable noise parameters. Tested NumPy polyfit (degrees 0-5) and SciPy regression.', fr: 'Implémentation de la fonction d\'évaluation combinant RMSLE (erreur logarithmique), corrélation de Pearson (précision des tendances) et inverse du temps de calcul (vitesse). Création d\'un générateur de données synthétiques. Tests des régressions NumPy (degrés 0-5) et SciPy.' },
-    },
-    {
-      title: { en: 'Neural Network Architecture Design', fr: 'Conception de l\'architecture du réseau neuronal' },
-      description: { en: 'Built two architectures: Sequential (2 Dense layers, ReLU, softmax) and Functional API (Input → Dense(nb_param×2) → Dense(nb_param) → Dense(6)). Used categorical cross-entropy loss, Adam optimizer. Trained on 150+ samples with MinMaxScaler normalization.', fr: 'Construction de deux architectures : Sequential (2 couches Dense, ReLU, softmax) et Functional API (Input → Dense(nb_param×2) → Dense(nb_param) → Dense(6)). Loss categorical cross-entropy, optimiseur Adam. Entraînement sur 150+ échantillons avec normalisation MinMaxScaler.' },
-    },
-    {
-      title: { en: 'Model Training & CALIPSO Application', fr: 'Entraînement & application CALIPSO' },
-      description: { en: 'Trained both models for 10-30 epochs. Achieved successful predictions: DHT11 → degree 1, HCSR04 → degree 4, photoresistor → degree 3. Applied model to CALIOP lidar receiver (10 MHz digitization rate, 120s acquisition time). Results: Functional API suggested SciPy regression, Sequential suggested NumPy degree 1 polynomial.', fr: 'Entraînement des deux modèles sur 10-30 époques. Prédictions réussies : DHT11 → degré 1, HCSR04 → degré 4, photorésistance → degré 3. Application au lidar CALIOP (10 MHz, 120s). Résultats : API Functional suggère SciPy, Sequential suggère polynôme NumPy degré 1.' },
-    },
-  ],
-},
+    ],
+    sprints: [
+      {
+        title: { en: 'Problem Definition & Literature Review', fr: 'Définition du problème & revue de littérature' },
+        description: { en: 'Identified core problem: temporal derivation of sampled measurements causes noise amplification. Studied regression methods for noise mitigation. Selected CALIPSO satellite as application case for aerosol profile differentiation.', fr: 'Identification du problème central : la dérivation temporelle amplifie le bruit. Étude des méthodes de régression. Sélection du satellite CALIPSO comme cas d\'application pour la différentiation des profils d\'aérosols.' },
+      },
+      {
+        title: { en: 'Regression Efficiency Framework', fr: 'Cadre d\'efficacité des régressions' },
+        description: { en: 'Implemented efficiency evaluation function combining RMSLE (log error), Pearson correlation (trend accuracy), and inverse computation time (speed). Created synthetic sensor data generator with configurable noise parameters. Tested NumPy polyfit (degrees 0-5) and SciPy regression.', fr: 'Implémentation de la fonction d\'évaluation combinant RMSLE (erreur logarithmique), corrélation de Pearson (précision des tendances) et inverse du temps de calcul (vitesse). Création d\'un générateur de données synthétiques. Tests des régressions NumPy (degrés 0-5) et SciPy.' },
+      },
+      {
+        title: { en: 'Neural Network Architecture Design', fr: 'Conception de l\'architecture du réseau neuronal' },
+        description: { en: 'Built two architectures: Sequential (2 Dense layers, ReLU, softmax) and Functional API (Input → Dense(nb_param×2) → Dense(nb_param) → Dense(6)). Used categorical cross-entropy loss, Adam optimizer. Trained on 150+ samples with MinMaxScaler normalization.', fr: 'Construction de deux architectures : Sequential (2 couches Dense, ReLU, softmax) et Functional API (Input → Dense(nb_param×2) → Dense(nb_param) → Dense(6)). Loss categorical cross-entropy, optimiseur Adam. Entraînement sur 150+ échantillons avec normalisation MinMaxScaler.' },
+      },
+      {
+        title: { en: 'Model Training & CALIPSO Application', fr: 'Entraînement & application CALIPSO' },
+        description: { en: 'Trained both models for 10-30 epochs. Achieved successful predictions: DHT11 → degree 1, HCSR04 → degree 4, photoresistor → degree 3. Applied model to CALIOP lidar receiver (10 MHz digitization rate, 120s acquisition time). Results: Functional API suggested SciPy regression, Sequential suggested NumPy degree 1 polynomial.', fr: 'Entraînement des deux modèles sur 10-30 époques. Prédictions réussies : DHT11 → degré 1, HCSR04 → degré 4, photorésistance → degré 3. Application au lidar CALIOP (10 MHz, 120s). Résultats : API Functional suggère SciPy, Sequential suggère polynôme NumPy degré 1.' },
+      },
+    ],
+  },
+
+/*FAST TYPER*/
   {
     id: 'fast-typer',
     type: 'Web Dev',
@@ -566,6 +579,32 @@ Innovation clé : La fonction d'efficacité (temps⁻¹ + R_pearson + RMSLE) éq
       { title: { en: 'Sprint 3: Polish and responsiveness', fr: 'Sprint 3 : Finition et responsive' }, description: { en: 'Refined the UI, responsive layout, and course-based JavaScript behavior.', fr: 'Affinement de l’interface, mise en page responsive et comportement JavaScript inspiré du cours.' } },
     ],
   },
+
+  /*BAXANDALL*/
+  {
+    id: 'baxandall',
+    type: 'embedded',
+    typeColor: '#34495e',
+    name: {
+      en: 'Baxandall Filter',
+      fr: 'Filtre Baxandall',
+    },
+    description: {
+      en: 'A bass and treble filter built with no potentiometer',
+      fr: 'Un filtre de graves et aigus construit sans potentiomètre',
+    },
+    stack: ['Embedded electronics'],
+    role: {
+      en: 'Dev',
+      fr: 'Dév',
+    },
+    year: 2024,
+    wip: false,
+    teamSize: 1,
+    images: ['baxandall/baxandall.png'],
+  },
+
+  /*ALTER FLUGHAFEN*/
   {
     id: 'alter-flughafen',
     type: 'gamedev',
@@ -604,28 +643,8 @@ Innovation clé : La fonction d'efficacité (temps⁻¹ + R_pearson + RMSLE) éq
       { title: { en: 'Sprint 3: Testing', fr: 'Sprint 3 : Tests' }, description: { en: 'Testing, debugging, and performance optimization', fr: 'Tests, débogage et optimisation des performances' } },
     ],
   },
-  {
-    id: 'baxandall',
-    type: 'embedded',
-    typeColor: '#34495e',
-    name: {
-      en: 'Baxandall Filter',
-      fr: 'Filtre Baxandall',
-    },
-    description: {
-      en: 'A bass and treble filter built with no potentiometer',
-      fr: 'Un filtre de graves et aigus construit sans potentiomètre',
-    },
-    stack: ['Embedded electronics'],
-    role: {
-      en: 'Dev',
-      fr: 'Dév',
-    },
-    year: 2024,
-    wip: false,
-    teamSize: 1,
-    images: ['baxandall/baxandall.png'],
-  },
+
+  /*ANDROID WALLPAPER CHANGER*/
   {
   id: 'android-wallpaper-changer',
   type: 'mobile dev',
@@ -695,84 +714,87 @@ Fonctionnalités prévues (non entièrement réalisées) : galerie d'images avec
       description: { en: 'Changed default app icon to custom image. Tested on emulator and verified wallpaper persistence after app exit. Documented code and prepared project wiki page.', fr: 'Changement de l\'icône d\'application par défaut. Test sur émulateur et vérification de la persistance du fond d\'écran après fermeture. Documentation du code et préparation de la page wiki du projet.' },
     },
   ],
-},
-{
-  id: 'unity-viking-rpg',
-  type: 'gamedev',
-  typeColor: '#c0392b',
-  name: {
-    en: 'Unity Viking RPG (First 3D Game)',
-    fr: 'Jeu Viking RPG sur Unity (Premier jeu 3D)',
   },
-  description: {
-    en: 'First attempt at 3D game development: an open-world Viking RPG with quests, NPCs, and a Nordic temple environment. Built with Unity 3D using assets from the Unity Asset Store.',
-    fr: 'Première tentative de développement de jeu 3D : un RPG Viking en monde ouvert avec quêtes, PNJ et un environnement de temple nordique. Réalisé avec Unity 3D et des assets de l\'Asset Store.',
-  },
-  stack: ['Unity 3D', '3D Game Development', 'Asset Store', 'OpenClassrooms', 'RPG Design'],
-  sourceCode: '',
-  livePreview: '',
-  image: '',
-  images: [],
-  teamSize: 2,
-  role: {
-    en: 'Dev',
-    fr: 'Dev',
-  },
-  year: 2016,
-  wip: false,
-  detailedDescription: {
-    en: `This was my first 3D game development project, created during high school (ICN - Computer Science and Digital Creation). The goal was to build an open-world Viking RPG featuring a village, Nordic temple, quest system, NPCs with animations, weapons, and enemy encounters (dragons, skeletons). We used Unity 3D as the game engine.
 
-Due to our limited programming experience at the time, we leveraged the Unity Asset Store for pre-built environments (Viking village, Nordic temple), character models, and animations. I handled the Unity interface, scene setup, asset importing, terrain modification, first-person controller integration, weapon attachment, and NPC placement. My teammate contributed to scenario writing and game design.
-
-Key technical achievements included: importing and configuring a complete Viking village environment, expanding the player's accessible area by modifying the volume boundary (collider/respawn volume), successfully attaching a weapon (axe, then sword) to the first-person character, downloading and placing an NPC soldier from the Asset Store with pre-built animations and movement scripts.
-
-The project ultimately faced a critical blocker: compilation errors in the imported NPC's scripts that were incompatible with our recent Unity version. With limited C# knowledge and no online resources available for that specific version, we had to abandon the project. This experience was pivotal—it revealed the importance of programming fundamentals and directly motivated us to start a new project learning Java and Android development (the Wallpaper Changer app).`,
-    fr: `Ce fut mon premier projet de développement de jeu 3D, réalisé au lycée dans le cadre de l'option ICN (Informatique et Création Numérique). L'objectif était de construire un RPG Viking en monde ouvert avec un village, un temple nordique, un système de quêtes, des PNJ avec animations, des armes et des ennemis (dragons, squelettes). Nous avons utilisé Unity 3D comme moteur de jeu.
-
-En raison de notre expérience limitée en programmation à l'époque, nous avons utilisé l'Asset Store d'Unity pour les environnements pré-construits (village viking, temple nordique), les modèles de personnages et les animations. Je me suis occupée de l'interface Unity, de la configuration des scènes, de l'importation des assets, de la modification du terrain, de l'intégration du contrôleur première personne, de l'attachement des armes et du placement des PNJ. Ma coéquipière a contribué à l'écriture du scénario et au design du jeu.
-
-Les réalisations techniques clés incluent : l'importation et la configuration d'un village viking complet, l'expansion de la zone accessible au joueur en modifiant les limites de volume (collider/respawn volume), l'attachement réussi d'une arme (hache, puis épée) au personnage en vue subjective, le téléchargement et le placement d'un soldat PNJ depuis l'Asset Store avec animations et scripts de mouvement pré-intégrés.
-
-Le projet a finalement rencontré un blocage critique : des erreurs de compilation dans les scripts du PNJ importé, incompatibles avec notre version récente d'Unity. Avec des connaissances limitées en C# et aucune ressource en ligne disponible pour cette version spécifique, nous avons dû abandonner le projet. Cette expérience a été décisive : elle a révélé l'importance des fondamentaux de la programmation et nous a directement motivées à démarrer un nouveau projet pour apprendre Java et le développement Android (l'application Wallpaper Changer).`,
-  },
-  features: [
-    { en: 'Open-world Viking village environment from Asset Store', fr: 'Environnement de village viking en monde ouvert depuis l\'Asset Store' },
-    { en: 'Nordic temple area for quest progression', fr: 'Zone de temple nordique pour la progression des quêtes' },
-    { en: 'First-person controller (FPS) camera perspective', fr: 'Contrôleur en vue subjective (FPS)' },
-    { en: 'Weapon attachment system (axe → sword)', fr: 'Système d\'attachement d\'arme (hache → épée)' },
-    { en: 'NPC soldier with pre-built animations and movement scripts', fr: 'PNJ soldat avec animations et scripts de mouvement pré-intégrés' },
-    { en: 'Terrain boundary expansion (collider/respawn volume)', fr: 'Expansion des limites de terrain (collider/volume de réapparition)' },
-    { en: 'Planned: quest system, health bars, enemies (dragons, skeletons)', fr: 'Prévu : système de quêtes, barres de vie, ennemis (dragons, squelettes)' },
-  ],
-  challenges: [
-    { en: 'Script compilation errors in imported NPC assets due to recent Unity version incompatibility', fr: 'Erreurs de compilation des scripts des PNJ importés en raison d\'une incompatibilité de version Unity' },
-    { en: 'No online resources/forum solutions available for our specific Unity version', fr: 'Aucune ressource en ligne/solution de forum disponible pour notre version spécifique d\'Unity' },
-    { en: 'Limited C# programming knowledge to debug and fix asset scripts', fr: 'Connaissances limitées en programmation C# pour déboguer et corriger les scripts des assets' },
-    { en: 'Player movement restricted by invisible volume boundary (solved by expanding it)', fr: 'Déplacement du joueur limité par une limite de volume invisible (résolu en l\'agrandissant)' },
-    { en: 'Windows permission issues with asset imports (resolved with teacher help)', fr: 'Problèmes de droits Windows avec les imports d\'assets (résolus avec l\'aide du professeur)' },
-    { en: 'Weapon animation integration for axe and sword', fr: 'Intégration des animations d\'arme pour hache et épée' },
-  ],
-  reportPDFs: [],
-  sprints: [
-    {
-      title: { en: 'Game Design & Tool Discovery', fr: 'Design du jeu & découverte de l\'outil' },
-      description: { en: 'Wrote scenario (Viking village + Nordic temple), defined RPG scope (quests, dragons, skeletons). Discovered Unity 3D interface (Scene, Game, Hierarchy, Project panels). Watched YouTube tutorials and OpenClassrooms courses.', fr: 'Écriture du scénario (village viking + temple nordique), définition du scope RPG (quêtes, dragons, squelettes). Découverte de l\'interface Unity 3D (panneaux Scene, Game, Hierarchy, Project). Visionnage de tutoriels YouTube et cours OpenClassrooms.' },
+  /* UNITY */
+  {
+    id: 'unity-viking-rpg',
+    type: 'gamedev',
+    typeColor: '#c0392b',
+    name: {
+      en: 'Unity Viking RPG (First 3D Game)',
+      fr: 'Jeu Viking RPG sur Unity (Premier jeu 3D)',
     },
-    {
-      title: { en: 'Environment & Character Setup', fr: 'Configuration de l\'environnement & du personnage' },
-      description: { en: 'Imported Viking village from Asset Store, chose Nordic temple environment. Decided on FPS (first-person) over TPC. Downloaded and attached axe weapon to character (later switched to sword). Fixed player boundary by expanding volume collider.', fr: 'Import du village viking depuis l\'Asset Store, choix de l\'environnement du temple nordique. Décision d\'utiliser la vue FPS plutôt que TPC. Téléchargement et attachement d\'une hache (puis épée) au personnage. Correction des limites du joueur en agrandissant le collider de volume.' },
+    description: {
+      en: 'First attempt at 3D game development: an open-world Viking RPG with quests, NPCs, and a Nordic temple environment. Built with Unity 3D using assets from the Unity Asset Store.',
+      fr: 'Première tentative de développement de jeu 3D : un RPG Viking en monde ouvert avec quêtes, PNJ et un environnement de temple nordique. Réalisé avec Unity 3D et des assets de l\'Asset Store.',
     },
-    {
-      title: { en: 'NPC Integration & Critical Block', fr: 'Intégration des PNJ & blocage critique' },
-      description: { en: 'Downloaded soldier NPC from Asset Store with pre-built animations and scripts. Resolved Windows permission issues (teacher assisted). Hit compilation errors in NPC scripts incompatible with recent Unity version. No online help available → project abandoned.', fr: 'Téléchargement d\'un soldat PNJ depuis l\'Asset Store avec animations et scripts pré-intégrés. Résolution des problèmes de droits Windows (assisté par professeur). Rencontre d\'erreurs de compilation dans les scripts du PNJ incompatibles avec la version récente d\'Unity. Aucune aide en ligne disponible → abandon du projet.' },
+    stack: ['Unity 3D', '3D Game Development', 'Asset Store', 'OpenClassrooms', 'RPG Design'],
+    sourceCode: '',
+    livePreview: '',
+    image: '',
+    images: [],
+    teamSize: 2,
+    role: {
+      en: 'Dev',
+      fr: 'Dev',
     },
-  ],
-},
+    year: 2016,
+    wip: false,
+    detailedDescription: {
+      en: `This was my first 3D game development project, created during high school (ICN - Computer Science and Digital Creation). The goal was to build an open-world Viking RPG featuring a village, Nordic temple, quest system, NPCs with animations, weapons, and enemy encounters (dragons, skeletons). We used Unity 3D as the game engine.
+
+  Due to our limited programming experience at the time, we leveraged the Unity Asset Store for pre-built environments (Viking village, Nordic temple), character models, and animations. I handled the Unity interface, scene setup, asset importing, terrain modification, first-person controller integration, weapon attachment, and NPC placement. My teammate contributed to scenario writing and game design.
+
+  Key technical achievements included: importing and configuring a complete Viking village environment, expanding the player's accessible area by modifying the volume boundary (collider/respawn volume), successfully attaching a weapon (axe, then sword) to the first-person character, downloading and placing an NPC soldier from the Asset Store with pre-built animations and movement scripts.
+
+  The project ultimately faced a critical blocker: compilation errors in the imported NPC's scripts that were incompatible with our recent Unity version. With limited C# knowledge and no online resources available for that specific version, we had to abandon the project. This experience was pivotal—it revealed the importance of programming fundamentals and directly motivated us to start a new project learning Java and Android development (the Wallpaper Changer app).`,
+      fr: `Ce fut mon premier projet de développement de jeu 3D, réalisé au lycée dans le cadre de l'option ICN (Informatique et Création Numérique). L'objectif était de construire un RPG Viking en monde ouvert avec un village, un temple nordique, un système de quêtes, des PNJ avec animations, des armes et des ennemis (dragons, squelettes). Nous avons utilisé Unity 3D comme moteur de jeu.
+
+  En raison de notre expérience limitée en programmation à l'époque, nous avons utilisé l'Asset Store d'Unity pour les environnements pré-construits (village viking, temple nordique), les modèles de personnages et les animations. Je me suis occupée de l'interface Unity, de la configuration des scènes, de l'importation des assets, de la modification du terrain, de l'intégration du contrôleur première personne, de l'attachement des armes et du placement des PNJ. Ma coéquipière a contribué à l'écriture du scénario et au design du jeu.
+
+  Les réalisations techniques clés incluent : l'importation et la configuration d'un village viking complet, l'expansion de la zone accessible au joueur en modifiant les limites de volume (collider/respawn volume), l'attachement réussi d'une arme (hache, puis épée) au personnage en vue subjective, le téléchargement et le placement d'un soldat PNJ depuis l'Asset Store avec animations et scripts de mouvement pré-intégrés.
+
+  Le projet a finalement rencontré un blocage critique : des erreurs de compilation dans les scripts du PNJ importé, incompatibles avec notre version récente d'Unity. Avec des connaissances limitées en C# et aucune ressource en ligne disponible pour cette version spécifique, nous avons dû abandonner le projet. Cette expérience a été décisive : elle a révélé l'importance des fondamentaux de la programmation et nous a directement motivées à démarrer un nouveau projet pour apprendre Java et le développement Android (l'application Wallpaper Changer).`,
+    },
+    features: [
+      { en: 'Open-world Viking village environment from Asset Store', fr: 'Environnement de village viking en monde ouvert depuis l\'Asset Store' },
+      { en: 'Nordic temple area for quest progression', fr: 'Zone de temple nordique pour la progression des quêtes' },
+      { en: 'First-person controller (FPS) camera perspective', fr: 'Contrôleur en vue subjective (FPS)' },
+      { en: 'Weapon attachment system (axe → sword)', fr: 'Système d\'attachement d\'arme (hache → épée)' },
+      { en: 'NPC soldier with pre-built animations and movement scripts', fr: 'PNJ soldat avec animations et scripts de mouvement pré-intégrés' },
+      { en: 'Terrain boundary expansion (collider/respawn volume)', fr: 'Expansion des limites de terrain (collider/volume de réapparition)' },
+      { en: 'Planned: quest system, health bars, enemies (dragons, skeletons)', fr: 'Prévu : système de quêtes, barres de vie, ennemis (dragons, squelettes)' },
+    ],
+    challenges: [
+      { en: 'Script compilation errors in imported NPC assets due to recent Unity version incompatibility', fr: 'Erreurs de compilation des scripts des PNJ importés en raison d\'une incompatibilité de version Unity' },
+      { en: 'No online resources/forum solutions available for our specific Unity version', fr: 'Aucune ressource en ligne/solution de forum disponible pour notre version spécifique d\'Unity' },
+      { en: 'Limited C# programming knowledge to debug and fix asset scripts', fr: 'Connaissances limitées en programmation C# pour déboguer et corriger les scripts des assets' },
+      { en: 'Player movement restricted by invisible volume boundary (solved by expanding it)', fr: 'Déplacement du joueur limité par une limite de volume invisible (résolu en l\'agrandissant)' },
+      { en: 'Windows permission issues with asset imports (resolved with teacher help)', fr: 'Problèmes de droits Windows avec les imports d\'assets (résolus avec l\'aide du professeur)' },
+      { en: 'Weapon animation integration for axe and sword', fr: 'Intégration des animations d\'arme pour hache et épée' },
+    ],
+    reportPDFs: [],
+    sprints: [
+      {
+        title: { en: 'Game Design & Tool Discovery', fr: 'Design du jeu & découverte de l\'outil' },
+        description: { en: 'Wrote scenario (Viking village + Nordic temple), defined RPG scope (quests, dragons, skeletons). Discovered Unity 3D interface (Scene, Game, Hierarchy, Project panels). Watched YouTube tutorials and OpenClassrooms courses.', fr: 'Écriture du scénario (village viking + temple nordique), définition du scope RPG (quêtes, dragons, squelettes). Découverte de l\'interface Unity 3D (panneaux Scene, Game, Hierarchy, Project). Visionnage de tutoriels YouTube et cours OpenClassrooms.' },
+      },
+      {
+        title: { en: 'Environment & Character Setup', fr: 'Configuration de l\'environnement & du personnage' },
+        description: { en: 'Imported Viking village from Asset Store, chose Nordic temple environment. Decided on FPS (first-person) over TPC. Downloaded and attached axe weapon to character (later switched to sword). Fixed player boundary by expanding volume collider.', fr: 'Import du village viking depuis l\'Asset Store, choix de l\'environnement du temple nordique. Décision d\'utiliser la vue FPS plutôt que TPC. Téléchargement et attachement d\'une hache (puis épée) au personnage. Correction des limites du joueur en agrandissant le collider de volume.' },
+      },
+      {
+        title: { en: 'NPC Integration & Critical Block', fr: 'Intégration des PNJ & blocage critique' },
+        description: { en: 'Downloaded soldier NPC from Asset Store with pre-built animations and scripts. Resolved Windows permission issues (teacher assisted). Hit compilation errors in NPC scripts incompatible with recent Unity version. No online help available → project abandoned.', fr: 'Téléchargement d\'un soldat PNJ depuis l\'Asset Store avec animations et scripts pré-intégrés. Résolution des problèmes de droits Windows (assisté par professeur). Rencontre d\'erreurs de compilation dans les scripts du PNJ incompatibles avec la version récente d\'Unity. Aucune aide en ligne disponible → abandon du projet.' },
+      },
+    ],
+  },
 
 ]
 
 const educationHistory = [
+  /*KTH*/
   {
     id: 'kth',
     school: {
@@ -917,6 +939,8 @@ const educationHistory = [
       },
     ],
   },
+
+  /* GRENBOBLE */
   {
     id: 'grenoble-inp',
     school: {
@@ -941,6 +965,8 @@ const educationHistory = [
       fr: ['GNU Octave', 'C', 'GitLab', 'Traitement du signal', 'Bash', 'Programmation orientée objet'],
     },
   },
+
+  /* FAIDHERBE */
   {
     id: 'lycee-faiderbe',
     school: {
@@ -961,6 +987,8 @@ const educationHistory = [
       fr: ['Keras', 'WordPress', 'Python', 'Bases de données SQL', 'TensorFlow', 'SQL'],
     },
   },
+
+  /* FENELON */
   {
     id: 'lycee-fenelon',
     school: {

@@ -103,6 +103,11 @@ const SearchBar = () => {
                 placeholder={strings.searchPlaceholder || 'Search projects and skills...'}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => {
+                    if (e.key === 'Escape') {
+                      handleClose();
+                    }
+                  }}
                 className='search-fullpage-input'
                 autoFocus
               />
