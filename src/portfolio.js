@@ -132,6 +132,16 @@ const projects = [
         },
       },
     ],
+    reportPDFs: [
+      {
+        title: 'Project Reflection',
+        description: {
+          en: 'Reflections and notes on the project',
+          fr: 'Réflexions et notes sur le projet',
+        },
+        src: `${process.env.PUBLIC_URL}/reports/housebite/Project_Reflection.pdf`,
+      },
+    ],
   },
 
   /*SLSO*/
