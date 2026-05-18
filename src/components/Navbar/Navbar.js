@@ -41,6 +41,7 @@ const Navbar = () => {
             </Link>
           </li>
         ) : null}
+
         <li className='nav__list-item'>
           <Link
             to='/education'
@@ -49,6 +50,15 @@ const Navbar = () => {
             {strings.navEducation}
           </Link>
         </li>
+
+         <li className='nav__list-item'>
+          <Link
+            to='/hackathons'
+            className='link link--nav'
+          >
+            {strings.navHackathons}
+          </Link>
+        </li>       
       </ul>
     </nav>
   )

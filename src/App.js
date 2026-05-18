@@ -14,6 +14,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import Education from './components/Education/Education'
+import Hackathons from './components/Hackathons/Hackathons'
 import ProjectDetail from './components/ProjectDetail/ProjectDetail'
 import './App.css'
 import DarkVeilBackground from './components/Background/DarkVeilBackground'
@@ -63,6 +64,7 @@ const App = () => {
             <Route exact path='/' component={HomePage} />
             <Route path='/education' component={Education} />
             <Route path='/project/:projectId' component={ProjectDetail} />
+            <Route path='/hackathons' component={Hackathons} />
           </Switch>
         </main>
 
