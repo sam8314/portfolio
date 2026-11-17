@@ -1022,56 +1022,6 @@ const educationHistory = [
 ]
 
 const hackathonsHistory = [
-  /* Bean Hacks 2026*/
-  {
-    title: 'BeanHacks',
-    organizer: 'DevPost',
-    judges: 'UC Berkeley Students',
-    year: '2026',
-    teckstack:{
-      en: '',
-      fr: ''
-    },
-    status:{
-      en: 'Enrolled',
-      fr: 'Inscrite'
-    },
-    link: 'https://beanhacks.devpost.com/',
-  },
-
-  /*Hack the kitty*/
-  {
-    title: 'Hack the Kitty',
-    organizer: 'coding.kitty',
-    judges: '',
-    year: '2026',
-    teckstack:{
-      en: '',
-      fr: ''
-    },
-    status:{
-      en: 'Enrolled',
-      fr: 'Inscrite'
-    },
-    link: 'https://hackthekitty.com/',
-  },
-
-  /*United Hacks V7*/
-  {
-    title: 'United Hacks V7',
-    organizer: 'United Hacks',
-    judges: '',
-    year: '2026',
-    teckstack:{
-      en: '',
-      fr: ''
-    },
-    status:{
-      en: 'Enrolled',
-      fr: 'Inscrite'
-    },
-    link: 'https://unitedhacks.hackunited.org/',
-  },
 
 ]
 
