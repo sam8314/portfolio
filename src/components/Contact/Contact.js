@@ -53,7 +53,7 @@ const Contact = () => {
         <div className='contact__header'>
           <h2 className='section__title'>{strings.contactTitle}</h2>
           <p className='contact__description'>
-            {strings.contactDescription || "I would love to hear from you. For projects, internships, hackathons..."}
+            {strings.contacthackathonDescription || "I would love to hear from you. For projects, internships, hackathons..."}
           </p>
         </div>
 

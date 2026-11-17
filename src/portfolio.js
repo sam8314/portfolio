@@ -11,10 +11,10 @@ const about = {
   },
   picture: 'https://media.licdn.com/dms/image/v2/D4E03AQH0_5sOvg1wxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694356364808?e=1779321600&v=beta&t=ajJD6Te-rVFMz80bAzEzg_1eVphh77PXT6bdvmwfDcA',
   description: {
-    en: `Engineering student at KTH with hands-on experience in PostgreSQL, Python, and full-stack development. Strong foundation in database systems, algorithms, and software engineering. Passionate about sustainable digitalization and data-driven solutions for real-world problems. My coursework includes Databases, Software Engineering, Data Structures, Algorithms, and Computer Networks. I'm actively improving skills in DevOps practices, data analysis, and security fundamentals, with a goal of contributing across the data-infrastructure-security stack.`,
-    fr: `Étudiante en ingénierie à KTH avec une expérience pratique en PostgreSQL, Python et développement full-stack. Solide formation en systèmes de bases de données, algorithmique et génie logiciel. Passionnée par la digitalisation durable et les solutions axées sur les données pour des problèmes réels. Mes cours incluent Bases de données, Génie logiciel, Structures de données, Algorithmique et Réseaux informatiques. Je développe activement des compétences en pratiques DevOps, analyse de données et fondamentaux de la sécurité, avec l'objectif de contribuer à la pile données-infrastructure-sécurité.`,
+    en: `As a cybersecurity student at KTH, I bridge the gap between development and defense. My coursework in Databases, Software Engineering, and Computer Networks is backed by practical, hands-on offensive security experience from the EN2720 cyber range, where I executed full attack lifecycles from reconnaissance to exploitation. With a strong background in PostgreSQL and full-stack development, I understand how applications are built—and how they break. I am passionate about sustainable digitalization and actively expanding my expertise in DevOps and security fundamentals to secure data-driven infrastructure.`,
+    fr: `En tant qu'étudiante en cybersécurité à KTH, je fais le lien entre le développement et la défense. Mes cours en bases de données, génie logiciel et réseaux informatiques sont soutenus par une expérience pratique en sécurité offensive (cyber range EN2720), où j'ai mené des cycles d'attaque complets, de la reconnaissance à l'exploitation. Forte d'une expérience en PostgreSQL et en développement full-stack, je comprends comment les applications sont construites—et comment elles peuvent être compromises. Je suis passionnée par la digitalisation durable et je développe activement mon expertise en pratiques DevOps et en fondamentaux de la sécurité pour sécuriser les infrastructures orientées données.`,
   },
-  resume: `${process.env.PUBLIC_URL}/Resume_Serbouti.pdf`,
+  resume: `${process.env.PUBLIC_URL}/Resume_Serbouti_Pentester.pdf`,
   social: {
     linkedin: 'https://www.linkedin.com/in/samia-serbouti-0595b1229',
     github: 'https://github.com/sam8314',
@@ -23,6 +23,126 @@ const about = {
 }
 
 const projects = [
+  /* EN2720 */
+  {
+  id: 'en2720',
+  type: 'Cybersecurity',
+  typeColor: '#e74c3c', // A red/orange color often associated with security/offensive ops
+  name: {
+    en: 'Ethical Hacking Cyber Range',
+    fr: 'Cyber Range de Hacking Éthique',
+  },
+  description: {
+    en: 'A comprehensive offensive security project simulating a multi-machine enterprise cloud environment. Executed full attack lifecycles spanning Linux, Windows Active Directory, GCP cloud, and Wi-Fi networks, from initial reconnaissance to privilege escalation and persistence, concluding with detailed technical reporting.',
+    fr: 'Un projet complet de sécurité offensive simulant un environnement d\'entreprise multi-machines dans le cloud. Exécution de cycles d\'attaque complets couvrant Linux, Active Directory Windows, le cloud GCP et les réseaux Wi-Fi, de la reconnaissance initiale à l\'élévation de privilèges et à la persistance, concluant sur un rapport technique détaillé.',
+  },
+  stack: ['Burp Suite', 'Metasploit', 'Nmap', 'Wireshark', 'SQL Injection', 'Privilege Escalation', 'Active Directory', 'Container Escape', 'Client-Side Attacks', 'Linux', 'Windows', 'GCP'],
+  sourceCode: '',
+  livePreview: '', // Leave empty unless you hosted a writeup somewhere
+  image: '', // You should add an image to public/images/
+  teamSize: 1,
+  role: {
+    en: 'Penetration Tester',
+    fr: 'Testeur d\'Intrusion',
+  },
+  year: 2026,
+  wip: false,
+  detailedDescription: {
+    en: `The EN2720 project involved navigating a complex, segmented network to capture flags by exploiting known vulnerabilities and misconfigurations. Key milestones included gaining an initial foothold via SQL injection in a legacy PHP web app to achieve RCE, pivoting through the network to exploit a Samba server via EternalRed, and performing a container escape via cgroup misconfigurations. I also executed client-side attacks by hijacking DNS to serve browser exploits, demonstrating a full-spectrum offensive security skillset.`,
+    fr: `Le projet EN2720 consistait à naviguer dans un réseau complexe et segmenté pour capturer des drapeaux en exploitant des vulnérabilités et des erreurs de configuration. Les étapes clés comprenaient l'obtention d'un premier accès via une injection SQL dans une application web PHP héritée pour obtenir une exécution de code à distance (RCE), le pivotement à travers le réseau pour exploiter un serveur Samba via EternalRed, et une évasion de conteneur via des erreurs de configuration de cgroup. J'ai également exécuté des attaques côté client en détournant le DNS pour servir des exploits de navigateur, démontrant ainsi un ensemble de compétences complet en sécurité offensive.`,
+  },
+  features: [
+    {
+      en: 'Web Application Exploitation (SQL Injection to RCE via INTO OUTFILE)',
+      fr: 'Exploitation d\'applications web (Injection SQL vers RCE via INTO OUTFILE)',
+    },
+    {
+      en: 'Linux Privilege Escalation (SUID, Cron Jobs, Writable Passwd)',
+      fr: 'Élévation de privilèges Linux (SUID, Tâches Cron, Passwd inscriptible)',
+    },
+    {
+      en: 'Active Directory Enumeration and Exploitation',
+      fr: 'Énumération et exploitation d\'Active Directory',
+    },
+    {
+      en: 'Container Escape via cgroup release_agent',
+      fr: 'Évasion de conteneur via cgroup release_agent',
+    },
+    {
+      en: 'Client-Side Attacks (Firefox WebIDL Injection, DNS Spoofing)',
+      fr: 'Attaques côté client (Injection WebIDL Firefox, Usurpation DNS)',
+    },
+    {
+      en: 'Network Pivoting and Tunneling (SSH Local Forwarding)',
+      fr: 'Pivotement et Tunneling Réseau (Transfert Local SSH)',
+    },
+    {
+      en: 'GCP Metadata Server Abuse and Cloud Reconnaissance',
+      fr: 'Abus du serveur de métadonnées GCP et reconnaissance cloud',
+    },
+  ],
+  /*
+  challenges: [
+    {
+      en: 'Bypassing strict input validation and file permissions to write a functional web shell.',
+      fr: 'Contournement de la validation stricte des entrées et des permissions de fichiers pour écrire un web shell fonctionnel.',
+    },
+    {
+      en: 'Operating within a segmented network requiring careful pivoting and port forwarding.',
+      fr: 'Opérer dans un réseau segmenté nécessitant un pivotement et un transfert de ports minutieux.',
+    }
+  ],
+  
+  images: [
+    'en2720/terminal.png',
+    'en2720/network.png',
+    // Add more if you have them
+  ],
+  sprints: [ // You can use this section to represent the phases of the course
+    {
+      title: {
+        en: 'Phase 1: Reconnaissance & Initial Access',
+        fr: 'Phase 1 : Reconnaissance et Accès Initial',
+      },
+      description: {
+        en: 'Scanned the network, identified live hosts and services, and exploited a SQL injection in a legacy PHP page to gain an initial shell as www-data.',
+        fr: 'Scan du réseau, identification des hôtes et services actifs, et exploitation d\'une injection SQL dans une page PHP héritée pour obtenir un premier shell en tant que www-data.',
+      },
+    },
+    {
+      title: {
+        en: 'Phase 2: Privilege Escalation & Pivoting',
+        fr: 'Phase 2 : Élévation de Privilèges et Pivotement',
+      },
+      description: {
+        en: 'Escalated to root by abusing a world-writable cron job. Used SSH port forwarding to pivot into a restricted subnet and exploit a Samba server.',
+        fr: 'Élévation vers root en abusant d\'une tâche cron accessible en écriture. Utilisation du transfert de ports SSH pour pivoter vers un sous-réseau restreint et exploiter un serveur Samba.',
+      },
+    },
+    {
+      title: {
+        en: 'Phase 3: Advanced Exploitation & Cloud',
+        fr: 'Phase 3 : Exploitation Avancée et Cloud',
+      },
+      description: {
+        en: 'Performed a container escape, abused a GCP metadata server to extract SSH keys, and hijacked DNS to deliver a client-side browser exploit.',
+        fr: 'Réalisation d\'une évasion de conteneur, abus d\'un serveur de métadonnées GCP pour extraire des clés SSH, et détournement DNS pour livrer un exploit de navigateur côté client.',
+      },
+    },
+  ],
+  reportPDFs: [
+    {
+      title: 'Hacking Logs & Walkthroughs',
+      description: {
+        en: 'Detailed logs and technical walkthroughs of the exploitation phases.',
+        fr: 'Journaux détaillés et procédures techniques des phases d\'exploitation.',
+      },
+      src: `${process.env.PUBLIC_URL}/reports/en2720/Hacking_Logs.pdf`, // TODO Ensure this file exists in public/reports/en2720/
+    },
+  ],
+  */
+},
+
   /*HOUSEBITE*/
   {
     id: 'housebite',
@@ -1021,10 +1141,6 @@ const educationHistory = [
   },
 ]
 
-const hackathonsHistory = [
-
-]
-
 const standaloneCourses = [
   {
     title: {
@@ -1139,4 +1255,4 @@ const contact = {
   email: 'sa.serbouti@protonmail.com',
 }
 
-export { header, about, projects, educationHistory, standaloneCourses, skills, contact, hackathonsHistory }
+export { header, about, projects, educationHistory, standaloneCourses, skills, contact }

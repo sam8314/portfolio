@@ -8,7 +8,6 @@ const translations = {
     navSkills: 'Skills',
     navContact: 'Contact',
     navEducation: 'Education',
-    navHackathons: 'Hackathons',
     searchPlaceholder: 'Search projects, skills...',
     noResults: 'No results found',
     resumeButton: 'Resume',
@@ -66,13 +65,6 @@ const translations = {
     livePreviewLabel: 'Live preview',
     pdfFallback: 'Open in a new tab',
     link: 'Link',
-    hackathonsTitle: 'Hackathons',
-    hackathonTitle: 'Hackathon Name',
-    hackathonOrganizer: 'Organizer',
-    hackathonYear: 'Year',
-    hackathonTeckStack: 'Technologies',
-    hackathonStatus: 'Status',
-    hackathonJudges: 'Judges',
 
   },
   fr: {
@@ -80,7 +72,6 @@ const translations = {
     navSkills: 'Compétences',
     navContact: 'Contact',
     navEducation: 'Formation',
-    navHackathons: 'Hackathons',
     searchPlaceholder: 'Rechercher projets, compétences...',
     noResults: 'Aucun résultat trouvé',
     resumeButton: 'CV',
@@ -138,13 +129,6 @@ const translations = {
     livePreviewLabel: 'Aperçu',
     pdfFallback: 'Ouvrir dans un nouvel onglet',
     link: 'Lien',
-    hackathonsTitle: 'Hackathons',
-    hackathonTitle: 'Nom du hackathon',
-    hackathonOrganizer: 'Organisme',
-    hackathonYear: 'Année',
-    hackathonTeckStack: 'Technologies',
-    hackathonStatus: 'Status',
-    hackathonJudges: 'Juges',
 
   },
 }
