@@ -76,8 +76,8 @@ main {
   height: 0.2em;
   position: absolute;
   bottom: 0;
-  background-color: var(--clr-primary);
-  transition: width 0.2s ease-in;
+  background-color: #8050b1;
+  transition: width 0.5s ease-in;
 }
 
 .link:hover::before,

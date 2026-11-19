@@ -6,13 +6,13 @@ const header = {
 const about = {
   name: 'Samia Serbouti',
   role: {
-    en: 'a software engineer from KTH with backend focus',
-    fr: 'ingénieure logicielle de KTH spécialisée backend',
+    en: 'a cybersecurity student from KTH',
+    fr: 'ingénieure en cybersécurité de KTH',
   },
   picture: 'https://media.licdn.com/dms/image/v2/D4E03AQH0_5sOvg1wxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694356364808?e=1779321600&v=beta&t=ajJD6Te-rVFMz80bAzEzg_1eVphh77PXT6bdvmwfDcA',
   description: {
-    en: `As a cybersecurity student at KTH, I bridge the gap between development and defense. My coursework in Databases, Software Engineering, and Computer Networks is backed by practical, hands-on offensive security experience from the EN2720 cyber range, where I executed full attack lifecycles from reconnaissance to exploitation. With a strong background in PostgreSQL and full-stack development, I understand how applications are built—and how they break. I am passionate about sustainable digitalization and actively expanding my expertise in DevOps and security fundamentals to secure data-driven infrastructure.`,
-    fr: `En tant qu'étudiante en cybersécurité à KTH, je fais le lien entre le développement et la défense. Mes cours en bases de données, génie logiciel et réseaux informatiques sont soutenus par une expérience pratique en sécurité offensive (cyber range EN2720), où j'ai mené des cycles d'attaque complets, de la reconnaissance à l'exploitation. Forte d'une expérience en PostgreSQL et en développement full-stack, je comprends comment les applications sont construites—et comment elles peuvent être compromises. Je suis passionnée par la digitalisation durable et je développe activement mon expertise en pratiques DevOps et en fondamentaux de la sécurité pour sécuriser les infrastructures orientées données.`,
+    en: `As a cybersecurity student at KTH, I bridge the gap between development and defense. My coursework in Databases, Software Engineering, and Computer Networks is backed by practical, hands-on offensive security experience from the EN2720 course by Professor Pontus Johnson, where I executed full attack lifecycles from reconnaissance to exploitation. With a strong background in PostgreSQL and full-stack development, I understand how applications are built—and how they break. I am passionate about sustainable digitalization and actively expanding my expertise in DevOps and security fundamentals to secure data-driven infrastructure.`,
+    fr: `En tant qu'étudiante en cybersécurité à KTH, je fais le lien entre le développement et la défense. Mes cours en bases de données, génie logiciel et réseaux informatiques sont soutenus par une expérience pratique en sécurité offensive (venant du cours EN2720 à KTH du Professeur Pontus Johnson), où j'ai mené des cycles d'attaque complets, de la reconnaissance à l'exploitation. Forte d'une expérience en PostgreSQL et en développement full-stack, je comprends comment les applications sont construites—et comment elles peuvent être compromises. Je suis passionnée par la digitalisation durable et je développe activement mon expertise en pratiques DevOps et en fondamentaux de la sécurité pour sécuriser les infrastructures orientées données.`,
   },
   resume: `${process.env.PUBLIC_URL}/Resume_Serbouti_Pentester.pdf`,
   social: {
