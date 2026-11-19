@@ -1172,6 +1172,19 @@ const educationHistory = [
 
 const standaloneCourses = [
   {
+    title:{
+      en: 'Introduction to R',
+      fr: 'Introduction to R',
+    },
+    provider: 'Umeå University',
+    year: '2026',
+    link: 'https://www.umu.se/en/education/courses/introduction-to-r-2st064/',
+    notes: {
+      en: 'Data visualization',
+      fr: 'Visualisation de données',
+    }
+  },
+  {
     title: {
       en: 'Apprenez à programmer avec JavaScript',
       fr: 'Apprenez à programmer avec JavaScript',
@@ -1246,6 +1259,7 @@ const standaloneCourses = [
       fr: 'Introduction à la programmation en langage C.',
     },
   },
+  /*
   {
     title: {
       en: 'Scrum Fundamentals Certified',
@@ -1259,7 +1273,7 @@ const standaloneCourses = [
       en: 'Currently pursuing Scrum Fundamentals certification.',
       fr: 'Actuellement en cours de certification Scrum Fundamentals.',
     },
-  },
+  },*/
 ]
 
 const skills = [
