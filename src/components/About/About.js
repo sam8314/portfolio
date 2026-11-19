@@ -38,7 +38,7 @@ const About = () => {
                 aria-label='resume'
                 className='link link--icon'
               >
-                <DescriptionIcon />
+                <DescriptionIcon sx={{ fontSize: 60 }}/>
               </a>
             )}
             {social.github && (
@@ -47,7 +47,7 @@ const About = () => {
                 aria-label='github'
                 className='link link--icon'
               >
-                <GitHubIcon />
+                <GitHubIcon sx={{ fontSize: 60 }}/>
               </a>
             )}
 
@@ -57,7 +57,7 @@ const About = () => {
                 aria-label='linkedin'
                 className='link link--icon'
               >
-                <LinkedInIcon />
+                <LinkedInIcon sx={{ fontSize: 60 }}/>
               </a>
             )}
           </>
