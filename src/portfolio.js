@@ -948,125 +948,154 @@ const educationHistory = [
       {
         name: 'Programming I',
         topics: 'Java, algorithmic problem solving, object oriented design',
+        code: 'ID1018',
+        link: '',
       },
       {
         name: 'Digital Design',
         topics: 'CMOS circuit design, Logisim',
+        code: 'IE1204',
+        link: '',
       },
       {
         name: 'Embedded Electronics',
         topics: 'Electrical circuit analysis',
+        code: 'IE1206',
+        link: '',
       },
       {
-        name: 'Intro to IT',
+        name: 'Introduction to IT',
         topics: 'Teamwork, Version Control',
+        code: 'II1306',
+        link: '',
       },
       {
         name: 'Discrete Maths',
         topics: 'Error correcting codes, Hamming codes, graph theory',
+        code: 'SF1610',
+        link: '',
       },
       {
         name: 'Algebra and Geometry',
         topics: '',
+        code: 'SF1684',
+        link: '',
       },
       {
         name: 'Calculus in One Variable',
         topics: '',
+        code: 'SF1686',
+        link: '',
       },
       {
         name: 'Basic Course in Maths',
         topics: '',
+        code: 'SF1690',
+        link: '',
       },
       {
         name: 'Algorithms and Data Structures',
         topics: 'Algorithmic in C',
-      },
-      {
-        name: 'Calculus in Several Variables',
-        topics: '',
-      },
-      {
-        name: 'Electromagnetism and Waves',
-        topics: '',
+        code: 'ID1021',
+        link: '',
       },
       {
         name: 'Industrial Management',
         topics: 'Product costing, CI analysis, bookkeeping, accounting, annual report, financial analysis',
+        code: 'ME1003',
+        link: '',
       },
       {
         name: 'Intercultural Competence',
         topics: '',
+        code: 'LS1600',
+        link: '',
       },
       {
         name: 'Probability Theory and Statistics',
-        period: 'P1',
         topics: 'Matlab',
+        code: 'SF1900',
+        link:'',
       },
       {
         name: 'Computer Hardware Engineering',
-        period: 'P1',
         topics: 'C, MIPS, RISC-V, MARS simulator, RARS simulator, Logisim',
+        code: 'IS1200',
+        link: '',
       },
       {
         name: 'Data Storage Paradigms',
-        period: 'P2',
         topics: 'SQL, PostgreSQL, Maven, pgAdmin4',
+        code: 'IV1351',
+        link: ''
       },
       {
         name: 'Operating Systems',
-        period: 'P2',
         topics: '',
+        code: 'ID1206',
+        link: ''
       },
+      /*
       {
         name: 'Compilers and Execution Environments',
         period: 'P2',
         topics: 'Rust',
       },
+      */
       {
         name: 'Concurrent Programming',
-        period: 'P3',
-        topics: '',
+        topics: 'pthreads, OpenMP, Java threads',
+        code: 'ID1217',
+        link: '',
       },
       {
         name: 'Networks and Communication',
-        period: 'P3',
         topics: '',
+        code: 'IK1203',
+        link: '',
       },
       {
         name: 'Digitalisation and Innovation',
-        period: 'P3',
         topics: '',
+        code: 'AL1523',
+        link: '',
       },
       {
         name: 'Project in Info and Com Tech',
-        period: 'P4',
         topics: '',
+        code: 'II1305',
+        link: ''
       },
       {
         name: 'Interaction Programming and Dynamic Web',
-        period: 'P2',
         topics: 'JS, React, Redux, HTML, CSS, JSX',
+        code: 'DH2642',
+        link: '',
       },
       {
         name: 'Degree Project in IT',
-        period: 'P1/P2 or P3/P4',
         topics: '',
+        code: 'II143X',
+        link: '',
       },
       {
-        name: 'Ethical Hacking 1',
-        period: 'P1',
-        topics: '',
+        name: 'Ethical Hacking',
+        topics: 'SQLi, LFI, webshells, LDAP and Kerberos enumeration, client-side attacks',
+        code: 'EN2720',
+        link: '',
       },
       {
-        name: 'Ethical Hacking 2',
-        period: 'P2',
+        name: 'Ethical Hacking',
         topics: '',
+        code: 'EP275V',
+        link: ''
       },
+      /*
       {
         name: 'Introduction to Computer Security',
-        period: 'P4',
         topics: '',
       },
+      */
     ],
   },
 

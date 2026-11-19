@@ -71,6 +71,7 @@ const Education = () => {
                           <tr>
                             <th>{strings.courseName}</th>
                             <th>{strings.courseTopics}</th>
+                            <th>{strings.courseSyllabus}</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -78,6 +79,11 @@ const Education = () => {
                             <tr key={idx}>
                               <td>{course.name}</td>
                               <td>{course.topics}</td>
+                              <td>
+                            <a href={"https://www.kth.se/student/kurser/kurs/" + course.code + "?l=en"}>
+                              {course.code}
+                            </a>
+                          </td>
                             </tr>
                           ))}
                         </tbody>
