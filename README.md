@@ -35,30 +35,16 @@ yarn deploy
 
 ## if yarn deploy fails or gets stuck
 
-build/ is listed in .gitignore, and `git subtree split --prefix build main` only reads committed history. So if you run:
-
-```bash
-yarn build
-git push origin `git subtree split --prefix build main`:gh-pages --force
-```
-you will almost always get Everything up-to-date and gh-pages will NOT update — because the freshly built files were never committed to main, so subtree split produces the exact same history as last time.
-
-If you see Everything up-to-date from a subtree push, STOP : do not keep retrying it. Use the gh-pages package instead (below).
-
-### manual deploy
 gh-pages pushes the contents of the folder directly and does not care about .gitignore or commit history:
 
 ```bash
 yarn build && npx gh-pages -d build
 ```
 
-Then confirm on GitHub:
-- go to the gh-pages branch on github.com
-- the latest commit should be from just now, with a message like Publishing to gh-pages branch
+- confirm on GitHub
+- if the timestamp is still old, the push did not actually happen : check the terminal output for errors
 
-if the timestamp is still old, the push did not actually happen : check the terminal output for errors
-
-### really want the subtree method
+### if really want the subtree method
 must force-add and commit the build output to main first:
 
 ```bash

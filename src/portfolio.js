@@ -850,7 +850,7 @@ Fonctionnalités prévues (non entièrement réalisées) : galerie d'images avec
   {
     id: 'unity-viking-rpg',
     type: 'gamedev',
-    typeColor: '#c0392b',
+    typeColor: '#dce91d',
     name: {
       en: 'Unity Viking RPG (First 3D Game)',
       fr: 'Jeu Viking RPG sur Unity (Premier jeu 3D)',
