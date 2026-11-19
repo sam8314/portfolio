@@ -11,8 +11,8 @@ const about = {
   },
   picture: 'https://media.licdn.com/dms/image/v2/D4E03AQH0_5sOvg1wxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694356364808?e=1779321600&v=beta&t=ajJD6Te-rVFMz80bAzEzg_1eVphh77PXT6bdvmwfDcA',
   description: {
-    en: `As a cybersecurity student at KTH, I bridge the gap between development and defense. My coursework in Databases, Software Engineering, and Computer Networks is backed by practical, hands-on offensive security experience from the EN2720 course by Professor Pontus Johnson, where I executed full attack lifecycles from reconnaissance to exploitation. With a strong background in PostgreSQL and full-stack development, I understand how applications are built—and how they break. I am passionate about sustainable digitalization and actively expanding my expertise in DevOps and security fundamentals to secure data-driven infrastructure.`,
-    fr: `En tant qu'étudiante en cybersécurité à KTH, je fais le lien entre le développement et la défense. Mes cours en bases de données, génie logiciel et réseaux informatiques sont soutenus par une expérience pratique en sécurité offensive (venant du cours EN2720 à KTH du Professeur Pontus Johnson), où j'ai mené des cycles d'attaque complets, de la reconnaissance à l'exploitation. Forte d'une expérience en PostgreSQL et en développement full-stack, je comprends comment les applications sont construites—et comment elles peuvent être compromises. Je suis passionnée par la digitalisation durable et je développe activement mon expertise en pratiques DevOps et en fondamentaux de la sécurité pour sécuriser les infrastructures orientées données.`,
+    en: `As a cybersecurity student at KTH, I bridge the gap between development and defense. My coursework in Databases, Software Engineering, and Computer Networks is backed by practical, hands-on offensive security experience from the EN2720 course by Professor Pontus Johnson, where I executed full attack lifecycles from reconnaissance to exploitation. With a strong background in PostgreSQL and full-stack development, I understand how applications are built and how they break. I am passionate about sustainable digitalization and actively expanding my expertise in DevOps and security fundamentals to secure data-driven infrastructure.`,
+    fr: `En tant qu'étudiante en cybersécurité à KTH, je fais le lien entre le développement et la défense. Mes cours en bases de données, génie logiciel et réseaux informatiques sont soutenus par une expérience pratique en sécurité offensive (venant du cours EN2720 à KTH du Professeur Pontus Johnson), où j'ai mené des cycles d'attaque complets, de la reconnaissance à l'exploitation. Forte d'une expérience en PostgreSQL et en développement full-stack, je comprends comment les applications sont construites et comment elles peuvent être compromises. Je suis passionnée par la digitalisation durable et je développe activement mon expertise en pratiques DevOps et en fondamentaux de la sécurité pour sécuriser les infrastructures orientées données.`,
   },
   resume: `${process.env.PUBLIC_URL}/Resume_Serbouti_Pentester.pdf`,
   social: {
@@ -36,7 +36,7 @@ const projects = [
     en: 'A comprehensive offensive security project simulating a multi-machine enterprise cloud environment. Executed full attack lifecycles spanning Linux, Windows Active Directory, GCP cloud, and Wi-Fi networks, from initial reconnaissance to privilege escalation and persistence, concluding with detailed technical reporting.',
     fr: 'Un projet complet de sécurité offensive simulant un environnement d\'entreprise multi-machines dans le cloud. Exécution de cycles d\'attaque complets couvrant Linux, Active Directory Windows, le cloud GCP et les réseaux Wi-Fi, de la reconnaissance initiale à l\'élévation de privilèges et à la persistance, concluant sur un rapport technique détaillé.',
   },
-  stack: ['Burp Suite', 'Metasploit', 'Nmap', 'Wireshark', 'SQL Injection', 'Privilege Escalation', 'Active Directory', 'Container Escape', 'Client-Side Attacks', 'Linux', 'Windows', 'GCP'],
+  stack: ['Kali Linux', 'Burp Suite', 'Metasploit', 'Nmap', 'Wireshark', 'SQL Injection', 'Privilege Escalation', 'Active Directory', 'Container Escape', 'Client-Side Attacks', 'Linux', 'Windows', 'GCP'],
   sourceCode: '',
   livePreview: '', // Leave empty unless you hosted a writeup somewhere
   image: '', // You should add an image to public/images/
@@ -48,8 +48,8 @@ const projects = [
   year: 2026,
   wip: false,
   detailedDescription: {
-    en: `The EN2720 project involved navigating a complex, segmented network to capture flags by exploiting known vulnerabilities and misconfigurations. Key milestones included gaining an initial foothold via SQL injection in a legacy PHP web app to achieve RCE, pivoting through the network to exploit a Samba server via EternalRed, and performing a container escape via cgroup misconfigurations. I also executed client-side attacks by hijacking DNS to serve browser exploits, demonstrating a full-spectrum offensive security skillset.`,
-    fr: `Le projet EN2720 consistait à naviguer dans un réseau complexe et segmenté pour capturer des drapeaux en exploitant des vulnérabilités et des erreurs de configuration. Les étapes clés comprenaient l'obtention d'un premier accès via une injection SQL dans une application web PHP héritée pour obtenir une exécution de code à distance (RCE), le pivotement à travers le réseau pour exploiter un serveur Samba via EternalRed, et une évasion de conteneur via des erreurs de configuration de cgroup. J'ai également exécuté des attaques côté client en détournant le DNS pour servir des exploits de navigateur, démontrant ainsi un ensemble de compétences complet en sécurité offensive.`,
+    en: `The EN2720 project involved navigating a complex, segmented network to capture flags by exploiting known vulnerabilities and misconfigurations. Key milestones included gaining an initial foothold via SQL injection in a legacy PHP web app to achieve RCE, pivoting through the network to exploit a Samba server via EternalRed, and performing a container escape via cgroup misconfigurations. I also executed client-side attacks by hijacking DNS to serve browser exploits.`,
+    fr: `Le projet EN2720 consistait à naviguer dans un réseau complexe et segmenté pour capturer des drapeaux en exploitant des vulnérabilités et des erreurs de configuration. Les étapes clés comprenaient l'obtention d'un premier accès via une injection SQL dans une application web PHP héritée pour obtenir une exécution de code à distance (RCE), le pivotement à travers le réseau pour exploiter un serveur Samba via EternalRed, et une évasion de conteneur via des erreurs de configuration de cgroup. J'ai également exécuté des attaques côté client en détournant le DNS pour servir des exploits de navigateur.`,
   },
   features: [
     {
@@ -472,7 +472,7 @@ La base de données est conçue autour des exigences du projet : cursus flexible
   /*SOUNDGOOOD*/
   {
   id: 'soundgood-music-school',
-    type: 'Database Engineering',
+    type: 'Database engineering',
   typeColor: '#9b59b6',
   name: {
     en: 'Music School Database System',
@@ -713,7 +713,7 @@ Le projet comprend quatre requêtes analytiques : nombre de cours par mois et pa
   /*BAXANDALL*/
   {
     id: 'baxandall',
-    type: 'embedded',
+    type: 'electronics',
     typeColor: '#34495e',
     name: {
       en: 'Baxandall Filter',
@@ -738,7 +738,7 @@ Le projet comprend quatre requêtes analytiques : nombre de cours par mois et pa
   {
     id: 'alter-flughafen',
     type: 'gamedev',
-    typeColor: '#c0392b',
+    typeColor: '#dce91d',
     name: {
       en: 'Alter Flughafen',
       fr: 'Alter Flughafen',

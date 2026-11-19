@@ -140,7 +140,6 @@
   line-height: 1.6;
   min-height: 6rem;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
