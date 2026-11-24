@@ -1,11 +1,10 @@
-/* Remove the duplicate .app definition at the top and keep only this */
 .app {
   font-family: 'Raleway', sans-serif;
   line-height: 1.5;
   color: var(--clr-fg);
   min-height: 100vh;
   position: relative;
-  /* Remove the background: linear-gradient line */
+  zoom: 125%;
 }
 
 /* Semi-transparent overlay for better text readability */
