@@ -14,12 +14,13 @@ const Skills = () => {
 
   // Filter projects that use the selected skill
   const relatedProjects = selectedSkill
-    ? projects.filter(project =>
-        project.stack.some(tech =>
-          tech.toLowerCase().includes(selectedSkill.toLowerCase()) ||
-          selectedSkill.toLowerCase().includes(tech.toLowerCase())
+    ? projects
+        .filter(project =>
+          project.stack.some(
+            tech => tech.toLowerCase() === selectedSkill.toLowerCase()
+          )
         )
-      )
+        .sort((a, b) => Number(b.year) - Number(a.year))
     : []
 
   const handleSkillClick = (skill) => {
